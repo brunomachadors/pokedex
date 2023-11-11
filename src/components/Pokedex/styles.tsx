@@ -17,7 +17,8 @@ export const PokedexLeftSide = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-radius: 10px;
+  border-radius: 30px;
+  box-shadow: inset 0 0 15px rgba(251, 56, 56, 0.5);
 `;
 
 export const PokedexRightSide = styled.div`
@@ -26,11 +27,12 @@ export const PokedexRightSide = styled.div`
   height: 100%;
   border: solid black 1px;
   border-left: none;
-  border-radius: 10px;
+  border-radius: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  box-shadow: inset 0 0 15px rgba(251, 56, 56, 0.5);
 `;
 
 export const PokedexLeftContent = styled.div`
@@ -41,8 +43,7 @@ export const PokedexLeftContent = styled.div`
   border-left: solid #680708 2px;
   border-top: solid solid #680708 2px;
   border-radius: 10px;
-  margin-left: 10px;
-  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
 `;
 
 export const PokedexRighContent = styled.div`
@@ -53,5 +54,5 @@ export const PokedexRighContent = styled.div`
   border-left: solid #680708 2px;
   border-top: solid solid #680708 2px;
   border-radius: 10px;
-  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
 `;

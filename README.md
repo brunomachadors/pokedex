@@ -1,4 +1,53 @@
-# React + TypeScript + Vite
+# POKEDEX
+
+This project was developed during the Mindera Frontend Bootcamp at 2023.
+The idea is to create a pokedex using the Pokemon API.
+
+## How to run
+
+```bash
+yarn install
+yarn dev
+```
+
+## Tasks
+
+- [x] Project Foundation
+- [x] Handle API
+
+## Team Members
+
+- [Bruno Machado](https://github.com/brunomachadors)
+
+## API
+
+### POKEMON
+
+- [POKEMON API API](https://pokeapi.co/)
+
+## All packages
+
+### AXIOS
+
+This project is using action as a method of comunication with the endpoins.
+
+- [Axios Oficial Page](https://axios-http.com/docs/intro)
+
+### STYLED COMPOMENTS
+
+Almost all compoments are using styled compoments
+[Style Compoments Website](https://styled-components.com/)
+
+### REDUX
+
+This project was made using Redux. Redux provides a central store to hold the state, and any component can access and subscribe to this store to stay informed about state changes.
+
+You can use Redux for managing the state of a web application. It follows a predictable state management pattern, where the entire application state is stored in a single JavaScript object, and changes to the state are made through actions.
+These actions are dispatched by components and processed by reducers, which are pure functions responsible for updating the state.
+
+[Redux Website](https://redux.js.org/)
+
+### React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -6,22 +55,3 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
