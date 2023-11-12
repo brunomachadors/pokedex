@@ -8,6 +8,9 @@ import {
 } from './styles';
 import { getPokemonList } from '../../api/pokemon/pokemons';
 import { TpokemonList, Tresult } from '../../types/pokemon';
+import Display from '../Display';
+import Buttons from '../Buttons';
+import Search from '../Search';
 
 export function Pokedex() {
   const [pokemonList, setPokemonList] = useState<Tresult[]>([]);
@@ -29,7 +32,11 @@ export function Pokedex() {
   return (
     <PokedexContainer>
       <PokedexLeftSide>
-        <PokedexLeftContent></PokedexLeftContent>
+        <PokedexLeftContent>
+          <Display></Display>
+          <Buttons></Buttons>
+          <Search></Search>
+        </PokedexLeftContent>
       </PokedexLeftSide>
 
       <PokedexRightSide>
