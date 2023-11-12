@@ -12,8 +12,7 @@ yarn dev
 
 ## Tasks
 
-- [x] Project Foundation
-- [x] Handle API
+- [x] Api Communication
 
 ## Team Members
 

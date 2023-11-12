@@ -46,7 +46,7 @@ export const PokedexLeftContent = styled.div`
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
 `;
 
-export const PokedexRighContent = styled.div`
+export const PokedexRightContent = styled.div`
   background: linear-gradient(to right, #de0b0f, #750406);
   width: 90%;
   height: 90%;
@@ -55,4 +55,8 @@ export const PokedexRighContent = styled.div`
   border-top: solid solid #680708 2px;
   border-radius: 10px;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
