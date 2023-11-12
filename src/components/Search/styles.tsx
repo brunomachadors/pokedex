@@ -7,6 +7,7 @@ export const SearchInput = styled.input`
   background-color: #ffffff;
   font-family: 'RetroGaming', sans-serif;
   font-size: 20px;
-  border: 3px solid black;
+  border: 3px solid #1d1e2c;
   text-align: center;
+  margin-bottom: 30px;
 `;

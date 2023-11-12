@@ -1,47 +1,62 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const PokedexContainer = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  width: 1400px;
-  height: 700px;
+  width: 1600px;
+  height: 800px;
+  flex-direction: row;
+
+  @media (max-width: 1280px) {
+    width: 1400px;
+    height: 700px;
+  }
+
+  @media (max-width: 720px) {
+    width: 1100px;
+    height: 900px;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const PokedexLeftSide = styled.div`
-  background: linear-gradient(to left, #eb090d, #950406);
+  background: radial-gradient(#eb090d, #950406);
   width: 35%;
   height: 100%;
   border: solid black 1px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
   flex-direction: column;
   border-radius: 30px;
   box-shadow: inset 0 0 15px rgba(251, 56, 56, 0.5);
+  padding-bottom: 10px;
 `;
 
 export const PokedexRightSide = styled.div`
-  background: linear-gradient(to right, #eb090d, #950406);
-  width: 35%;
-  height: 100%;
+  background: linear-gradient(to bottom, #de0b0f, #750406);
+  width: 32%;
+  height: 82%;
   border: solid black 1px;
-  border-left: none;
+
   border-radius: 30px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   box-shadow: inset 0 0 15px rgba(251, 56, 56, 0.5);
+  margin-bottom: 10px;
 `;
 
 export const PokedexLeftContent = styled.div`
   background: radial-gradient(#de0b0f, #750406);
   width: 90%;
-  height: 90%;
+  height: 80%;
   border: solid black 2px;
-  border-left: solid #680708 2px;
-  border-top: solid solid #680708 2px;
+  border-left: 12px solid #680708;
+  border-top: solid #680708 12px;
   border-radius: 10px;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
   display: flex;
@@ -51,16 +66,58 @@ export const PokedexLeftContent = styled.div`
 `;
 
 export const PokedexRightContent = styled.div`
-  background: radial-gradient(#de0b0f, #750406);
-  width: 90%;
-  height: 90%;
-  border: solid black 2px;
-  border-left: solid #680708 2px;
-  border-top: solid solid #680708 2px;
+  background: linear-gradient(to right, #950406, #eb090d);
+  width: 95%;
+  height: 94%;
+  border-right: solid #be0306 5px;
+  border-bottom: solid #be0306 5px;
   border-radius: 10px;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-left: 5px;
+`;
+
+export const PokedexHeaderContainer = styled.div`
+  display: flex;
+  width: 100%;
+  height: 18%;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  gap: 20px;
+`;
+
+export const PokedexHeaderLines = styled.div`
+  display: flex;
+  width: 80%;
+  height: 10%;
+  border-top: 5px solid black;
+`;
+
+const pulseAnimation = keyframes`
+  0% {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.6);
+  }
+`;
+
+export const PokedexHeaderBall = styled.div`
+  display: flex;
+  width: 15%;
+  height: 55%;
+  border-top: 2px solid black;
+  background: radial-gradient(#3db8f5, #277eaa, #184f6b);
+  border-radius: 50%;
+  margin-left: 30px;
+  border: solid white 5px;
+
+  animation: ${pulseAnimation} 3s ease-in-out infinite;
 `;

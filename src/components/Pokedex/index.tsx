@@ -5,6 +5,9 @@ import {
   PokedexRightSide,
   PokedexLeftContent,
   PokedexRightContent,
+  PokedexHeaderContainer,
+  PokedexHeaderLines,
+  PokedexHeaderBall,
 } from './styles';
 import { getPokemonList } from '../../api/pokemon/pokemons';
 import { TpokemonList, Tresult } from '../../types/pokemon';
@@ -32,6 +35,10 @@ export function Pokedex() {
   return (
     <PokedexContainer>
       <PokedexLeftSide>
+        <PokedexHeaderContainer>
+          <PokedexHeaderBall></PokedexHeaderBall>
+          <PokedexHeaderLines></PokedexHeaderLines>
+        </PokedexHeaderContainer>
         <PokedexLeftContent>
           <Display></Display>
           <Buttons></Buttons>
