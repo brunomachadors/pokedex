@@ -36,11 +36,10 @@ export const PokedexLeftSide = styled.div`
 `;
 
 export const PokedexRightSide = styled.div`
-  background: linear-gradient(to bottom, #de0b0f, #750406);
+  background: radial-gradient(#eb090d, #950406);
   width: 32%;
-  height: 82%;
+  height: 80%;
   border: solid black 1px;
-
   border-radius: 30px;
   display: flex;
   justify-content: center;
@@ -66,13 +65,12 @@ export const PokedexLeftContent = styled.div`
 `;
 
 export const PokedexRightContent = styled.div`
-  background: linear-gradient(to right, #950406, #eb090d);
+  background: radial-gradient(#de0b0f, #750406);
   width: 95%;
   height: 94%;
-  border-right: solid #be0306 5px;
-  border-bottom: solid #be0306 5px;
+  border-right: 6px solid #680708;
+  border-top: 6px solid #680708;
   border-radius: 10px;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
