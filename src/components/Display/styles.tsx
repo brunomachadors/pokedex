@@ -119,6 +119,7 @@ export const PokemonTypeContainer = styled.div`
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 10px;
 `;
 
 export const TextInfo = styled.div`
