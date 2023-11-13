@@ -15,7 +15,7 @@ export const PokedexContainer = styled.div`
 
   @media (max-width: 720px) {
     width: 1100px;
-    height: 900px;
+    height: 1200px;
     flex-direction: column;
     align-items: center;
   }
@@ -33,6 +33,11 @@ export const PokedexLeftSide = styled.div`
   border-radius: 30px;
   box-shadow: inset 0 0 15px rgba(251, 56, 56, 0.5);
   padding-bottom: 10px;
+
+  @media (max-width: 720px) {
+    width: 40%;
+    height: 50%;
+  }
 `;
 
 export const PokedexRightSide = styled.div`
@@ -47,6 +52,11 @@ export const PokedexRightSide = styled.div`
   flex-direction: column;
   box-shadow: inset 0 0 15px rgba(251, 56, 56, 0.5);
   margin-bottom: 10px;
+
+  @media (max-width: 720px) {
+    width: 35%;
+    height: 50%;
+  }
 `;
 
 export const PokedexLeftContent = styled.div`
@@ -72,9 +82,9 @@ export const PokedexRightContent = styled.div`
   border-top: 6px solid #680708;
   border-radius: 10px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: column;
   margin-left: 5px;
 `;
 
@@ -82,7 +92,7 @@ export const PokedexHeaderContainer = styled.div`
   display: flex;
   width: 100%;
   height: 18%;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
   gap: 20px;
@@ -90,7 +100,7 @@ export const PokedexHeaderContainer = styled.div`
 
 export const PokedexHeaderLines = styled.div`
   display: flex;
-  width: 80%;
+  width: 50%;
   height: 10%;
   border-top: 5px solid black;
 `;
@@ -109,8 +119,8 @@ const pulseAnimation = keyframes`
 
 export const PokedexHeaderBall = styled.div`
   display: flex;
-  width: 15%;
-  height: 55%;
+  width: 25%;
+  height: 50%;
   border-top: 2px solid black;
   background: radial-gradient(#3db8f5, #277eaa, #184f6b);
   border-radius: 50%;
@@ -118,4 +128,53 @@ export const PokedexHeaderBall = styled.div`
   border: solid white 5px;
 
   animation: ${pulseAnimation} 3s ease-in-out infinite;
+`;
+
+export const BallsContainer = styled.div`
+  display: flex;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-start;
+`;
+
+export const LightsContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
+  width: 50%;
+  gap: 20px;
+  margin-top: 60px;
+  margin-left: 10px;
+  position: relative;
+`;
+export const PokedexLightRed = styled.div`
+  display: flex;
+  width: 15%;
+  height: 15%;
+  border-top: 2px solid black;
+  background: radial-gradient(#f53d3d, #aa2727, #6b1818);
+  border-radius: 50%;
+  border: solid black 1px;
+`;
+
+export const PokedexLightYellow = styled.div`
+  display: flex;
+  width: 15%;
+  height: 15%;
+  border-top: 2px solid black;
+  background: radial-gradient(#f5d03d, #aa9927, #6b5518);
+  border-radius: 50%;
+
+  border: solid black 1px;
+`;
+
+export const PokedexLighGreen = styled.div`
+  display: flex;
+  width: 15%;
+  height: 15%;
+  border-top: 2px solid black;
+  background: radial-gradient(#3df543, #27aa38, #186b23);
+  border-radius: 50%;
+  border: solid black 1px;
 `;

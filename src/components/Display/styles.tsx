@@ -10,6 +10,7 @@ export const BlackScreen = styled.div`
   background-image: radial-gradient(#1d1e2c, #09090d);
   border: 3px solid black;
   overflow: hidden;
+  border-radius: 10px;
   margin-top: -20px;
 `;
 
@@ -27,4 +28,77 @@ export const AnimatedText = styled.div`
 export const Word = styled.div`
   display: inline-block;
   animation: ${wordAnimation} 3s linear infinite;
+`;
+
+export const BlackScreenList = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  width: 70%;
+  height: 40%;
+  border: 3px solid black;
+  overflow: hidden;
+  margin-top: -20px;
+  flex-direction: column;
+  overflow-y: auto;
+`;
+
+export const List = styled.ul`
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+  font-size: 20px;
+`;
+
+export const ListText = styled.li`
+  font-size: 16px;
+  color: white;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: 'RetroGaming', sans-serif;
+  text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black,
+    1px 1px 1px black;
+  margin-left: 10%;
+`;
+
+export const Button = styled.button`
+  width: 100%;
+  position: relative;
+  background: ${(props) =>
+    props.color ? props.color : 'linear-gradient(#1d1e2c, #09090d)'};
+  background-color: ${(props) => (props.color ? 'transparent' : '#1d1e2c')};
+`;
+
+export const WhiteScreen = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 45%;
+  background-image: radial-gradient(#f1f1f4, #bdbdbd);
+  border: 3px solid black;
+  overflow: hidden;
+  margin-top: -20px;
+  border-radius: 10px;
+`;
+
+export const Screen = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  width: 80%;
+  height: 80%;
+  background-image: radial-gradient(#1d1e2c, #09090d);
+  border: 3px solid black;
+  overflow: hidden;
+  border-radius: 10px;
 `;
