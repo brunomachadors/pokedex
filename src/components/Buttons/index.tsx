@@ -5,10 +5,9 @@ interface ButtonsProps {
   onButtonClick?: (index: number) => void;
 }
 
-const buttonLabels = ['POKEMON', 'TYPES', 'ITEMS', 'LOCATIONS'];
-
-function Buttons({ onButtonClick }: ButtonsProps) {
+function ButtonsMenu({ onButtonClick }: ButtonsProps) {
   const [selectedButton, setSelectedButton] = useState<number | null>(null);
+  const buttonLabels = ['POKEMON', 'TYPES', 'ITEMS', 'LOCATIONS'];
 
   const handleButtonClick = (buttonIndex: number) => {
     setSelectedButton(buttonIndex);
@@ -32,4 +31,4 @@ function Buttons({ onButtonClick }: ButtonsProps) {
   );
 }
 
-export default Buttons;
+export default ButtonsMenu;

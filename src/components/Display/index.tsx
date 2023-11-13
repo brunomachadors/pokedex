@@ -3,19 +3,31 @@ import {
   AnimatedText,
   BlackScreen,
   BlackScreenList,
-  Button,
   List,
   ListText,
   WhiteScreen,
   Word,
   Screen,
+  StyledImage,
+  StyledType,
+  PokemonTypeContainer,
+  TextInfo,
+  BlackScreenInfo,
 } from './styles';
 import {
   getPokemonDataByName,
   getPokemonList,
 } from '../../api/pokemon/pokemons';
-import { TpokemonList, TpokemonType, Tresult } from '../../types/pokemon';
+import {
+  State,
+  TpokemonList,
+  TpokemonType,
+  Tresult,
+} from '../../types/pokemon';
 import themes from '../../utils/themes';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectPokemon } from '../../store/pokemon/pokemon';
+import { ButtonSelect } from '../Buttons/styles';
 
 export function Display() {
   return (
@@ -30,11 +42,12 @@ export function Display() {
 export function DisplayList() {
   const [pokemonList, setPokemonList] = useState<Tresult[]>([]);
   const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const response: TpokemonList = await getPokemonList(0, 151);
+        const response: TpokemonList = await getPokemonList(0, 251);
         setPokemonList(response.results);
 
         const updatedList = await Promise.all(
@@ -43,7 +56,9 @@ export function DisplayList() {
 
             return {
               ...pokemon,
-              gameIndex: dataResponse.game_indices[10].game_index,
+              id: dataResponse.id,
+              image:
+                dataResponse.sprites.other['official-artwork'].front_default,
               types: dataResponse.types.map(
                 (type: TpokemonType) => type.type.name
               ),
@@ -62,6 +77,10 @@ export function DisplayList() {
     fetchData();
   }, []);
 
+  const handleClick = (pokemon: Tresult) => {
+    dispatch(selectPokemon(pokemon));
+  };
+
   return (
     <BlackScreenList>
       <List>
@@ -69,19 +88,19 @@ export function DisplayList() {
           <p>Loading...</p>
         ) : (
           pokemonList.map((pokemon) => (
-            <Button
+            <ButtonSelect
               key={pokemon.name}
               color={
                 themes.colors.type[
                   pokemon.types?.[0] as keyof typeof themes.colors.type
                 ] || '#09090d'
               }
+              onClick={() => handleClick(pokemon)}
             >
               <ListText>
-                #{pokemon.gameIndex} {pokemon.name.toUpperCase()} -{' '}
-                {pokemon.types && pokemon.types[0]?.toUpperCase()}
+                #{pokemon.id} {pokemon.name.toUpperCase()}
               </ListText>
-            </Button>
+            </ButtonSelect>
           ))
         )}
       </List>
@@ -90,10 +109,46 @@ export function DisplayList() {
 }
 
 export function DisplayMonitor() {
+  const currentPokemon = useSelector(
+    (state: State) => state.pokemon.selectedPokemon
+  );
+
+  const backgroundColor =
+    themes.colors.background[
+      currentPokemon.types?.[0] as keyof typeof themes.colors.type
+    ];
+
   return (
     <WhiteScreen>
-      <Screen></Screen>
+      <Screen color={backgroundColor}>
+        <StyledImage src={currentPokemon.image} alt="selectedPokemon" />
+        <PokemonTypeContainer>
+          {currentPokemon.types?.map((type, index) => (
+            <StyledType
+              key={index}
+              color={
+                themes.colors.buttonColor[
+                  type as keyof typeof themes.colors.type
+                ]
+              }
+            >
+              {type.toUpperCase()}
+            </StyledType>
+          ))}
+        </PokemonTypeContainer>
+      </Screen>
     </WhiteScreen>
+  );
+}
+
+export function DisplayInfo() {
+  const currentPokemon = useSelector(
+    (state: State) => state.pokemon.selectedPokemon
+  );
+  return (
+    <BlackScreenInfo>
+      <TextInfo>{currentPokemon.name.toLocaleUpperCase()}</TextInfo>
+    </BlackScreenInfo>
   );
 }
 

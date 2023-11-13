@@ -4,7 +4,6 @@ export const BlackScreen = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 40px;
   width: 70%;
   height: 15%;
   background-image: radial-gradient(#1d1e2c, #09090d);
@@ -21,7 +20,7 @@ const wordAnimation = keyframes`
 `;
 
 export const AnimatedText = styled.div`
-  font-size: 24px;
+  font-size: 30px;
   color: yellow;
 `;
 
@@ -35,13 +34,10 @@ export const BlackScreenList = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 40px;
-  width: 70%;
+  width: 50%;
   height: 40%;
-  border: 3px solid black;
   overflow: hidden;
-  margin-top: -20px;
   flex-direction: column;
-  overflow-y: auto;
 `;
 
 export const List = styled.ul`
@@ -54,6 +50,7 @@ export const List = styled.ul`
   margin-block-end: 0;
   padding-inline-start: 0;
   font-size: 20px;
+  overflow-y: auto;
 `;
 
 export const ListText = styled.li`
@@ -69,24 +66,15 @@ export const ListText = styled.li`
   margin-left: 10%;
 `;
 
-export const Button = styled.button`
-  width: 100%;
-  position: relative;
-  background: ${(props) =>
-    props.color ? props.color : 'linear-gradient(#1d1e2c, #09090d)'};
-  background-color: ${(props) => (props.color ? 'transparent' : '#1d1e2c')};
-`;
-
 export const WhiteScreen = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 60%;
   height: 45%;
-  background-image: radial-gradient(#f1f1f4, #bdbdbd);
+  background-image: linear-gradient(to bottom, #f1f1f4, #a5a5a5);
   border: 3px solid black;
   overflow: hidden;
-  margin-top: -20px;
   border-radius: 10px;
 `;
 
@@ -97,8 +85,48 @@ export const Screen = styled.div`
   font-size: 40px;
   width: 80%;
   height: 80%;
+  background-image: ${(props) => (props.color ? props.color : '#1d1e2c')};
+  border: 3px solid black;
+  overflow: hidden;
+  border-radius: 10px;
+  flex-direction: column;
+`;
+
+export const StyledImage = styled.img`
+  width: 70%;
+`;
+
+export const StyledType = styled.div`
+  background-color: ${(props) => props.color || 'black'};
+  padding: 5px 10px;
+  color: ${(props) => (props.color === '#E3D38E' ? 'black' : 'white')};
+  font-size: 12px;
+  border: 0.5px solid black;
+  border-radius: 10px;
+`;
+
+export const PokemonTypeContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+`;
+
+export const TextInfo = styled.div`
+  font-size: 20px;
+  color: yellow;
+`;
+
+export const BlackScreenInfo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 25%;
   background-image: radial-gradient(#1d1e2c, #09090d);
   border: 3px solid black;
   overflow: hidden;
   border-radius: 10px;
+  margin-top: -20px;
 `;

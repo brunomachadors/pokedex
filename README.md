@@ -3,6 +3,10 @@
 This project was developed during the Mindera Frontend Bootcamp at 2023.
 The idea is to create a pokedex using the Pokemon API.
 
+## PREVIEW
+
+![Pokedex](public/pokedex.png)
+
 ## How to run
 
 ```bash
@@ -13,10 +17,22 @@ yarn dev
 ## Tasks
 
 - [x] Api Communication
+- [x] Left Side Components
+- [x] Right Side Components
+- [x] Display Monitor
+- [ ] Display Info
+- [ ] Menu Buttons
+- [ ] Pokemon Types
+- [ ] Pokemon Items
+- [ ] Regions
 
 ## Team Members
 
 - [Bruno Machado](https://github.com/brunomachadors)
+
+### MY FAVOURITE POKEMON
+
+![GENGAR](https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/96269ce8-4a07-4702-936a-6860e1b5594f/df2h3dd-6db30c29-a4cf-4329-b86f-0d118c144b7d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzk2MjY5Y2U4LTRhMDctNDcwMi05MzZhLTY4NjBlMWI1NTk0ZlwvZGYyaDNkZC02ZGIzMGMyOS1hNGNmLTQzMjktYjg2Zi0wZDExOGMxNDRiN2QucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.piOIw_Tgm_VMOJOZd5GEjXpHxwfk3ByqDCX2-uoTfoM)
 
 ## API
 

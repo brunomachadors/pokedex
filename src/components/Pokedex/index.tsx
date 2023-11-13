@@ -15,8 +15,9 @@ import {
 } from './styles';
 
 import Display, { DisplayList, DisplayMonitor } from '../Display';
-import Buttons from '../Buttons';
+import ButtonsMenu from '../Buttons';
 import Search from '../Search';
+import InfoPainel from '../Info';
 
 export function Pokedex() {
   return (
@@ -31,12 +32,12 @@ export function Pokedex() {
               <PokedexLighGreen></PokedexLighGreen>
             </LightsContainer>
           </BallsContainer>
-
           <PokedexHeaderLines></PokedexHeaderLines>
         </PokedexHeaderContainer>
+
         <PokedexLeftContent>
           <Display></Display>
-          <Buttons></Buttons>
+          <ButtonsMenu></ButtonsMenu>
           <Search></Search>
         </PokedexLeftContent>
       </PokedexLeftSide>
@@ -44,6 +45,7 @@ export function Pokedex() {
       <PokedexRightSide>
         <PokedexRightContent>
           <DisplayMonitor></DisplayMonitor>
+          <InfoPainel></InfoPainel>
           <DisplayList></DisplayList>
         </PokedexRightContent>
       </PokedexRightSide>
