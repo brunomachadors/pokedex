@@ -53,7 +53,6 @@ export function DisplayList() {
 
         setPokemonList(updatedList);
         setLoading(false);
-        console.log(pokemonList);
       } catch (error) {
         console.error('Error fetching Pokemon data:', error);
         setLoading(false);
