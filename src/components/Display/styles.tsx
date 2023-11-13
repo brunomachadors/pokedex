@@ -83,7 +83,7 @@ export const WhiteScreen = styled.div`
   justify-content: center;
   width: 60%;
   height: 45%;
-  background-image: radial-gradient(#f1f1f4, #bdbdbd);
+  background-image: linear-gradient(to bottom, #f1f1f4, #a5a5a5);
   border: 3px solid black;
   overflow: hidden;
   margin-top: -20px;
@@ -97,8 +97,12 @@ export const Screen = styled.div`
   font-size: 40px;
   width: 80%;
   height: 80%;
-  background-image: radial-gradient(#1d1e2c, #09090d);
+  background-image: ${(props) => (props.color ? props.color : '#1d1e2c')};
   border: 3px solid black;
   overflow: hidden;
   border-radius: 10px;
+`;
+
+export const StyledImage = styled.img`
+  width: 100%;
 `;

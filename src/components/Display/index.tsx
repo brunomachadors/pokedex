@@ -9,13 +9,21 @@ import {
   WhiteScreen,
   Word,
   Screen,
+  StyledImage,
 } from './styles';
 import {
   getPokemonDataByName,
   getPokemonList,
 } from '../../api/pokemon/pokemons';
-import { TpokemonList, TpokemonType, Tresult } from '../../types/pokemon';
+import {
+  State,
+  TpokemonList,
+  TpokemonType,
+  Tresult,
+} from '../../types/pokemon';
 import themes from '../../utils/themes';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectPokemon } from '../../store/pokemon/pokemon';
 
 export function Display() {
   return (
@@ -30,6 +38,7 @@ export function Display() {
 export function DisplayList() {
   const [pokemonList, setPokemonList] = useState<Tresult[]>([]);
   const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function fetchData() {
@@ -43,7 +52,9 @@ export function DisplayList() {
 
             return {
               ...pokemon,
-              gameIndex: dataResponse.game_indices[10].game_index,
+              id: dataResponse.id,
+              image:
+                dataResponse.sprites.other['official-artwork'].front_default,
               types: dataResponse.types.map(
                 (type: TpokemonType) => type.type.name
               ),
@@ -62,6 +73,10 @@ export function DisplayList() {
     fetchData();
   }, []);
 
+  const handleClick = (pokemon: Tresult) => {
+    dispatch(selectPokemon(pokemon));
+  };
+
   return (
     <BlackScreenList>
       <List>
@@ -76,9 +91,10 @@ export function DisplayList() {
                   pokemon.types?.[0] as keyof typeof themes.colors.type
                 ] || '#09090d'
               }
+              onClick={() => handleClick(pokemon)}
             >
               <ListText>
-                #{pokemon.gameIndex} {pokemon.name.toUpperCase()} -{' '}
+                #{pokemon.id} {pokemon.name.toUpperCase()} -{' '}
                 {pokemon.types && pokemon.types[0]?.toUpperCase()}
               </ListText>
             </Button>
@@ -90,9 +106,20 @@ export function DisplayList() {
 }
 
 export function DisplayMonitor() {
+  const currentPokemon = useSelector(
+    (state: State) => state.pokemon.selectedPokemon
+  );
+
+  const backgroundColor =
+    themes.colors.background[
+      currentPokemon.types?.[0] as keyof typeof themes.colors.type
+    ] || '#09090d';
+
   return (
     <WhiteScreen>
-      <Screen></Screen>
+      <Screen color={backgroundColor}>
+        <StyledImage src={currentPokemon.image} alt="selectedPokemon" />
+      </Screen>
     </WhiteScreen>
   );
 }

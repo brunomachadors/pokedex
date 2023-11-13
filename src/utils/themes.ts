@@ -1,7 +1,25 @@
 export default {
   colors: {
+    background: {
+      grass: 'linear-gradient(to top, #65D68B, black)',
+      fire: 'linear-gradient(to top, #903F3F, black)',
+      water: 'linear-gradient(to top, #557DEA, black)',
+      poison: 'linear-gradient(to top, #7A6696, black)',
+      normal: 'linear-gradient(to top, #A1A1A1, black)',
+      bug: 'linear-gradient(to top, #00A862, black)',
+      flying: 'linear-gradient(to top, #7AA9E8, black)',
+      electric: 'linear-gradient(to top, #D6CA23, black)',
+      ground: 'linear-gradient(to top, #B76D29, black)',
+      fairy: 'linear-gradient(to top, #BD23A0, black)',
+      fighting: 'linear-gradient(to top, #A85451, black)',
+      psychic: 'linear-gradient(to top, #C82D5B, black)',
+      rock: 'linear-gradient(to top, #6C644F, black)',
+      ghost: 'linear-gradient(to top, #816A9F, black)',
+      ice: 'linear-gradient(to top, #176F73, black)',
+      dragon: 'linear-gradient(to top, #7241E4, black)',
+    },
     type: {
-      grass: 'linear-gradient(#65D68B, #4BB36F)',
+      grass: 'linear-gradient(to right, #65D68B, #4BB36F)',
       fire: 'linear-gradient(to right, #903F3F, #FF6C6C)',
       water: 'linear-gradient(to right, #557DEA, #70A7F0)',
       poison: 'linear-gradient(to right, #7A6696, #C89EC7)',
