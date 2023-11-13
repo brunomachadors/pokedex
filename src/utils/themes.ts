@@ -17,6 +17,8 @@ export default {
       ghost: 'linear-gradient(to top, #816A9F, black)',
       ice: 'linear-gradient(to top, #176F73, black)',
       dragon: 'linear-gradient(to top, #7241E4, black)',
+      steel: 'linear-gradient(to top, #A0A0A0, black)',
+      dark: 'linear-gradient(to top, #333333, black)',
     },
     type: {
       grass: 'linear-gradient(to right, #65D68B, #4BB36F)',
@@ -35,6 +37,8 @@ export default {
       ghost: 'linear-gradient(to right, #816A9F, #B683B3)',
       ice: 'linear-gradient(to right, #176F73, #9CE8F2)',
       dragon: 'linear-gradient(to right, #7241E4, #A99EC3)',
+      steel: 'linear-gradient(to right, #A0A0A0, #6C6C6C)',
+      dark: 'linear-gradient(to right, #333333, #000000)',
     },
     buttonColor: {
       grass: '#2E6030',
@@ -53,6 +57,8 @@ export default {
       ghost: '#695D7E',
       ice: '#579AA9',
       dragon: '#70578B',
+      steel: '#808080',
+      dark: '#333333',
     },
   },
 };

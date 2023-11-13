@@ -36,11 +36,8 @@ export const BlackScreenList = styled.div`
   font-size: 40px;
   width: 50%;
   height: 40%;
-  border: 3px solid black;
   overflow: hidden;
-
   flex-direction: column;
-  overflow-y: auto;
 `;
 
 export const List = styled.ul`
@@ -53,6 +50,7 @@ export const List = styled.ul`
   margin-block-end: 0;
   padding-inline-start: 0;
   font-size: 20px;
+  overflow-y: auto;
 `;
 
 export const ListText = styled.li`

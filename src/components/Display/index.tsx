@@ -47,7 +47,7 @@ export function DisplayList() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response: TpokemonList = await getPokemonList(0, 151);
+        const response: TpokemonList = await getPokemonList(0, 251);
         setPokemonList(response.results);
 
         const updatedList = await Promise.all(
