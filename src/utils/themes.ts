@@ -5,7 +5,7 @@ export default {
       fire: 'linear-gradient(to top,  #D6CA23, #903F3F, black)',
       water: 'linear-gradient(to top, #70A7F0, #557DEA, black)',
       poison: 'linear-gradient(to top, #A819D7, #611380, black)',
-      normal: 'linear-gradient(to top, #ACA974, black)',
+      normal: 'linear-gradient(to top, #CCC9AA, #ACA974, black)',
       bug: 'linear-gradient(to top, #D9FE9E, #BDDD6E, #91BA2E)',
       flying: 'linear-gradient(to top, #7AA9E8, black)',
       electric: 'linear-gradient(to top, #D6CA23, black)',
