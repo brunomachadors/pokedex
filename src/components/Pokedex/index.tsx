@@ -17,6 +17,7 @@ import {
 import Display, { DisplayList, DisplayMonitor } from '../Display';
 import Buttons from '../Buttons';
 import Search from '../Search';
+import InfoPainel from '../Info';
 
 export function Pokedex() {
   return (
@@ -44,6 +45,7 @@ export function Pokedex() {
       <PokedexRightSide>
         <PokedexRightContent>
           <DisplayMonitor></DisplayMonitor>
+          <InfoPainel></InfoPainel>
           <DisplayList></DisplayList>
         </PokedexRightContent>
       </PokedexRightSide>

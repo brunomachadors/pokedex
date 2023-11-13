@@ -3,13 +3,16 @@ import {
   AnimatedText,
   BlackScreen,
   BlackScreenList,
-  Button,
   List,
   ListText,
   WhiteScreen,
   Word,
   Screen,
   StyledImage,
+  StyledType,
+  PokemonTypeContainer,
+  TextInfo,
+  BlackScreenInfo,
 } from './styles';
 import {
   getPokemonDataByName,
@@ -24,6 +27,7 @@ import {
 import themes from '../../utils/themes';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectPokemon } from '../../store/pokemon/pokemon';
+import { ButtonSelect } from '../Buttons/styles';
 
 export function Display() {
   return (
@@ -84,7 +88,7 @@ export function DisplayList() {
           <p>Loading...</p>
         ) : (
           pokemonList.map((pokemon) => (
-            <Button
+            <ButtonSelect
               key={pokemon.name}
               color={
                 themes.colors.type[
@@ -94,10 +98,9 @@ export function DisplayList() {
               onClick={() => handleClick(pokemon)}
             >
               <ListText>
-                #{pokemon.id} {pokemon.name.toUpperCase()} -{' '}
-                {pokemon.types && pokemon.types[0]?.toUpperCase()}
+                #{pokemon.id} {pokemon.name.toUpperCase()}
               </ListText>
-            </Button>
+            </ButtonSelect>
           ))
         )}
       </List>
@@ -113,14 +116,39 @@ export function DisplayMonitor() {
   const backgroundColor =
     themes.colors.background[
       currentPokemon.types?.[0] as keyof typeof themes.colors.type
-    ] || '#09090d';
+    ];
 
   return (
     <WhiteScreen>
       <Screen color={backgroundColor}>
         <StyledImage src={currentPokemon.image} alt="selectedPokemon" />
+        <PokemonTypeContainer>
+          {currentPokemon.types?.map((type, index) => (
+            <StyledType
+              key={index}
+              color={
+                themes.colors.buttonColor[
+                  type as keyof typeof themes.colors.type
+                ]
+              }
+            >
+              {type.toUpperCase()}
+            </StyledType>
+          ))}
+        </PokemonTypeContainer>
       </Screen>
     </WhiteScreen>
+  );
+}
+
+export function DisplayInfo() {
+  const currentPokemon = useSelector(
+    (state: State) => state.pokemon.selectedPokemon
+  );
+  return (
+    <BlackScreenInfo>
+      <TextInfo>{currentPokemon.name.toLocaleUpperCase()}</TextInfo>
+    </BlackScreenInfo>
   );
 }
 

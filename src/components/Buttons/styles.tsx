@@ -9,6 +9,7 @@ export const ButtonContainer = styled.div`
   width: 70%;
   height: 12%;
   gap: 6px;
+  cursor: pointer;
 `;
 
 export const Button = styled.button<ButtonProps>`
@@ -27,6 +28,7 @@ export const Button = styled.button<ButtonProps>`
   border-right: ${(props) => (props.selected ? 'none' : '3px solid #4990a9')};
   border-bottom: ${(props) => (props.selected ? 'none' : '3px solid #4990a9')};
   transition: background-color 0.1s;
+  cursor: pointer;
 
   @media (max-width: 1280px) {
     font-size: 9px;
@@ -35,4 +37,13 @@ export const Button = styled.button<ButtonProps>`
   @media (max-width: 720px) {
     font-size: 6px;
   }
+`;
+
+export const ButtonSelect = styled.button`
+  width: 100%;
+  position: relative;
+  background: ${(props) =>
+    props.color ? props.color : 'linear-gradient(#1d1e2c, #09090d)'};
+  background-color: ${(props) => (props.color ? 'transparent' : '#1d1e2c')};
+  cursor: pointer;
 `;
