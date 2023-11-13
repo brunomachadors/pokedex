@@ -37,7 +37,6 @@ export const BlackScreenList = styled.div`
   font-size: 40px;
   width: 70%;
   height: 40%;
-  background-image: radial-gradient(#1d1e2c, #09090d);
   border: 3px solid black;
   overflow: hidden;
   margin-top: -20px;
@@ -58,19 +57,24 @@ export const List = styled.ul`
 `;
 
 export const ListText = styled.li`
-  font-size: 18px;
+  font-size: 16px;
   color: white;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-family: 'RetroGaming', sans-serif;
+  text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black,
+    1px 1px 1px black;
+  margin-left: 10%;
 `;
 
 export const Button = styled.button`
   width: 100%;
   position: relative;
-  background-image: radial-gradient(#1d1e2c, #09090d);
+  background: ${(props) =>
+    props.color ? props.color : 'linear-gradient(#1d1e2c, #09090d)'};
+  background-color: ${(props) => (props.color ? 'transparent' : '#1d1e2c')};
 `;
 
 export const WhiteScreen = styled.div`

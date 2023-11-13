@@ -8,4 +8,16 @@ export type TpokemonList = {
 export interface Tresult {
   name: string;
   url: string;
+  gameIndex?: number;
+  types?: string;
 }
+
+export type TpokemonType = {
+  slot: number;
+  type: Type;
+};
+
+type Type = {
+  name: string;
+  url: string;
+};
