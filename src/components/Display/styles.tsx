@@ -38,6 +38,10 @@ export const BlackScreenList = styled.div`
   height: 40%;
   overflow: hidden;
   flex-direction: column;
+
+  @media (max-width: 720px) {
+    width: 60%;
+  }
 `;
 
 export const List = styled.ul`
@@ -64,13 +68,17 @@ export const ListText = styled.li`
   text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black,
     1px 1px 1px black;
   margin-left: 10%;
+
+  @media (max-width: 720px) {
+    margin-left: 5%;
+  }
 `;
 
 export const WhiteScreen = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60%;
+  width: 70%;
   height: 45%;
   background-image: linear-gradient(to bottom, #f1f1f4, #a5a5a5);
   border: 3px solid black;

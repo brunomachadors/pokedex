@@ -15,8 +15,10 @@ import {
 } from './styles';
 
 import Display, { DisplayList, DisplayMonitor } from '../Display';
-import ButtonsMenu from '../Buttons';
+
 import Search from '../Search';
+
+import ButtonsMenu from '../Buttons';
 import InfoPainel from '../Info';
 
 export function Pokedex() {

@@ -14,10 +14,11 @@ export const PokedexContainer = styled.div`
   }
 
   @media (max-width: 720px) {
-    width: 1100px;
+    width: 1050px;
     height: 1200px;
     flex-direction: column;
     align-items: center;
+    margin-top: 450px;
   }
 `;
 
@@ -35,7 +36,6 @@ export const PokedexLeftSide = styled.div`
   padding-bottom: 10px;
 
   @media (max-width: 720px) {
-    width: 40%;
     height: 50%;
   }
 `;
