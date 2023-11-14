@@ -7,10 +7,6 @@ import {
   ListText,
   WhiteScreen,
   Word,
-  Screen,
-  StyledImage,
-  StyledType,
-  PokemonTypeContainer,
   TextInfo,
   BlackScreenInfo,
 } from './styles';
@@ -28,6 +24,8 @@ import themes from '../../utils/themes';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectPokemon } from '../../store/pokemon/pokemon';
 import { ButtonSelect } from '../Buttons/styles';
+import Photo from '../Photo';
+import { Info } from '../Info';
 
 export function Display() {
   return (
@@ -109,34 +107,11 @@ export function DisplayList() {
 }
 
 export function DisplayMonitor() {
-  const currentPokemon = useSelector(
-    (state: State) => state.pokemon.selectedPokemon
-  );
-
-  const backgroundColor =
-    themes.colors.background[
-      currentPokemon.types?.[0] as keyof typeof themes.colors.type
-    ];
-
+  const infoMenu = useSelector((state: State) => state.infoMenu.selectedMenu);
   return (
     <WhiteScreen>
-      <Screen color={backgroundColor}>
-        <StyledImage src={currentPokemon.image} alt="selectedPokemon" />
-        <PokemonTypeContainer>
-          {currentPokemon.types?.map((type, index) => (
-            <StyledType
-              key={index}
-              color={
-                themes.colors.buttonColor[
-                  type as keyof typeof themes.colors.type
-                ]
-              }
-            >
-              {type.toUpperCase()}
-            </StyledType>
-          ))}
-        </PokemonTypeContainer>
-      </Screen>
+      {infoMenu !== 'info' && <Photo></Photo>}
+      {infoMenu !== 'photo' && <Info></Info>}
     </WhiteScreen>
   );
 }
