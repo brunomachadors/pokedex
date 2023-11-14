@@ -1,6 +1,6 @@
-import { useDispatch } from 'react-redux';
 import { ButtonPhoto, ButtonInfo, InfoButtonContainer } from './styles';
 import { selectInfoMenu } from '../../store/info/info';
+import { useDispatch } from 'react-redux';
 
 function InfoPainel() {
   const dispatch = useDispatch();

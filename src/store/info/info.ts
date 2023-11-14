@@ -1,8 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
+// create initial state
 const initialState: { selectedMenu: string } = {
   selectedMenu: 'photo',
 };
+
+//Create slice
 
 export const infoMenuSlice = createSlice({
   name: 'infoMenu',
@@ -14,7 +17,10 @@ export const infoMenuSlice = createSlice({
   },
 });
 
+// export actions
+
 export const { selectInfoMenu } = infoMenuSlice.actions;
 
+// export redecer
 const infoMenuReducer = infoMenuSlice.reducer;
 export default infoMenuReducer;

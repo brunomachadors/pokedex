@@ -108,10 +108,11 @@ export function DisplayList() {
 
 export function DisplayMonitor() {
   const infoMenu = useSelector((state: State) => state.infoMenu.selectedMenu);
+
   return (
     <WhiteScreen>
-      {infoMenu !== 'info' && <Photo></Photo>}
-      {infoMenu !== 'photo' && <Info></Info>}
+      {infoMenu == 'photo' && <Photo></Photo>}
+      {infoMenu == 'info' && <Info></Info>}
     </WhiteScreen>
   );
 }

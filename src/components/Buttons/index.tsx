@@ -1,16 +1,29 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, ButtonContainer } from './styles';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectMainMenu } from '../../store/mainMenu/mainMenu';
+import { State } from '../../types/pokemon';
 
 interface ButtonsProps {
   onButtonClick?: (index: number) => void;
 }
 
 function ButtonsMenu({ onButtonClick }: ButtonsProps) {
-  const [selectedButton, setSelectedButton] = useState<number | null>(null);
+  const [selectedButton, setSelectedButton] = useState<number>(0);
   const buttonLabels = ['POKEMON', 'TYPES', 'ITEMS', 'LOCATIONS'];
+  const dispatch = useDispatch();
+  const selected = useSelector(
+    (state: State) => state.mainMenu.selectedMainMenu
+  );
 
-  const handleButtonClick = (buttonIndex: number) => {
+  useEffect(() => {
+    handleButtonClick(selectedButton, selected);
+  });
+
+  const handleButtonClick = (buttonIndex: number, buttonLabel: string) => {
     setSelectedButton(buttonIndex);
+    dispatch(selectMainMenu(buttonLabel));
+
     if (onButtonClick) {
       onButtonClick(buttonIndex);
     }
@@ -22,7 +35,7 @@ function ButtonsMenu({ onButtonClick }: ButtonsProps) {
         <Button
           key={index}
           selected={selectedButton === index}
-          onClick={() => handleButtonClick(index)}
+          onClick={() => handleButtonClick(index, label)}
         >
           {label}
         </Button>
