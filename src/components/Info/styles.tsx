@@ -67,4 +67,8 @@ export const Flavour = styled.div`
   line-height: 2;
   max-height: 80px;
   overflow-y: auto;
+
+  @media (max-width: 1280px) {
+    font-size: 8px;
+  }
 `;
