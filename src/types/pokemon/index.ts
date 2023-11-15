@@ -27,6 +27,10 @@ export interface State {
   pokemon: Pokemon;
   infoMenu: SelectedMenu;
   mainMenu: SelectedMainMenu;
+  pokemonList: {
+    originalList: Tresult[];
+    filteredList: Tresult[];
+  };
 }
 
 export interface SelectedMainMenu {

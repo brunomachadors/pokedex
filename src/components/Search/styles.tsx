@@ -9,5 +9,33 @@ export const SearchInput = styled.input`
   font-size: 20px;
   border: 3px solid #1d1e2c;
   text-align: center;
-  margin-bottom: 30px;
+`;
+
+export const SearchContainer = styled.div`
+  height: 40%;
+`;
+
+export const PokemonListContainer = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+`;
+
+export const PokemonListItemContainer = styled.li`
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  padding: 10px;
+  cursor: pointer;
+
+  img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+`;
+
+export const PokemonInfo = styled.div`
+  font-size: 14px;
+  color: #333;
 `;

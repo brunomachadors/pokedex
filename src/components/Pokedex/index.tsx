@@ -23,6 +23,7 @@ export function Pokedex() {
           <Display></Display>
           <ButtonsMenu></ButtonsMenu>
           <Search></Search>
+          <DisplayList></DisplayList>
         </PokedexLeftContent>
       </PokedexLeftSide>
 
@@ -30,7 +31,6 @@ export function Pokedex() {
         <PokedexRightContent>
           <DisplayMonitor></DisplayMonitor>
           <InfoPainel></InfoPainel>
-          <DisplayList></DisplayList>
         </PokedexRightContent>
       </PokedexRightSide>
     </PokedexContainer>
