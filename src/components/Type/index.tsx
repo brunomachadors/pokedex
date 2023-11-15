@@ -7,6 +7,11 @@ import {
   TypeIcon,
 } from './styles';
 
+function getIconSrc(type: string): string {
+  const sourceImage = type.toLowerCase() + '.svg';
+  return sourceImage;
+}
+
 function PokemonType({ pokemon }: { pokemon: Tresult }) {
   return (
     <PokemonTypeContainer>
@@ -18,7 +23,7 @@ function PokemonType({ pokemon }: { pokemon: Tresult }) {
           }
         >
           <TypeContent>
-            <TypeIcon src="pokeball.svg" alt={`${type} icon`} />
+            <TypeIcon src={getIconSrc(type)} alt={`${type} icon`} />
             {type.toUpperCase()}
           </TypeContent>
         </StyledType>
