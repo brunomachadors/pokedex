@@ -90,16 +90,3 @@ export const TextInfo = styled.div`
   font-size: 20px;
   color: yellow;
 `;
-
-export const BlackScreenInfo = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  height: 25%;
-  background-image: radial-gradient(#1d1e2c, #09090d);
-  border: 3px solid black;
-  overflow: hidden;
-  border-radius: 10px;
-  margin-top: -20px;
-`;

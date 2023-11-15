@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button, ButtonContainer } from './styles';
+import { Button, ButtonContainer, ButtonText } from './styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectMainMenu } from '../../store/mainMenu/mainMenu';
 import { State } from '../../types/pokemon';
@@ -37,7 +37,7 @@ function ButtonsMenu({ onButtonClick }: ButtonsProps) {
           selected={selectedButton === index}
           onClick={() => handleButtonClick(index, label)}
         >
-          {label}
+          <ButtonText>{label}</ButtonText>
         </Button>
       ))}
     </ButtonContainer>

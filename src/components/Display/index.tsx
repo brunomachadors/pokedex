@@ -7,8 +7,6 @@ import {
   ListText,
   WhiteScreen,
   Word,
-  TextInfo,
-  BlackScreenInfo,
 } from './styles';
 import {
   getPokemonDataByName,
@@ -26,6 +24,10 @@ import { selectPokemon } from '../../store/pokemon/pokemon';
 import { ButtonSelect } from '../Buttons/styles';
 import Photo from '../Photo';
 import { Info } from '../Info';
+import {
+  PokemonGeneration,
+  getRangeByGeneration,
+} from '../../utils/generation';
 
 export function Display() {
   return (
@@ -42,10 +44,16 @@ export function DisplayList() {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
+  const firstGeneration = getRangeByGeneration(PokemonGeneration.First);
+  const secondGeneration = getRangeByGeneration(PokemonGeneration.Third);
+
   useEffect(() => {
     async function fetchData() {
       try {
-        const response: TpokemonList = await getPokemonList(0, 251);
+        const response: TpokemonList = await getPokemonList(
+          firstGeneration.start,
+          secondGeneration.end
+        );
         setPokemonList(response.results);
 
         const updatedList = await Promise.all(
@@ -114,17 +122,6 @@ export function DisplayMonitor() {
       {infoMenu == 'photo' && <Photo></Photo>}
       {infoMenu == 'info' && <Info></Info>}
     </WhiteScreen>
-  );
-}
-
-export function DisplayInfo() {
-  const currentPokemon = useSelector(
-    (state: State) => state.pokemon.selectedPokemon
-  );
-  return (
-    <BlackScreenInfo>
-      <TextInfo>{currentPokemon.name.toLocaleUpperCase()}</TextInfo>
-    </BlackScreenInfo>
   );
 }
 

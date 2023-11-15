@@ -15,23 +15,5 @@ export const Screen = styled.div`
 `;
 
 export const StyledImage = styled.img`
-  width: 70%;
-`;
-
-export const StyledType = styled.div`
-  background-color: ${(props) => props.color || 'black'};
-  padding: 5px 10px;
-  color: ${(props) => (props.color === '#E3D38E' ? 'black' : 'white')};
-  font-size: 12px;
-  border: 0.5px solid black;
-  border-radius: 10px;
-`;
-
-export const PokemonTypeContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 10px;
+  width: 85%;
 `;

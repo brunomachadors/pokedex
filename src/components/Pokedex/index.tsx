@@ -4,14 +4,6 @@ import {
   PokedexRightSide,
   PokedexLeftContent,
   PokedexRightContent,
-  PokedexHeaderContainer,
-  PokedexHeaderLines,
-  PokedexHeaderBall,
-  PokedexLightRed,
-  LightsContainer,
-  PokedexLightYellow,
-  PokedexLighGreen,
-  BallsContainer,
 } from './styles';
 
 import Display, { DisplayList, DisplayMonitor } from '../Display';
@@ -20,23 +12,13 @@ import Search from '../Search';
 
 import ButtonsMenu from '../Buttons';
 import InfoPainel from '../Info';
+import Header from '../Header';
 
 export function Pokedex() {
   return (
     <PokedexContainer>
       <PokedexLeftSide>
-        <PokedexHeaderContainer>
-          <BallsContainer>
-            <PokedexHeaderBall></PokedexHeaderBall>
-            <LightsContainer>
-              <PokedexLightRed></PokedexLightRed>
-              <PokedexLightYellow></PokedexLightYellow>
-              <PokedexLighGreen></PokedexLighGreen>
-            </LightsContainer>
-          </BallsContainer>
-          <PokedexHeaderLines></PokedexHeaderLines>
-        </PokedexHeaderContainer>
-
+        <Header></Header>
         <PokedexLeftContent>
           <Display></Display>
           <ButtonsMenu></ButtonsMenu>
