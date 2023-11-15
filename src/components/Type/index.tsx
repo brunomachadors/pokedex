@@ -18,10 +18,7 @@ function PokemonType({ pokemon }: { pokemon: Tresult }) {
           }
         >
           <TypeContent>
-            <TypeIcon
-              src={`icons/${type.toLowerCase()}.svg`}
-              alt={`${type} icon`}
-            />
+            <TypeIcon src="/pokeball.svg" alt={`${type} icon`} />
             {type.toUpperCase()}
           </TypeContent>
         </StyledType>
