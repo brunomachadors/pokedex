@@ -7,12 +7,6 @@ import {
   ListText,
   WhiteScreen,
   Word,
-  Screen,
-  StyledImage,
-  StyledType,
-  PokemonTypeContainer,
-  TextInfo,
-  BlackScreenInfo,
 } from './styles';
 import {
   getPokemonDataByName,
@@ -28,6 +22,12 @@ import themes from '../../utils/themes';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectPokemon } from '../../store/pokemon/pokemon';
 import { ButtonSelect } from '../Buttons/styles';
+import Photo from '../Photo';
+import { Info } from '../Info';
+import {
+  PokemonGeneration,
+  getRangeByGeneration,
+} from '../../utils/generation';
 
 export function Display() {
   return (
@@ -44,10 +44,16 @@ export function DisplayList() {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
+  const firstGeneration = getRangeByGeneration(PokemonGeneration.First);
+  const secondGeneration = getRangeByGeneration(PokemonGeneration.Third);
+
   useEffect(() => {
     async function fetchData() {
       try {
-        const response: TpokemonList = await getPokemonList(0, 251);
+        const response: TpokemonList = await getPokemonList(
+          firstGeneration.start,
+          secondGeneration.end
+        );
         setPokemonList(response.results);
 
         const updatedList = await Promise.all(
@@ -109,46 +115,13 @@ export function DisplayList() {
 }
 
 export function DisplayMonitor() {
-  const currentPokemon = useSelector(
-    (state: State) => state.pokemon.selectedPokemon
-  );
-
-  const backgroundColor =
-    themes.colors.background[
-      currentPokemon.types?.[0] as keyof typeof themes.colors.type
-    ];
+  const infoMenu = useSelector((state: State) => state.infoMenu.selectedMenu);
 
   return (
     <WhiteScreen>
-      <Screen color={backgroundColor}>
-        <StyledImage src={currentPokemon.image} alt="selectedPokemon" />
-        <PokemonTypeContainer>
-          {currentPokemon.types?.map((type, index) => (
-            <StyledType
-              key={index}
-              color={
-                themes.colors.buttonColor[
-                  type as keyof typeof themes.colors.type
-                ]
-              }
-            >
-              {type.toUpperCase()}
-            </StyledType>
-          ))}
-        </PokemonTypeContainer>
-      </Screen>
+      {infoMenu == 'photo' && <Photo></Photo>}
+      {infoMenu == 'info' && <Info></Info>}
     </WhiteScreen>
-  );
-}
-
-export function DisplayInfo() {
-  const currentPokemon = useSelector(
-    (state: State) => state.pokemon.selectedPokemon
-  );
-  return (
-    <BlackScreenInfo>
-      <TextInfo>{currentPokemon.name.toLocaleUpperCase()}</TextInfo>
-    </BlackScreenInfo>
   );
 }
 

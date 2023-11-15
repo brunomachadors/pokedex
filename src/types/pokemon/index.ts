@@ -25,6 +25,15 @@ type Type = {
 
 export interface State {
   pokemon: Pokemon;
+  infoMenu: SelectedMenu;
+  mainMenu: SelectedMainMenu;
+}
+
+export interface SelectedMainMenu {
+  selectedMainMenu: string;
+}
+export interface SelectedMenu {
+  selectedMenu: string;
 }
 
 export interface Pokemon {

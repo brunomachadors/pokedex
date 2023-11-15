@@ -2,13 +2,15 @@ import axios from 'axios';
 import { BASE_URL, PATH } from '../../utils/url';
 
 export const getPokemonList = async (
-  start: number = 0,
+  start: number = 1,
   total: number = 151
 ) => {
   const config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: `${BASE_URL}${PATH.pokemon.pokemon}?offset=${start}&limit=${total}`,
+    url: `${BASE_URL}${PATH.pokemon.pokemon}?offset=${
+      start - 1
+    }&limit=${total}`,
     headers: {},
   };
 

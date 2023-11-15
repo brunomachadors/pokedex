@@ -47,3 +47,18 @@ export const ButtonSelect = styled.button`
   background-color: ${(props) => (props.color ? 'transparent' : '#1d1e2c')};
   cursor: pointer;
 `;
+
+export const ButtonText = styled.p`
+  position: relative;
+  margin-bottom: -100px;
+  font-size: 12px;
+  color: #350000;
+
+  @media (max-width: 1280px) {
+    font-size: 10px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 8px;
+  }
+`;
