@@ -1,25 +1,29 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Tresult } from '../../types/pokemon';
+import { PokemonList, Tresult } from '../../types/pokemon';
 
-const initialState: { pokemonList: Tresult[] } = {
-  pokemonList: [],
+const initialState: { lists: PokemonList } = {
+  lists: {
+    originalList: [],
+    filteredList: [],
+  },
 };
 
 export const pokemonListSlice = createSlice({
-  name: 'pokemonList',
+  name: 'list',
   initialState,
   reducers: {
-    originalList: (state, action: PayloadAction<Tresult[]>) => {
-      state.pokemonList = action.payload;
+    updateOriginalList: (state, action: PayloadAction<Tresult[]>) => {
+      state.lists.originalList = action.payload;
     },
 
-    filteredList: (state, action: PayloadAction<Tresult[]>) => {
-      state.pokemonList = action.payload;
+    updateFilteredList: (state, action: PayloadAction<Tresult[]>) => {
+      state.lists.filteredList = action.payload;
     },
   },
 });
 
-export const { originalList, filteredList } = pokemonListSlice.actions;
+export const { updateOriginalList, updateFilteredList } =
+  pokemonListSlice.actions;
 
 const pokemonListReducer = pokemonListSlice.reducer;
 export default pokemonListReducer;

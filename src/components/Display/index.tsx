@@ -28,6 +28,10 @@ import {
   PokemonGeneration,
   getRangeByGeneration,
 } from '../../utils/generation';
+import {
+  updateFilteredList,
+  updateOriginalList,
+} from '../../store/pokemonList/pokemonList';
 
 export function Display() {
   return (
@@ -40,27 +44,23 @@ export function Display() {
 }
 
 export function DisplayList() {
-  const [pokemonList, setPokemonList] = useState<Tresult[]>([]);
+  const pokemonLists = useSelector((state: State) => state.pokemonList.lists);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
-
   const firstGeneration = getRangeByGeneration(PokemonGeneration.First);
-  const secondGeneration = getRangeByGeneration(PokemonGeneration.Third);
 
   useEffect(() => {
     async function fetchData() {
       try {
         const response: TpokemonList = await getPokemonList(
           firstGeneration.start,
-          secondGeneration.end
+          firstGeneration.end
         );
-        setPokemonList(response.results);
-
         const updatedList = await Promise.all(
           response.results.map(async (pokemon) => {
             const dataResponse = await getPokemonDataByName(pokemon.name);
 
-            return {
+            const updatedPokemon = {
               ...pokemon,
               id: dataResponse.id,
               image:
@@ -69,10 +69,12 @@ export function DisplayList() {
                 (type: TpokemonType) => type.type.name
               ),
             };
+
+            return updatedPokemon;
           })
         );
-
-        setPokemonList(updatedList);
+        dispatch(updateOriginalList(updatedList));
+        dispatch(updateFilteredList(updatedList));
         setLoading(false);
       } catch (error) {
         console.error('Error fetching Pokemon data:', error);
@@ -81,7 +83,7 @@ export function DisplayList() {
     }
 
     fetchData();
-  }, []);
+  }, [dispatch, firstGeneration.start, firstGeneration.end]);
 
   const handleClick = (pokemon: Tresult) => {
     dispatch(selectPokemon(pokemon));
@@ -93,7 +95,7 @@ export function DisplayList() {
         {loading ? (
           <p>Loading...</p>
         ) : (
-          pokemonList.map((pokemon) => (
+          pokemonLists.filteredList.map((pokemon) => (
             <ButtonSelect
               key={pokemon.name}
               color={

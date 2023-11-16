@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const SearchInput = styled.input`
   display: flex;
-  width: 70%;
-  height: 8%;
+  width: 100%;
+  height: 100%;
   background-color: #ffffff;
   font-family: 'RetroGaming', sans-serif;
   font-size: 20px;
@@ -12,7 +12,8 @@ export const SearchInput = styled.input`
 `;
 
 export const SearchContainer = styled.div`
-  height: 40%;
+  height: 8%;
+  background-color: black;
 `;
 
 export const PokemonListContainer = styled.ul`
