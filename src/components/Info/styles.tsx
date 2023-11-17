@@ -65,7 +65,7 @@ export const Flavour = styled.div`
   background-color: #0000009d;
   text-align: center;
   line-height: 2;
-  max-height: 80px;
+  max-height: 100px;
   overflow-y: auto;
 
   @media (max-width: 1280px) {
