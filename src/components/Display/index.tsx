@@ -47,13 +47,14 @@ export function DisplayList() {
   const pokemonLists = useSelector((state: State) => state.pokemonList.lists);
   const dispatch = useDispatch();
   const firstGeneration = getRangeByGeneration(PokemonGeneration.First);
+  const secondGeneration = getRangeByGeneration(PokemonGeneration.Second);
 
   useEffect(() => {
     async function fetchData() {
       try {
         const response: TpokemonList = await getPokemonList(
           firstGeneration.start,
-          firstGeneration.end
+          secondGeneration.end
         );
         const updatedList = await Promise.all(
           response.results.map(async (pokemon) => {

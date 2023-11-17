@@ -17,7 +17,6 @@ function ButtonsMenu({ onButtonClick }: ButtonsProps) {
   );
 
   useEffect(() => {
-    console.log(selectedButton);
     handleButtonClick(selectedButton, selected);
   });
 

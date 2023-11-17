@@ -6,6 +6,9 @@ import { updateFilteredList } from '../../store/pokemonList/pokemonList';
 function Search() {
   const pokemonLists = useSelector((state: State) => state.pokemonList.lists);
   const dispatch = useDispatch();
+  const selectedMenu = useSelector(
+    (state: State) => state.mainMenu.selectedMainMenu
+  );
 
   const handleSearch = (searchTerm: string) => {
     if (searchTerm === '') {
@@ -17,11 +20,12 @@ function Search() {
       dispatch(updateFilteredList(filteredResults));
     }
   };
+  const placeHolderText = `Search ${selectedMenu.toLocaleLowerCase()}...`;
 
   return (
     <SearchContainer>
       <SearchInput
-        placeholder="Search..."
+        placeholder={placeHolderText}
         id="searchBox"
         onChange={(e) => handleSearch(e.target.value)}
       />
