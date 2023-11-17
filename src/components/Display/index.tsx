@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import {
   AnimatedText,
   BlackScreen,
@@ -45,7 +45,6 @@ export function Display() {
 
 export function DisplayList() {
   const pokemonLists = useSelector((state: State) => state.pokemonList.lists);
-  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
   const firstGeneration = getRangeByGeneration(PokemonGeneration.First);
 
@@ -75,10 +74,8 @@ export function DisplayList() {
         );
         dispatch(updateOriginalList(updatedList));
         dispatch(updateFilteredList(updatedList));
-        setLoading(false);
       } catch (error) {
         console.error('Error fetching Pokemon data:', error);
-        setLoading(false);
       }
     }
 
@@ -92,25 +89,21 @@ export function DisplayList() {
   return (
     <BlackScreenList>
       <List>
-        {loading ? (
-          <p>Loading...</p>
-        ) : (
-          pokemonLists.filteredList.map((pokemon) => (
-            <ButtonSelect
-              key={pokemon.name}
-              color={
-                themes.colors.type[
-                  pokemon.types?.[0] as keyof typeof themes.colors.type
-                ] || '#09090d'
-              }
-              onClick={() => handleClick(pokemon)}
-            >
-              <ListText>
-                #{pokemon.id} {pokemon.name.toUpperCase()}
-              </ListText>
-            </ButtonSelect>
-          ))
-        )}
+        {pokemonLists.filteredList.map((pokemon) => (
+          <ButtonSelect
+            key={pokemon.name}
+            color={
+              themes.colors.type[
+                pokemon.types?.[0] as keyof typeof themes.colors.type
+              ] || '#09090d'
+            }
+            onClick={() => handleClick(pokemon)}
+          >
+            <ListText>
+              #{pokemon.id} {pokemon.name.toUpperCase()}
+            </ListText>
+          </ButtonSelect>
+        ))}
       </List>
     </BlackScreenList>
   );
@@ -118,11 +111,15 @@ export function DisplayList() {
 
 export function DisplayMonitor() {
   const infoMenu = useSelector((state: State) => state.infoMenu.selectedMenu);
+  const mainMenu = useSelector(
+    (state: State) => state.mainMenu.selectedMainMenu
+  );
 
   return (
     <WhiteScreen>
-      {infoMenu == 'photo' && <Photo></Photo>}
-      {infoMenu == 'info' && <Info></Info>}
+      {mainMenu === 'POKEMON' &&
+        ((infoMenu === 'photo' && <Photo></Photo>) ||
+          (infoMenu === 'info' && <Info></Info>))}
     </WhiteScreen>
   );
 }

@@ -35,7 +35,7 @@ export const BlackScreenList = styled.div`
   justify-content: center;
   font-size: 40px;
   width: 50%;
-  height: 40%;
+  height: 100%;
   overflow: hidden;
   flex-direction: column;
 
@@ -84,6 +84,7 @@ export const WhiteScreen = styled.div`
   border: 3px solid black;
   overflow: hidden;
   border-radius: 10px;
+  margin-top: 10px;
 `;
 
 export const TextInfo = styled.div`

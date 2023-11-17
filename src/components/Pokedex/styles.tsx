@@ -93,9 +93,10 @@ export const PokedexRightContent = styled.div`
   border-radius: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex-direction: column;
   margin-left: 5px;
+  gap: 15px;
 
   @media (max-width: 720px) {
     height: 95%;

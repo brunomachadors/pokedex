@@ -6,13 +6,14 @@ import {
   PokedexRightContent,
 } from './styles';
 
-import Display, { DisplayList, DisplayMonitor } from '../Display';
+import Display, { DisplayMonitor } from '../Display';
 
 import Search from '../Search';
 
 import ButtonsMenu from '../Buttons';
 import InfoPainel from '../Info';
 import Header from '../Header';
+import Lists from '../Lists';
 
 export function Pokedex() {
   return (
@@ -30,7 +31,7 @@ export function Pokedex() {
         <PokedexRightContent>
           <DisplayMonitor></DisplayMonitor>
           <InfoPainel></InfoPainel>
-          <DisplayList></DisplayList>
+          <Lists></Lists>
         </PokedexRightContent>
       </PokedexRightSide>
     </PokedexContainer>
