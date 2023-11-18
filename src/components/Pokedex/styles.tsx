@@ -76,9 +76,9 @@ export const PokedexLeftContent = styled.div`
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-direction: column;
-  gap: 150px;
+  padding: 10px;
 
   @media (max-width: 720px) {
     height: 100%;

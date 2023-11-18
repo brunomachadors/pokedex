@@ -20,7 +20,7 @@ const wordAnimation = keyframes`
 `;
 
 export const AnimatedText = styled.div`
-  font-size: 3vw;
+  font-size: 2vw;
   color: yellow;
 `;
 
@@ -35,7 +35,7 @@ export const WhiteScreen = styled.div`
   justify-content: space-around;
   flex-direction: column;
   width: 70%;
-  height: 50%;
+  height: 55%;
   background-image: linear-gradient(to bottom, #f1f1f4, #a5a5a5);
   border: 3px solid black;
   overflow: hidden;
