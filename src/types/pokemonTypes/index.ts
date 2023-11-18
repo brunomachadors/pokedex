@@ -4,18 +4,20 @@ export interface IPokemonTypes {
 }
 
 export interface IPokemonType {
-  typeInfo: {
-    damage_relations?: DamageRelations;
-    game_indices?: Index[];
-    generation?: Generation2;
-    id?: number;
-    move_damage_class?: MoveDamageClass;
-    moves?: Mfe[];
-    name: string;
-    names?: Name[];
-    past_damage_relations?: PastDamageRelation[];
-    pokemon?: Pokemon[];
-  };
+  typeInfo: TypeInfo;
+}
+
+export interface TypeInfo {
+  damage_relations?: DamageRelations;
+  game_indices?: Index[];
+  generation?: Generation2;
+  id?: number;
+  move_damage_class?: MoveDamageClass;
+  moves?: Mfe[];
+  name: string;
+  names?: Name[];
+  past_damage_relations?: PastDamageRelation[];
+  pokemon?: Pokemon[];
 }
 
 export interface DamageRelations {

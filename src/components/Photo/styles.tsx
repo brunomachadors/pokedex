@@ -18,3 +18,7 @@ export const Screen = styled.div`
 export const StyledImage = styled.img`
   width: 85%;
 `;
+
+export const StyledTypeImage = styled.img`
+  width: 55%;
+`;

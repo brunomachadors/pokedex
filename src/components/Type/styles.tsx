@@ -14,23 +14,22 @@ export const PokemonTypeContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
 `;
 
 export const TypeContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  gap: 10px;
 `;
 
 export const TypeIcon = styled.img`
   width: 1vw;
   height: auto;
-  margin-right: 8px;
 `;
 
 export const TypeColoredIcon = styled.img`
   width: 1vw;
   height: auto;
-  margin-right: 8px;
 `;

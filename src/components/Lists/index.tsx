@@ -5,7 +5,13 @@ import {
   TpokemonType,
   Tresult,
 } from '../../types/pokemon';
-import { BlackScreenList, List, ListText, ListsContainer } from './styles';
+import {
+  BlackScreenList,
+  List,
+  ListText,
+  ListsContainer,
+  TextContainer,
+} from './styles';
 import { useEffect, useState } from 'react';
 import {
   PokemonGeneration,
@@ -20,7 +26,7 @@ import {
   updateOriginalList,
 } from '../../store/pokemonList/pokemonList';
 import { selectPokemon } from '../../store/pokemon/pokemon';
-import { PikachuLoading } from '../Loading';
+
 import { ButtonSelect } from '../Buttons/styles';
 import themes from '../../utils/themes';
 import { getPokemonTypeByName, getPokemonTypes } from '../../api/pokemonTypes';
@@ -30,6 +36,8 @@ import {
   updateOriginalTypeList,
 } from '../../store/pokemonTypes/pokemonTypeList';
 import { TypeColoredIcon } from '../Type/styles';
+import { selectType } from '../../store/type/pokemonType';
+import PokeballLoading from '../Loading';
 
 function Lists() {
   const selectedMenu = useSelector(
@@ -95,10 +103,15 @@ export function PokemonList() {
     dispatch(selectPokemon(pokemon));
   };
 
+  function getColoredIcon(type: string): string {
+    const sourceImage = 'types/' + type.toLowerCase() + '.svg';
+    return sourceImage;
+  }
+
   return (
     <BlackScreenList>
       {isLoading ? (
-        <PikachuLoading></PikachuLoading>
+        <PokeballLoading></PokeballLoading>
       ) : (
         <List>
           {pokemonLists.filteredList.map((pokemon) => (
@@ -107,12 +120,22 @@ export function PokemonList() {
               color={
                 themes.colors.type[
                   pokemon.types?.[0] as keyof typeof themes.colors.type
-                ] || '#09090d'
+                ]
               }
               onClick={() => handleClick(pokemon)}
             >
               <ListText>
-                #{pokemon.id} {pokemon.name.toUpperCase()}
+                <TextContainer>#{pokemon.id}</TextContainer>
+                <TextContainer>{pokemon.name.toUpperCase()}</TextContainer>
+                <TextContainer>
+                  {pokemon.types?.map((type) => (
+                    <TypeColoredIcon
+                      key={type}
+                      src={getColoredIcon(type)}
+                      alt={type}
+                    ></TypeColoredIcon>
+                  ))}
+                </TextContainer>
               </ListText>
             </ButtonSelect>
           ))}
@@ -128,8 +151,6 @@ export function TypeList() {
   const filteredList = useSelector(
     (state: State) => state.typeList.lists.filteredList
   );
-
-  console.log(filteredList);
 
   useEffect(() => {
     async function fetchPokemonTypes() {
@@ -150,6 +171,7 @@ export function TypeList() {
 
       dispatch(updateOriginalTypeList(typeList));
       dispatch(updateFilteredTypeList(typeList));
+
       setIsLoading(false);
     }
 
@@ -161,10 +183,14 @@ export function TypeList() {
     return sourceImage;
   }
 
+  const handleClick = (type: string) => {
+    dispatch(selectType(type));
+  };
+
   return (
     <BlackScreenList>
       {isLoading ? (
-        <PikachuLoading></PikachuLoading>
+        <PokeballLoading></PokeballLoading>
       ) : (
         <List>
           {filteredList.map((type) => (
@@ -175,13 +201,20 @@ export function TypeList() {
                   type.typeInfo.name as keyof typeof themes.colors.type
                 ]
               }
+              onClick={() => handleClick(type.typeInfo.name)}
             >
               <ListText>
-                <TypeColoredIcon
-                  src={getColoredIcon(type.typeInfo.name)}
-                  alt={type.typeInfo.name}
-                ></TypeColoredIcon>
-                {type.typeInfo.name.toUpperCase()}
+                <TextContainer>#{type.typeInfo.id}</TextContainer>
+                <TextContainer>
+                  {type.typeInfo.name.toUpperCase()}
+                </TextContainer>
+
+                <TextContainer>
+                  <TypeColoredIcon
+                    src={getColoredIcon(type.typeInfo.name)}
+                    alt={type.typeInfo.name}
+                  ></TypeColoredIcon>
+                </TextContainer>
               </ListText>
             </ButtonSelect>
           ))}

@@ -15,8 +15,10 @@ import PokemonType from '../Type';
 import { useEffect, useState } from 'react';
 import { getSpecie } from '../../api/locations/specie';
 import { FlavorTextEntry } from '../../types/specie';
+import { getPokemonTypeByName } from '../../api/pokemonTypes';
+import { TypeInfo } from '../../types/pokemonTypes';
 
-function InfoPainel() {
+export default function InfoPainel() {
   const dispatch = useDispatch();
 
   function handleClickPhoto() {
@@ -34,7 +36,7 @@ function InfoPainel() {
   );
 }
 
-export function Info() {
+export function PokemonInfo() {
   const currentPokemon = useSelector(
     (state: State) => state.pokemon.selectedPokemon
   );
@@ -82,6 +84,22 @@ export function Info() {
   );
 }
 
-export default InfoPainel;
+export function PokemonTypeInfo() {
+  const selectedType = useSelector((state: State) => state.type.selectedType);
+  const [pokemonType, setPokemonType] = useState<TypeInfo | null>(null);
 
-export function DisplayInfo() {}
+  useEffect(() => {
+    const loadType = async () => {
+      try {
+        const typeInfo: TypeInfo = await getPokemonTypeByName(selectedType);
+        setPokemonType(typeInfo);
+      } catch (error) {
+        console.error('Error loading Pokemon type:', error);
+      }
+    };
+
+    loadType();
+  }, [selectedType]);
+
+  return <div>{pokemonType?.name}</div>;
+}

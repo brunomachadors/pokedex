@@ -27,11 +27,11 @@ export const ListText = styled.li`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   font-family: 'RetroGaming', sans-serif;
   text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black,
     1px 1px 1px black;
-  margin-left: 10%;
+  gap: 0.5vw;
 
   @media (max-width: 720px) {
     margin-left: 5%;
@@ -64,3 +64,5 @@ export const BlackScreenList = styled.div`
     width: 60%;
   }
 `;
+
+export const TextContainer = styled.div``;

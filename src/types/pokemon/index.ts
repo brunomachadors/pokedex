@@ -35,6 +35,11 @@ export interface State {
   typeList: {
     lists: IPokemonTypes;
   };
+  type: SelectedType;
+}
+
+export interface SelectedType {
+  selectedType: string;
 }
 
 export interface PokemonList {
