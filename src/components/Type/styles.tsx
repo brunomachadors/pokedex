@@ -28,3 +28,9 @@ export const TypeIcon = styled.img`
   height: auto;
   margin-right: 8px;
 `;
+
+export const TypeColoredIcon = styled.img`
+  width: 1vw;
+  height: auto;
+  margin-right: 8px;
+`;

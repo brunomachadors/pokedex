@@ -43,8 +43,7 @@ export const ButtonSelect = styled.button`
   width: 100%;
   position: relative;
   background: ${(props) =>
-    props.color ? props.color : 'linear-gradient(#1d1e2c, #09090d)'};
-  background-color: ${(props) => (props.color ? 'transparent' : '#1d1e2c')};
+    props.color ? props.color : 'linear-gradient(to right, #afafaf, #929292)'};
   cursor: pointer;
 `;
 

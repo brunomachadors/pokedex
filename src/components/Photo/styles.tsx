@@ -7,7 +7,8 @@ export const Screen = styled.div`
   font-size: 40px;
   width: 80%;
   height: 80%;
-  background-image: ${(props) => (props.color ? props.color : '#1d1e2c')};
+  background-image: ${(props) =>
+    props.color ? props.color : 'radial-gradient(#1d1e2c, #09090d)'};
   border: 3px solid black;
   overflow: hidden;
   border-radius: 10px;

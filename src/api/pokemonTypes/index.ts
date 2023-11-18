@@ -1,10 +1,27 @@
 import axios from 'axios';
+import { BASE_URL, PATH } from '../../utils/url';
 
-export const getAllTypes = async () => {
+export const getPokemonTypes = async () => {
   const config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: 'https://pokeapi.co/api/v2/type/',
+    url: BASE_URL + PATH.pokemon.types,
+    headers: {},
+  };
+
+  try {
+    const response = await axios.request(config);
+    return response.data.results;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getPokemonTypeByName = async (name: string) => {
+  const config = {
+    method: 'get',
+    maxBodyLength: Infinity,
+    url: BASE_URL + PATH.pokemon.types + '/' + name,
     headers: {},
   };
 

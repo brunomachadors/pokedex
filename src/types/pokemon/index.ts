@@ -1,3 +1,5 @@
+import { IPokemonTypes } from '../pokemonTypes';
+
 export type TpokemonList = {
   count: number;
   next: string;
@@ -29,6 +31,9 @@ export interface State {
   mainMenu: SelectedMainMenu;
   pokemonList: {
     lists: PokemonList;
+  };
+  typeList: {
+    lists: IPokemonTypes;
   };
 }
 

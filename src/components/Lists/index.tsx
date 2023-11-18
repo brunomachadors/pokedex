@@ -23,6 +23,13 @@ import { selectPokemon } from '../../store/pokemon/pokemon';
 import { PikachuLoading } from '../Loading';
 import { ButtonSelect } from '../Buttons/styles';
 import themes from '../../utils/themes';
+import { getPokemonTypeByName, getPokemonTypes } from '../../api/pokemonTypes';
+import { IPokemonType } from '../../types/pokemonTypes';
+import {
+  updateFilteredTypeList,
+  updateOriginalTypeList,
+} from '../../store/pokemonTypes/pokemonTypeList';
+import { TypeColoredIcon } from '../Type/styles';
 
 function Lists() {
   const selectedMenu = useSelector(
@@ -32,6 +39,7 @@ function Lists() {
   return (
     <ListsContainer>
       {selectedMenu === 'POKEMON' && <PokemonList></PokemonList>}
+      {selectedMenu === 'TYPES' && <TypeList></TypeList>}
     </ListsContainer>
   );
 }
@@ -105,6 +113,75 @@ export function PokemonList() {
             >
               <ListText>
                 #{pokemon.id} {pokemon.name.toUpperCase()}
+              </ListText>
+            </ButtonSelect>
+          ))}
+        </List>
+      )}
+    </BlackScreenList>
+  );
+}
+
+export function TypeList() {
+  const [isLoading, setIsLoading] = useState(true);
+  const dispatch = useDispatch();
+  const filteredList = useSelector(
+    (state: State) => state.typeList.lists.filteredList
+  );
+
+  console.log(filteredList);
+
+  useEffect(() => {
+    async function fetchPokemonTypes() {
+      setIsLoading(true);
+      const pokemonTypes = await getPokemonTypes();
+
+      const typeList = await Promise.all(
+        pokemonTypes.map(async (type: { name: string }) => {
+          const typeInfo: IPokemonType = await getPokemonTypeByName(type.name);
+
+          const updatedTypeList = {
+            typeInfo,
+          };
+
+          return updatedTypeList;
+        })
+      );
+
+      dispatch(updateOriginalTypeList(typeList));
+      dispatch(updateFilteredTypeList(typeList));
+      setIsLoading(false);
+    }
+
+    fetchPokemonTypes();
+  }, [dispatch]);
+
+  function getColoredIcon(type: string): string {
+    const sourceImage = 'types/' + type.toLowerCase() + '.svg';
+    return sourceImage;
+  }
+
+  return (
+    <BlackScreenList>
+      {isLoading ? (
+        <PikachuLoading></PikachuLoading>
+      ) : (
+        <List>
+          {filteredList.map((type) => (
+            <ButtonSelect
+              key={type.typeInfo.name}
+              color={
+                themes.colors.type[
+                  type.typeInfo.name as keyof typeof themes.colors.type
+                ]
+              }
+            >
+              <ListText>
+                <TypeColoredIcon
+                  src={getColoredIcon(type.typeInfo.name)}
+                  alt={type.typeInfo.name}
+                ></TypeColoredIcon>
+                {type.typeInfo.name.toUpperCase()}
               </ListText>
             </ButtonSelect>
           ))}
