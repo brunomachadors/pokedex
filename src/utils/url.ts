@@ -67,6 +67,6 @@ export const PATH = {
     shape: '/pokemon-shape',
     species: '/pokemon-species',
     stats: '/stat',
-    types: '/types',
+    types: '/type',
   },
 };

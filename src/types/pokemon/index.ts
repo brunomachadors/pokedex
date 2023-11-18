@@ -1,3 +1,5 @@
+import { IPokemonTypes } from '../pokemonTypes';
+
 export type TpokemonList = {
   count: number;
   next: string;
@@ -30,6 +32,14 @@ export interface State {
   pokemonList: {
     lists: PokemonList;
   };
+  typeList: {
+    lists: IPokemonTypes;
+  };
+  type: SelectedType;
+}
+
+export interface SelectedType {
+  selectedType: string;
 }
 
 export interface PokemonList {

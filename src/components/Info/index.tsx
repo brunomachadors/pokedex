@@ -4,9 +4,14 @@ import {
   InfoButtonContainer,
   BlackScreenInfo,
   Name,
-  Id,
   TextContainer,
   Flavour,
+  DoubleDamageFrom,
+  Damage,
+  DoubleDamage,
+  DoubleDamageTo,
+  Imune,
+  ImunityTypeContainer,
 } from './styles';
 import { selectInfoMenu } from '../../store/info/info';
 import { useDispatch, useSelector } from 'react-redux';
@@ -16,8 +21,30 @@ import PokemonType from '../Type';
 import { useEffect, useState } from 'react';
 import { getSpecie } from '../../api/locations/specie';
 import { FlavorTextEntry } from '../../types/specie';
+import { getPokemonTypeByName } from '../../api/pokemonTypes';
+import { TypeInfo } from '../../types/pokemonTypes';
+import {
+  StyledType,
+  TypeColoredIcon,
+  TypeContent,
+  TypeIcon,
+} from '../Type/styles';
 
-function InfoPainel() {
+function getColoredIcon(type: string): string {
+  const sourceImage = 'types/' + type.toLowerCase() + '.svg';
+  return sourceImage;
+}
+
+function backgroundColor(type: string): string {
+  return themes.colors.buttonColor[type as keyof typeof themes.colors.type];
+}
+
+function getIconSrc(type: string): string {
+  const sourceImage = type.toLowerCase() + '.svg';
+  return sourceImage;
+}
+
+export default function InfoPainel() {
   const dispatch = useDispatch();
 
   function handleClickPhoto() {
@@ -35,7 +62,7 @@ function InfoPainel() {
   );
 }
 
-export function Info() {
+export function PokemonInfo() {
   const currentPokemon = useSelector(
     (state: State) => state.pokemon.selectedPokemon
   );
@@ -73,8 +100,9 @@ export function Info() {
   return (
     <BlackScreenInfo color={backgroundColor}>
       <TextContainer>
-        <Id>#{currentPokemon.id}</Id>
-        <Name>{currentPokemon.name.toLocaleUpperCase()}</Name>
+        <Name>
+          #{currentPokemon.id} {currentPokemon.name.toUpperCase()}
+        </Name>
         <PokemonType pokemon={currentPokemon}></PokemonType>
         {pokemonFlavour && <Flavour>{pokemonFlavour}</Flavour>}
       </TextContainer>
@@ -82,6 +110,80 @@ export function Info() {
   );
 }
 
-export default InfoPainel;
+export function PokemonTypeInfo() {
+  const selectedType = useSelector((state: State) => state.type.selectedType);
+  const [pokemonType, setPokemonType] = useState<TypeInfo | null>(null);
 
-export function DisplayInfo() {}
+  useEffect(() => {
+    const loadType = async () => {
+      try {
+        const typeInfo: TypeInfo = await getPokemonTypeByName(selectedType);
+        setPokemonType(typeInfo);
+      } catch (error) {
+        console.error('Error loading Pokemon type:', error);
+      }
+    };
+
+    loadType();
+  }, [selectedType]);
+
+  console.log(pokemonType);
+
+  return (
+    <TextContainer>
+      <Name>{pokemonType?.name.toUpperCase()}</Name>
+      <DoubleDamage>
+        DOUBLE DAMAGE
+        {pokemonType?.damage_relations?.double_damage_from.length !== 0 && (
+          <DoubleDamageFrom>
+            FROM:
+            {pokemonType?.damage_relations?.double_damage_from?.map(
+              (damageType) => (
+                <Damage key={damageType.name}>
+                  <TypeColoredIcon
+                    src={getColoredIcon(damageType.name)}
+                  ></TypeColoredIcon>
+                </Damage>
+              )
+            )}
+          </DoubleDamageFrom>
+        )}
+        {pokemonType?.damage_relations?.double_damage_to.length !== 0 && (
+          <DoubleDamageTo>
+            TO:
+            {pokemonType?.damage_relations?.double_damage_to?.map(
+              (damageType) => (
+                <Damage key={damageType.name}>
+                  <TypeColoredIcon
+                    src={getColoredIcon(damageType.name)}
+                  ></TypeColoredIcon>
+                </Damage>
+              )
+            )}
+          </DoubleDamageTo>
+        )}
+      </DoubleDamage>
+
+      {pokemonType?.damage_relations?.no_damage_from.length !== 0 && (
+        <Imune>
+          IMUNITIES
+          <ImunityTypeContainer>
+            {pokemonType?.damage_relations?.no_damage_from.map(
+              (type, index) => (
+                <StyledType key={index} color={backgroundColor(type.name)}>
+                  <TypeContent>
+                    <TypeIcon
+                      src={getIconSrc(type.name)}
+                      alt={`${type.name} icon`}
+                    />
+                    {type.name.toUpperCase()}
+                  </TypeContent>
+                </StyledType>
+              )
+            )}
+          </ImunityTypeContainer>
+        </Imune>
+      )}
+    </TextContainer>
+  );
+}

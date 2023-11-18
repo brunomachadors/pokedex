@@ -18,7 +18,7 @@ export const Button = styled.button<ButtonProps>`
   width: 25%;
   height: 100%;
   font-family: 'RetroGaming', sans-serif;
-  font-size: 10px;
+  font-size: 10vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,19 +43,18 @@ export const ButtonSelect = styled.button`
   width: 100%;
   position: relative;
   background: ${(props) =>
-    props.color ? props.color : 'linear-gradient(#1d1e2c, #09090d)'};
-  background-color: ${(props) => (props.color ? 'transparent' : '#1d1e2c')};
+    props.color ? props.color : 'linear-gradient(to right, #afafaf, #929292)'};
   cursor: pointer;
 `;
 
 export const ButtonText = styled.p`
   position: relative;
-  margin-bottom: -100px;
-  font-size: 12px;
+  margin-top: 200px;
+  font-size: 1vw;
   color: #350000;
 
   @media (max-width: 1280px) {
-    font-size: 10px;
+    margin-top: 100px;
   }
 
   @media (max-width: 720px) {

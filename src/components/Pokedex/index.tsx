@@ -7,11 +7,8 @@ import {
 } from './styles';
 
 import Display, { DisplayMonitor } from '../Display';
-
 import Search from '../Search';
-
 import ButtonsMenu from '../Buttons';
-import InfoPainel from '../Info';
 import Header from '../Header';
 import Lists from '../Lists';
 
@@ -30,7 +27,6 @@ export function Pokedex() {
       <PokedexRightSide>
         <PokedexRightContent>
           <DisplayMonitor></DisplayMonitor>
-          <InfoPainel></InfoPainel>
           <Lists></Lists>
         </PokedexRightContent>
       </PokedexRightSide>

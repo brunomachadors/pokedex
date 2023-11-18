@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 import themes from '../../utils/themes';
-import { Screen, StyledImage } from './styles'; // Import TypeContent
+import { Screen, StyledImage, StyledTypeImage } from './styles'; // Import TypeContent
 import { State } from '../../types/pokemon';
 
-function Photo() {
+function PokemonPhoto() {
   const selectedPokemon = useSelector(
     (state: State) => state.pokemon.selectedPokemon
   );
@@ -20,4 +20,19 @@ function Photo() {
   );
 }
 
-export default Photo;
+export function TypePhoto() {
+  const selectedType = useSelector(
+    (state: State) => state.type.selectedType
+  ) as keyof typeof themes.colors.background;
+
+  function getColoredIcon(type: string): string {
+    const sourceImage = 'types/' + type.toLowerCase() + '.svg';
+    return sourceImage;
+  }
+
+  return (
+    <StyledTypeImage src={getColoredIcon(selectedType)} alt="selectedPokemon" />
+  );
+}
+
+export default PokemonPhoto;

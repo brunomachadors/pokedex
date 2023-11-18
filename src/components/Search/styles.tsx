@@ -6,13 +6,14 @@ export const SearchInput = styled.input`
   height: 100%;
   background-color: #ffffff;
   font-family: 'RetroGaming', sans-serif;
-  font-size: 20px;
+  font-size: 1.3vw;
   border: 3px solid #1d1e2c;
   text-align: center;
 `;
 
 export const SearchContainer = styled.div`
   height: 8%;
+  width: 60%;
   background-color: black;
 `;
 
