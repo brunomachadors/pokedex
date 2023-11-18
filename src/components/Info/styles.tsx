@@ -53,7 +53,7 @@ export const TextContainer = styled.div`
 
 export const Name = styled.div`
   color: white;
-  font-size: 2vw;
+  font-size: 1.5vw;
   margin-top: 5px;
   font-family: 'RetroGaming', sans-serif;
 `;

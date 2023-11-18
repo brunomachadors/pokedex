@@ -19,6 +19,22 @@ export const List = styled.ul`
   margin-block-end: 0;
   padding-inline-start: 0;
   overflow-y: auto;
+  scrollbar-width: thin;
+  border: solid 3px #000000;
+
+  &::-webkit-scrollbar {
+    width: 30px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #15a835;
+    border: 2px solid black;
+    height: 2vw;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #494949;
+  }
 `;
 
 export const ListText = styled.li`
@@ -65,4 +81,6 @@ export const BlackScreenList = styled.div`
   }
 `;
 
-export const TextContainer = styled.div``;
+export const TextContainer = styled.div`
+  font-size: 0.8vw;
+`;
