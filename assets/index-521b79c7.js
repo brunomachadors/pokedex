@@ -110,9 +110,9 @@ Error generating stack: `+i.message+`
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-direction: column;
-  gap: 150px;
+  padding: 10px;
 
   @media (max-width: 720px) {
     height: 100%;
@@ -158,7 +158,7 @@ Error generating stack: `+i.message+`
   50% { opacity: 0 }
   100% { opacity: 1 }
 `,zv=N.div`
-  font-size: 3vw;
+  font-size: 2vw;
   color: yellow;
 `,bv=N.div`
   display: inline-block;
@@ -169,7 +169,7 @@ Error generating stack: `+i.message+`
   justify-content: space-around;
   flex-direction: column;
   width: 70%;
-  height: 50%;
+  height: 55%;
   background-image: linear-gradient(to bottom, #f1f1f4, #a5a5a5);
   border: 3px solid black;
   overflow: hidden;
