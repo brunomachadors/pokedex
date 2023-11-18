@@ -4,7 +4,6 @@ import {
   InfoButtonContainer,
   BlackScreenInfo,
   Name,
-  Id,
   TextContainer,
   Flavour,
 } from './styles';
@@ -73,8 +72,9 @@ export function Info() {
   return (
     <BlackScreenInfo color={backgroundColor}>
       <TextContainer>
-        <Id>#{currentPokemon.id}</Id>
-        <Name>{currentPokemon.name.toLocaleUpperCase()}</Name>
+        <Name>
+          #{currentPokemon.id} {currentPokemon.name.toLocaleUpperCase()}
+        </Name>
         <PokemonType pokemon={currentPokemon}></PokemonType>
         {pokemonFlavour && <Flavour>{pokemonFlavour}</Flavour>}
       </TextContainer>

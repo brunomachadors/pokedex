@@ -2,14 +2,19 @@ import styled from 'styled-components';
 export const InfoButtonContainer = styled.div`
   display: flex;
   gap: 40px;
+  width: 100%;
+  height: 10%;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const ButtonPhoto = styled.button`
   border-radius: 20px;
   background-color: #8d0303;
   color: white;
-  width: 100px;
-  font-size: 10px;
+  width: 30%;
+  height: 100%;
+  font-size: 0.5vw;
   font-family: 'RetroGaming', sans-serif;
 `;
 
@@ -17,8 +22,9 @@ export const ButtonInfo = styled.button`
   border-radius: 20px;
   background-color: #4747f7;
   color: white;
-  width: 100px;
-  font-size: 10px;
+  width: 30%;
+  height: 100%;
+  font-size: 0.5vw;
   font-family: 'RetroGaming', sans-serif;
 `;
 
@@ -40,7 +46,7 @@ export const TextContainer = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   flex-direction: column;
   gap: 10px;
   margin-top: 10px;
@@ -48,25 +54,23 @@ export const TextContainer = styled.div`
 
 export const Name = styled.div`
   color: white;
-  font-size: 20px;
-`;
-export const Id = styled.div`
-  color: white;
-  font-size: 15px;
+  font-size: 2vw;
+  margin-top: 5px;
 `;
 
 export const Flavour = styled.div`
-  font-size: 10px;
+  font-size: 0.8vw;
   color: white;
-  width: 80%;
+  width: 90%;
   border: solid white 1px;
   border-radius: 12px;
-  padding: 10px;
+  padding: 15px;
   background-color: #0000009d;
-  text-align: center;
+  text-align: left;
   line-height: 2;
-  max-height: 100px;
   overflow-y: auto;
+  font-family: 'RetroGaming', sans-serif;
+  max-height: 40%;
 
   @media (max-width: 1280px) {
     font-size: 8px;
