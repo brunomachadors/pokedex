@@ -11,6 +11,7 @@ import Search from '../Search';
 import ButtonsMenu from '../Buttons';
 import Header from '../Header';
 import Lists from '../Lists';
+import { Music } from '../Music';
 
 export function Pokedex() {
   return (
@@ -21,9 +22,9 @@ export function Pokedex() {
           <Display></Display>
           <ButtonsMenu></ButtonsMenu>
           <Search></Search>
+          <Music></Music>
         </PokedexLeftContent>
       </PokedexLeftSide>
-
       <PokedexRightSide>
         <PokedexRightContent>
           <DisplayMonitor></DisplayMonitor>
