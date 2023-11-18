@@ -7,14 +7,15 @@ export const StyledType = styled.div`
   font-size: 1.1vw;
   border: 0.5px solid black;
   border-radius: 10px;
+  font-family: 'RetroGaming', sans-serif;
 `;
 
 export const PokemonTypeContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   gap: 20px;
+  flex-direction: row;
 `;
 
 export const TypeContent = styled.div`
@@ -29,7 +30,11 @@ export const TypeIcon = styled.img`
   height: auto;
 `;
 
+export const TypeColoredDiv = styled.img`
+  display: flex;
+  flex-direction: row;
+`;
 export const TypeColoredIcon = styled.img`
-  width: 1vw;
+  width: 1.8vw;
   height: auto;
 `;

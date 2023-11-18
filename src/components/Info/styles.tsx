@@ -46,16 +46,61 @@ export const TextContainer = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-direction: column;
   gap: 10px;
-  margin-top: 10px;
 `;
 
 export const Name = styled.div`
   color: white;
   font-size: 2vw;
   margin-top: 5px;
+  font-family: 'RetroGaming', sans-serif;
+`;
+
+export const DoubleDamage = styled.div`
+  color: white;
+  font-size: 0.8vw;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+  border: 1px solid white;
+  padding: 0.5vw;
+  border-radius: 15px;
+  background-color: #00000098;
+  font-family: 'RetroGaming', sans-serif;
+`;
+
+export const DoubleDamageFrom = styled.div`
+  color: white;
+  font-size: 1.2vw;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  flex-direction: row;
+`;
+
+export const DoubleDamageTo = styled.div`
+  color: white;
+  font-size: 1.2vw;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  flex-direction: row;
+`;
+
+export const Damage = styled.div`
+  color: white;
+  font-size: 1vw;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
 `;
 
 export const Flavour = styled.div`
@@ -75,4 +120,22 @@ export const Flavour = styled.div`
   @media (max-width: 1280px) {
     font-size: 8px;
   }
+`;
+
+export const Imune = styled.div`
+  color: black;
+  font-size: 0.8vw;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  flex-direction: column-reverse;
+  font-family: 'RetroGaming', sans-serif;
+`;
+
+export const ImunityTypeContainer = styled.div`
+  display: flex;
+  gap: 10px;
+  font-family: 'RetroGaming', sans-serif;
 `;
