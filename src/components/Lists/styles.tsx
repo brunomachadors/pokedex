@@ -7,6 +7,14 @@ export const ListsContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    margin-top: 600px;
+  }
 `;
 
 export const List = styled.ul`
@@ -35,6 +43,16 @@ export const List = styled.ul`
   &::-webkit-scrollbar-track {
     background-color: #494949;
   }
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 `;
 
 export const ListText = styled.li`
@@ -48,6 +66,13 @@ export const ListText = styled.li`
   text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black,
     1px 1px 1px black;
   gap: 0.5vw;
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    height: 100%;
+    width: 150px;
+  }
 
   @media (max-width: 720px) {
     margin-left: 5%;
@@ -76,6 +101,10 @@ export const BlackScreenList = styled.div`
   overflow: hidden;
   flex-direction: column;
 
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
+
   @media (max-width: 720px) {
     width: 60%;
   }
@@ -83,4 +112,9 @@ export const BlackScreenList = styled.div`
 
 export const TextContainer = styled.div`
   font-size: 0.8vw;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 2vw;
+    overflow-x: auto;
+  }
 `;

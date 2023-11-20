@@ -9,6 +9,11 @@ export const SearchInput = styled.input`
   font-size: 1.3vw;
   border: 3px solid #1d1e2c;
   text-align: center;
+
+  @media screen and (max-width: 1024px) {
+    position: relative;
+    margin-top: 150px;
+  }
 `;
 
 export const SearchContainer = styled.div`

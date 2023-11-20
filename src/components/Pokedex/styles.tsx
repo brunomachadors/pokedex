@@ -9,14 +9,15 @@ export const PokedexContainer = styled.div`
   flex-direction: row;
   margin: 1vw;
 
-  @media (max-width: 1280px) {
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    height: 100%;
+    flex-direction: column-reverse;
+    margin: 0;
+    padding: 0;
   }
 
   @media (max-width: 720px) {
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
   }
 `;
 
@@ -32,6 +33,15 @@ export const PokedexLeftSide = styled.div`
   border-radius: 30px;
   box-shadow: inset 0 0 15px rgba(251, 56, 56, 0.5);
   padding-bottom: 10px;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    height: 50%;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border-radius: 0px;
+  }
 
   @media (max-width: 720px) {
     height: 50%;
@@ -54,6 +64,17 @@ export const PokedexRightSide = styled.div`
   flex-direction: column;
   box-shadow: inset 0 0 15px rgba(251, 56, 56, 0.5);
   margin-bottom: 10px;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    height: 50%;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    border-radius: 0px;
+    box-shadow: none;
+    border: none;
+  }
 
   @media (max-width: 720px) {
     width: 100%;
@@ -80,6 +101,21 @@ export const PokedexLeftContent = styled.div`
   flex-direction: column;
   padding: 10px;
 
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    height: 100%;
+    flex-direction: column-reverse;
+    margin: 0;
+    padding: 0;
+    border-radius: 0px;
+    padding: 0;
+    margin-bottom: 0;
+    border-left: none;
+    border-top: none;
+    justify-content: space-around;
+    border: none;
+  }
+
   @media (max-width: 720px) {
     height: 100%;
     justify-content: space-evenly;
@@ -99,6 +135,15 @@ export const PokedexRightContent = styled.div`
   flex-direction: column;
   margin-left: 5px;
   gap: 1vw;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
 
   @media (max-width: 720px) {
     height: 95%;

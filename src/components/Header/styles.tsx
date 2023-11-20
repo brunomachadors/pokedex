@@ -8,6 +8,11 @@ export const PokedexHeaderContainer = styled.div`
   align-items: center;
   position: relative;
   gap: 20px;
+
+  @media screen and (max-width: 1024px) {
+    width: 0;
+    height: 0;
+  }
 `;
 
 export const PokedexHeaderLines = styled.div`

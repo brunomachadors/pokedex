@@ -10,6 +10,10 @@ export const ButtonContainer = styled.div`
   height: 12%;
   gap: 6px;
   cursor: pointer;
+
+  @media screen and (max-width: 1024px) {
+    position: absolute;
+  }
 `;
 
 export const Button = styled.button<ButtonProps>`
@@ -30,8 +34,12 @@ export const Button = styled.button<ButtonProps>`
   transition: background-color 0.1s;
   cursor: pointer;
 
-  @media (max-width: 1280px) {
-    font-size: 9px;
+  @media screen and (max-width: 1024px) {
+    font-size: 4vw;
+    width: 30%;
+    height: 50%;
+    position: relative;
+    margin-top: 40px;
   }
 
   @media (max-width: 720px) {
@@ -53,8 +61,10 @@ export const ButtonText = styled.p`
   font-size: 1vw;
   color: #350000;
 
-  @media (max-width: 1280px) {
-    margin-top: 100px;
+  @media screen and (max-width: 1024px) {
+    font-size: 2vw;
+    margin-top: 0;
+    color: white;
   }
 
   @media (max-width: 720px) {
