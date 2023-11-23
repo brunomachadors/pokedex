@@ -10,12 +10,16 @@ export const InfoButtonContainer = styled.div`
 
 export const ButtonPhoto = styled.button`
   border-radius: 20px;
-  background-color: #8d0303;
+  background-color: #038d0e;
   color: white;
   width: 30%;
   height: 100%;
   font-size: 0.5vw;
   font-family: 'RetroGaming', sans-serif;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 2vw;
+  }
 `;
 
 export const ButtonInfo = styled.button`
@@ -26,6 +30,10 @@ export const ButtonInfo = styled.button`
   height: 100%;
   font-size: 0.5vw;
   font-family: 'RetroGaming', sans-serif;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 2vw;
+  }
 `;
 
 export const BlackScreenInfo = styled.div`
@@ -56,6 +64,10 @@ export const Name = styled.div`
   font-size: 1.5vw;
   margin-top: 5px;
   font-family: 'RetroGaming', sans-serif;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 3vw;
+  }
 `;
 
 export const DoubleDamage = styled.div`
@@ -71,6 +83,13 @@ export const DoubleDamage = styled.div`
   border-radius: 15px;
   background-color: #00000098;
   font-family: 'RetroGaming', sans-serif;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 3vw;
+    width: 98%;
+    height: 60%;
+    justify-content: space-evenly;
+  }
 `;
 
 export const DoubleDamageFrom = styled.div`
@@ -82,6 +101,12 @@ export const DoubleDamageFrom = styled.div`
   justify-content: flex-start;
   gap: 5px;
   flex-direction: row;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 3vw;
+    justify-content: center;
+    margin-right: 0px;
+  }
 `;
 
 export const DoubleDamageTo = styled.div`
@@ -93,6 +118,11 @@ export const DoubleDamageTo = styled.div`
   justify-content: flex-start;
   gap: 5px;
   flex-direction: row;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 3vw;
+    justify-content: space-around;
+  }
 `;
 
 export const Damage = styled.div`
@@ -101,6 +131,10 @@ export const Damage = styled.div`
   margin-top: 5px;
   display: flex;
   flex-direction: row;
+  @media screen and (max-width: 1024px) {
+    font-size: 2vw;
+    justify-content: center;
+  }
 `;
 
 export const Flavour = styled.div`
@@ -117,8 +151,8 @@ export const Flavour = styled.div`
   font-family: 'RetroGaming', sans-serif;
   max-height: 40%;
 
-  @media (max-width: 1280px) {
-    font-size: 8px;
+  @media screen and (max-width: 1024px) {
+    font-size: 2vw;
   }
 `;
 
@@ -132,6 +166,10 @@ export const Imune = styled.div`
   gap: 5px;
   flex-direction: column-reverse;
   font-family: 'RetroGaming', sans-serif;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 3vw;
+  }
 `;
 
 export const ImunityTypeContainer = styled.div`

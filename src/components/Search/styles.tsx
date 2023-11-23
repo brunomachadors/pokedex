@@ -9,12 +9,27 @@ export const SearchInput = styled.input`
   font-size: 1.3vw;
   border: 3px solid #1d1e2c;
   text-align: center;
+
+  @media screen and (max-width: 1024px) {
+    position: relative;
+    margin-top: 150px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    font-size: 4vw;
+  }
 `;
 
 export const SearchContainer = styled.div`
   height: 8%;
   width: 60%;
-  background-color: black;
+
+  @media (max-width: 480px) {
+    position: absolute;
+    margin-bottom: 600px;
+    width: 75%;
+    height: 5%;
+  }
 `;
 
 export const PokemonListContainer = styled.ul`

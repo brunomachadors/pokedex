@@ -9,14 +9,18 @@ export const PokedexContainer = styled.div`
   flex-direction: row;
   margin: 1vw;
 
-  @media (max-width: 1280px) {
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    height: 100%;
+    flex-direction: column-reverse;
+    margin: 0;
+    padding: 0;
   }
 
   @media (max-width: 720px) {
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+  }
+
+  @media (max-width: 480px) {
   }
 `;
 
@@ -33,12 +37,19 @@ export const PokedexLeftSide = styled.div`
   box-shadow: inset 0 0 15px rgba(251, 56, 56, 0.5);
   padding-bottom: 10px;
 
-  @media (max-width: 720px) {
-    height: 50%;
+  @media screen and (max-width: 1024px) {
     width: 100%;
-    align-items: center;
-    padding-bottom: 0px;
+    height: 50%;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
     border-radius: 0px;
+  }
+
+  @media (max-width: 720px) {
+  }
+
+  @media (max-width: 480px) {
   }
 `;
 
@@ -55,13 +66,18 @@ export const PokedexRightSide = styled.div`
   box-shadow: inset 0 0 15px rgba(251, 56, 56, 0.5);
   margin-bottom: 10px;
 
-  @media (max-width: 720px) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
     height: 50%;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 0px;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
     border-radius: 0px;
+    box-shadow: none;
+    border: none;
+  }
+
+  @media (max-width: 720px) {
   }
 `;
 
@@ -80,9 +96,22 @@ export const PokedexLeftContent = styled.div`
   flex-direction: column;
   padding: 10px;
 
-  @media (max-width: 720px) {
+  @media screen and (max-width: 1024px) {
+    width: 100%;
     height: 100%;
-    justify-content: space-evenly;
+    flex-direction: column-reverse;
+    margin: 0;
+    padding: 0;
+    border-radius: 0px;
+    padding: 0;
+    margin-bottom: 0;
+    border-left: none;
+    border-top: none;
+    justify-content: space-around;
+    border: none;
+  }
+
+  @media (max-width: 720px) {
   }
 `;
 
@@ -100,14 +129,12 @@ export const PokedexRightContent = styled.div`
   margin-left: 5px;
   gap: 1vw;
 
-  @media (max-width: 720px) {
-    height: 95%;
-    width: 90%;
-    margin-top: 2px;
-    border-top: none;
-    border-left: 12px solid #680708;
-    border-bottom: solid #680708 12px;
-    border-right: 2px solid black;
-    margin-left: 0;
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: none;
   }
 `;
