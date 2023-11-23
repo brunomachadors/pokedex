@@ -23,7 +23,7 @@ function PokemonType({ pokemon }: { pokemon: Tresult }) {
           }
         >
           <TypeContent>
-            <TypeIcon src={getIconSrc(type)} alt={`${type} icon`} />
+            <TypeIcon src={getIconSrc(type)} alt={`${type} icon`} id={type} />
             {type.toUpperCase()}
           </TypeContent>
         </StyledType>

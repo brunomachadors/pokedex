@@ -61,4 +61,8 @@ export const WhiteScreen = styled.div`
     width: 70%;
     height: 40%;
   }
+
+  @media (max-width: 480px) {
+    width: 90%;
+  }
 `;

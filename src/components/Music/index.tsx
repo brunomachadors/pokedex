@@ -15,6 +15,10 @@ const StyledAudioPlayer = styled.audio`
     position: absolute;
     bottom: 20px;
   }
+
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
 export const Music = () => {

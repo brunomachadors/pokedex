@@ -40,12 +40,16 @@ export const TypeIcon = styled.img`
     width: 16%;
     padding: 10px;
   }
+
+  @media screen and (max-width: 480px) {
+  }
 `;
 
 export const TypeColoredDiv = styled.img`
   display: flex;
   flex-direction: row;
 `;
+
 export const TypeColoredIcon = styled.img`
   width: 1.8vw;
   height: auto;
@@ -53,5 +57,13 @@ export const TypeColoredIcon = styled.img`
   @media screen and (max-width: 1024px) {
     width: 45px;
     padding: 6px;
+  }
+
+  @media (max-width: 720px) {
+    width: 12px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 20px;
   }
 `;

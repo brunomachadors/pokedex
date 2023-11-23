@@ -15,6 +15,14 @@ export const ListsContainer = styled.div`
     position: absolute;
     margin-top: 600px;
   }
+
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+    width: 100%;
+    height: 35%;
+    position: absolute;
+    margin-top: 500px;
+  }
 `;
 
 export const List = styled.ul`
@@ -53,6 +61,29 @@ export const List = styled.ul`
       display: none;
     }
   }
+
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    &::-webkit-scrollbar {
+      width: 30px;
+      display: flex;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #15a835;
+      border: 2px solid black;
+      height: 10vw;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #494949;
+    }
+  }
 `;
 
 export const ListText = styled.li`
@@ -75,7 +106,12 @@ export const ListText = styled.li`
   }
 
   @media (max-width: 720px) {
-    margin-left: 5%;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  @media (max-width: 720px) {
+    flex-direction: row;
   }
 `;
 
@@ -106,7 +142,11 @@ export const BlackScreenList = styled.div`
   }
 
   @media (max-width: 720px) {
-    width: 60%;
+    width: 70%;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 480px) {
   }
 `;
 
@@ -116,5 +156,10 @@ export const TextContainer = styled.div`
   @media screen and (max-width: 1024px) {
     font-size: 2vw;
     overflow-x: auto;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 4vw;
+    overflow-y: auto;
   }
 `;

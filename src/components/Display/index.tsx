@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { State } from '../../types/pokemon';
 import PokemonPhoto, { TypePhoto } from '../Photo';
 import InfoPainel, { PokemonInfo, PokemonTypeInfo } from '../Info';
-import { Screen } from '../Photo/styles';
+import { Screen, StyledImage } from '../Photo/styles';
 import themes from '../../utils/themes';
 
 export function Display() {
@@ -76,7 +76,11 @@ export function TypesDisplay() {
 }
 
 export function NoSelection() {
-  return <Screen></Screen>;
+  return (
+    <Screen>
+      <StyledImage src="https://i.gifer.com/4tym.gif"></StyledImage>
+    </Screen>
+  );
 }
 export function ItemsDisplay() {
   return <Screen></Screen>;
