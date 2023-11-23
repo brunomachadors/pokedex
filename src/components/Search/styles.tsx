@@ -23,12 +23,11 @@ export const SearchInput = styled.input`
 export const SearchContainer = styled.div`
   height: 8%;
   width: 60%;
-  background-color: black;
 
   @media (max-width: 480px) {
     position: absolute;
     margin-bottom: 600px;
-    width: 70%;
+    width: 75%;
     height: 5%;
   }
 `;

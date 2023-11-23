@@ -147,6 +147,8 @@ export const BlackScreenList = styled.div`
   }
 
   @media screen and (max-width: 480px) {
+    width: 75%;
+    align-items: center;
   }
 `;
 

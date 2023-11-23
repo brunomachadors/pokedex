@@ -6,18 +6,20 @@ interface ButtonProps {
 
 export const ButtonContainer = styled.div`
   display: flex;
-  width: 70%;
-  height: 12%;
+  width: 75%;
+  height: 14%;
   gap: 6px;
   cursor: pointer;
 
   @media screen and (max-width: 1024px) {
     position: absolute;
+    background-color: transparent;
   }
 
   @media (max-width: 480px) {
     position: absolute;
     margin-bottom: 500px;
+    height: 12%;
   }
 `;
 
