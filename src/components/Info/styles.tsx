@@ -203,6 +203,8 @@ export const ItemInfoContainer = styled.div`
 
 export const ItemName = styled.div`
   color: white;
+
+  font-size: 1vw;
   @media screen and (max-width: 1024px) {
     font-size: 2vw;
   }
