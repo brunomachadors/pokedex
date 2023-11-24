@@ -66,3 +66,39 @@ export const WhiteScreen = styled.div`
     width: 90%;
   }
 `;
+
+export const StyledItemCategory = styled.div`
+  background-color: #0000008b;
+  padding: 5px 10px;
+  color: white;
+  font-size: 1.1vw;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-family: 'RetroGaming', sans-serif;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 3vw;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 5vw;
+  }
+`;
+
+export const Categoryitem = styled.div`
+  color: black;
+  font-size: 1vw;
+  font-family: 'RetroGaming', sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 2vw;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 5vw;
+  }
+`;

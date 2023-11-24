@@ -1,3 +1,4 @@
+import { IItem, IItems } from '../item/item';
 import { IPokemonTypes } from '../pokemonTypes';
 
 export type TpokemonList = {
@@ -35,7 +36,15 @@ export interface State {
   typeList: {
     lists: IPokemonTypes;
   };
+  itemList: {
+    lists: IItems;
+  };
   type: SelectedType;
+  item: SelectedItem;
+}
+
+export interface SelectedItem {
+  selectedItem: IItem;
 }
 
 export interface SelectedType {

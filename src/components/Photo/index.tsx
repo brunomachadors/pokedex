@@ -1,7 +1,14 @@
 import { useSelector } from 'react-redux';
 import themes from '../../utils/themes';
-import { Screen, StyledImage, StyledTypeImage } from './styles'; // Import TypeContent
+import {
+  Screen,
+  StyledImage,
+  StyledItemImageLarge,
+  StyledTypeImage,
+} from './styles'; // Import TypeContent
 import { State } from '../../types/pokemon';
+import { Name, TextContainer } from '../Info/styles';
+import { Categoryitem, StyledItemCategory } from '../Display/styles';
 
 function PokemonPhoto() {
   const selectedPokemon = useSelector(
@@ -32,6 +39,27 @@ export function TypePhoto() {
 
   return (
     <StyledTypeImage src={getColoredIcon(selectedType)} alt="selectedPokemon" />
+  );
+}
+
+export function ItemPhoto() {
+  const selectedItem = useSelector((state: State) => state.item.selectedItem);
+
+  return (
+    <TextContainer>
+      <Name style={{ color: 'white' }}>{selectedItem.name.toUpperCase()}</Name>
+
+      <StyledItemImageLarge
+        src={selectedItem.sprites?.default}
+        alt="selectedItem"
+      />
+      <Categoryitem>
+        Category:
+        <StyledItemCategory>
+          {selectedItem.category?.name.toUpperCase()}
+        </StyledItemCategory>
+      </Categoryitem>
+    </TextContainer>
   );
 }
 

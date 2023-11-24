@@ -20,10 +20,10 @@ yarn dev
 - [x] Left Side Components
 - [x] Right Side Components
 - [x] Display Monitor
-- [ ] Display Info
-- [ ] Menu Buttons
-- [ ] Pokemon Types
-- [ ] Pokemon Items
+- [x] Display Info
+- [x] Menu Buttons
+- [x] Pokemon Types
+- [x] Pokemon Items
 - [ ] Regions
 
 ## Team Members

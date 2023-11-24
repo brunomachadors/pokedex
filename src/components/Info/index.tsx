@@ -12,6 +12,12 @@ import {
   DoubleDamageTo,
   Imune,
   ImunityTypeContainer,
+  ItemInfoContainer,
+  ItemName,
+  ItemId,
+  ItemAttributesContainer,
+  ItemAttributes,
+  ItemShortEffect,
 } from './styles';
 import { selectInfoMenu } from '../../store/info/info';
 import { useDispatch, useSelector } from 'react-redux';
@@ -185,5 +191,28 @@ export function PokemonTypeInfo() {
         </Imune>
       )}
     </TextContainer>
+  );
+}
+
+export function ItemInfo() {
+  const selectedItem = useSelector((state: State) => state.item.selectedItem);
+
+  return (
+    <ItemInfoContainer>
+      <ItemId>#{selectedItem.id}</ItemId>
+      <ItemName>{selectedItem.name.toUpperCase()}</ItemName>
+      <ItemShortEffect>
+        {selectedItem?.effect_entries?.[0]?.short_effect ||
+          'No short effect available'}
+      </ItemShortEffect>
+
+      <ItemAttributesContainer>
+        {selectedItem.attributes?.map((attribute) => (
+          <ItemAttributes key={attribute.name}>
+            {attribute.name.toUpperCase()}
+          </ItemAttributes>
+        ))}
+      </ItemAttributesContainer>
+    </ItemInfoContainer>
   );
 }

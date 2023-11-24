@@ -22,3 +22,32 @@ export const StyledImage = styled.img`
 export const StyledTypeImage = styled.img`
   width: 55%;
 `;
+
+export const StyledItemImage = styled.img`
+  width: 1.8vw;
+  height: auto;
+
+  @media screen and (max-width: 1024px) {
+    width: 5vw;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 8vw;
+  }
+`;
+
+export const StyledItemImageLarge = styled.img`
+  width: 3vw;
+  height: auto;
+  border: 3px solid black;
+  background-color: black;
+  border: 2px solid white;
+
+  @media screen and (max-width: 1024px) {
+    width: 10vw;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 18vw;
+  }
+`;
