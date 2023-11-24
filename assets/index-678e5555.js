@@ -506,6 +506,8 @@ Error generating stack: `+i.message+`
   }
 `,X1=j.div`
   color: white;
+
+  font-size: 1vw;
   @media screen and (max-width: 1024px) {
     font-size: 2vw;
   }
