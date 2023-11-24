@@ -2,7 +2,7 @@ import { AnimatedText, BlackScreen, WhiteScreen, Word } from './styles';
 import { useSelector } from 'react-redux';
 import { State } from '../../types/pokemon';
 import PokemonPhoto, { ItemPhoto, TypePhoto } from '../Photo';
-import InfoPainel, { PokemonInfo, PokemonTypeInfo } from '../Info';
+import InfoPainel, { ItemInfo, PokemonInfo, PokemonTypeInfo } from '../Info';
 import { Screen, StyledImage } from '../Photo/styles';
 import themes from '../../utils/themes';
 
@@ -87,7 +87,7 @@ export function ItemsDisplay() {
   return (
     <Screen color="linear-gradient(to top, #f9f9f9, #7c7c7c, black)">
       {infoMenu === 'photo' && <ItemPhoto />}
-      {infoMenu === 'info' && <PokemonTypeInfo />}
+      {infoMenu === 'info' && <ItemInfo />}
     </Screen>
   );
 }

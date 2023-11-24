@@ -67,18 +67,6 @@ export const WhiteScreen = styled.div`
   }
 `;
 
-export const ItemAttributesContainer = styled.ul`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around;
-`;
-export const ItemAttributes = styled.li`
-  color: black;
-  font-size: 0.8vw;
-  font-family: 'RetroGaming', sans-serif;
-`;
-
 export const StyledItemCategory = styled.div`
   background-color: #0000008b;
   padding: 5px 10px;
@@ -91,6 +79,10 @@ export const StyledItemCategory = styled.div`
   @media screen and (max-width: 1024px) {
     font-size: 3vw;
   }
+
+  @media screen and (max-width: 480px) {
+    font-size: 5vw;
+  }
 `;
 
 export const Categoryitem = styled.div`
@@ -101,4 +93,12 @@ export const Categoryitem = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 10px;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 2vw;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 5vw;
+  }
 `;

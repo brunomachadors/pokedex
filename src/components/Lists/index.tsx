@@ -279,13 +279,12 @@ export function ItemList() {
           {filteredItemList.map((item) => (
             <ButtonSelect
               key={item.id}
-              color="#3E9709"
+              color={themes.colors.buttonColor.dark}
               onClick={() => handleClick(item)}
             >
               <ListText>
-                <TextContainer>
-                  {item.id} - {item.name.toUpperCase()}
-                </TextContainer>
+                <TextContainer>#{item.id}</TextContainer>
+                <TextContainer>{item.name.toUpperCase()}</TextContainer>
                 <StyledItemImage src={item.sprites?.default}></StyledItemImage>
               </ListText>
             </ButtonSelect>

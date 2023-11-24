@@ -68,6 +68,10 @@ export const Name = styled.div`
   @media screen and (max-width: 1024px) {
     font-size: 3vw;
   }
+
+  @media screen and (max-width: 480px) {
+    font-size: 6vw;
+  }
 `;
 
 export const DoubleDamage = styled.div`
@@ -176,4 +180,86 @@ export const ImunityTypeContainer = styled.div`
   display: flex;
   gap: 10px;
   font-family: 'RetroGaming', sans-serif;
+`;
+
+export const ItemInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'RetroGaming', sans-serif;
+  margin-top: 1vw;
+  gap: 0.4vw;
+
+  @media screen and (max-width: 1024px) {
+    gap: 2vw;
+  }
+
+  @media screen and (max-width: 480px) {
+    margin-top: 2vw;
+    gap: 2vw;
+  }
+`;
+
+export const ItemName = styled.div`
+  color: white;
+  @media screen and (max-width: 1024px) {
+    font-size: 2vw;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 4vw;
+  }
+`;
+
+export const ItemId = styled.div`
+  color: white;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 2vw;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 4vw;
+  }
+`;
+
+export const ItemShortEffect = styled.div`
+  font-size: 0.7vw;
+  color: black;
+  background-color: #ffffffac;
+  width: 80%;
+  border-radius: 15px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid black;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 2vw;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 4vw;
+  }
+`;
+
+export const ItemAttributesContainer = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-top: 0;
+`;
+export const ItemAttributes = styled.li`
+  color: black;
+  font-size: 0.8vw;
+  font-family: 'RetroGaming', sans-serif;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 2vw;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 4vw;
+  }
 `;
