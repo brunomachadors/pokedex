@@ -132,7 +132,7 @@ export const BlackScreenList = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 60%;
   height: 100%;
   overflow: hidden;
   flex-direction: column;
