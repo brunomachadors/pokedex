@@ -22,3 +22,15 @@ export const StyledImage = styled.img`
 export const StyledTypeImage = styled.img`
   width: 55%;
 `;
+
+export const StyledItemImage = styled.img`
+  width: 2vw;
+  height: auto;
+`;
+
+export const StyledItemImageLarge = styled.img`
+  width: 3vw;
+  height: auto;
+  border: 3px solid black;
+  background-color: white;
+`;

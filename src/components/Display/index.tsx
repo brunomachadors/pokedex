@@ -1,7 +1,7 @@
 import { AnimatedText, BlackScreen, WhiteScreen, Word } from './styles';
 import { useSelector } from 'react-redux';
 import { State } from '../../types/pokemon';
-import PokemonPhoto, { TypePhoto } from '../Photo';
+import PokemonPhoto, { ItemPhoto, TypePhoto } from '../Photo';
 import InfoPainel, { PokemonInfo, PokemonTypeInfo } from '../Info';
 import { Screen, StyledImage } from '../Photo/styles';
 import themes from '../../utils/themes';
@@ -83,7 +83,13 @@ export function NoSelection() {
   );
 }
 export function ItemsDisplay() {
-  return <Screen></Screen>;
+  const infoMenu = useSelector((state: State) => state.infoMenu.selectedMenu);
+  return (
+    <Screen color="linear-gradient(to top, #f9f9f9, #7c7c7c, black)">
+      {infoMenu === 'photo' && <ItemPhoto />}
+      {infoMenu === 'info' && <PokemonTypeInfo />}
+    </Screen>
+  );
 }
 
 export function LocationsDisplay() {

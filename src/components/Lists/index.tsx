@@ -38,6 +38,14 @@ import {
 import { TypeColoredIcon } from '../Type/styles';
 import { selectType } from '../../store/type/pokemonType';
 import PokeballLoading from '../Loading';
+import { getItem, getItems } from '../../api/item/item';
+import { IItem } from '../../types/item/item';
+import { StyledItemImage } from '../Photo/styles';
+import {
+  updateFilteredItemList,
+  updateOriginalItemList,
+} from '../../store/itemList/itemList';
+import { selectItem } from '../../store/item/item';
 
 function Lists() {
   const selectedMenu = useSelector(
@@ -48,6 +56,7 @@ function Lists() {
     <ListsContainer>
       {selectedMenu === 'POKEMON' && <PokemonList></PokemonList>}
       {selectedMenu === 'TYPES' && <TypeList></TypeList>}
+      {selectedMenu === 'ITEMS' && <ItemList></ItemList>}
     </ListsContainer>
   );
 }
@@ -215,6 +224,69 @@ export function TypeList() {
                     alt={type.typeInfo.name}
                   ></TypeColoredIcon>
                 </TextContainer>
+              </ListText>
+            </ButtonSelect>
+          ))}
+        </List>
+      )}
+    </BlackScreenList>
+  );
+}
+
+export function ItemList() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const dispatch = useDispatch();
+  const filteredItemList = useSelector(
+    (state: State) => state.itemList.lists.filteredList
+  );
+
+  useEffect(() => {
+    async function getAllItems() {
+      try {
+        const items = await getItems();
+
+        const infos = await Promise.all(
+          items.map(async (item: { url: string }) => {
+            const info: IItem = await getItem(item.url);
+            return info;
+          })
+        );
+
+        dispatch(updateOriginalItemList(infos));
+        dispatch(updateFilteredItemList(infos));
+
+        setIsLoading(false);
+      } catch (error) {
+        console.error('Error fetching items:', error);
+        setIsLoading(false);
+      }
+    }
+
+    getAllItems();
+  }, [dispatch]);
+
+  const handleClick = (item: IItem) => {
+    dispatch(selectItem(item));
+  };
+
+  return (
+    <BlackScreenList>
+      {isLoading ? (
+        <PokeballLoading></PokeballLoading>
+      ) : (
+        <List>
+          {filteredItemList.map((item) => (
+            <ButtonSelect
+              key={item.id}
+              color="#3E9709"
+              onClick={() => handleClick(item)}
+            >
+              <ListText>
+                <TextContainer>
+                  {item.id} - {item.name.toUpperCase()}
+                </TextContainer>
+                <StyledItemImage src={item.sprites?.default}></StyledItemImage>
               </ListText>
             </ButtonSelect>
           ))}

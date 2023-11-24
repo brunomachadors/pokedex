@@ -6,6 +6,8 @@ import mainMenuReducer from './mainMenu/mainMenu';
 import pokemonListReducer from './pokemonList/pokemonList';
 import pokemonListTypeReducer from './pokemonTypes/pokemonTypeList';
 import typeReducer from './type/pokemonType';
+import itemListReducer from './itemList/itemList';
+import itemReducer from './item/item';
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +16,8 @@ export const store = configureStore({
     mainMenu: mainMenuReducer,
     pokemonList: pokemonListReducer,
     typeList: pokemonListTypeReducer,
+    itemList: itemListReducer,
     type: typeReducer,
+    item: itemReducer,
   },
 });

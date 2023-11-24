@@ -3,10 +3,12 @@ import { State } from '../../types/pokemon';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateFilteredList } from '../../store/pokemonList/pokemonList';
 import { updateFilteredTypeList } from '../../store/pokemonTypes/pokemonTypeList';
+import { updateFilteredItemList } from '../../store/itemList/itemList';
 
 function Search() {
   const pokemonLists = useSelector((state: State) => state.pokemonList.lists);
   const typeLists = useSelector((state: State) => state.typeList.lists);
+  const itemLists = useSelector((state: State) => state.itemList.lists);
   const dispatch = useDispatch();
   const selectedMenu = useSelector(
     (state: State) => state.mainMenu.selectedMainMenu
@@ -33,6 +35,17 @@ function Search() {
             item.typeInfo.name.toLowerCase().includes(searchTerm.toLowerCase())
           );
           dispatch(updateFilteredTypeList(filteredResults));
+        }
+        break;
+
+      case 'ITEMS':
+        if (searchTerm === '') {
+          dispatch(updateFilteredItemList(itemLists.originalList));
+        } else {
+          const filteredResults = itemLists.originalList.filter((item) =>
+            item.name.toLowerCase().includes(searchTerm.toLowerCase())
+          );
+          dispatch(updateFilteredItemList(filteredResults));
         }
         break;
       default:
