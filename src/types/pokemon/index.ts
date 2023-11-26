@@ -1,4 +1,5 @@
 import { IItem, IItems } from '../item/item';
+import { IRegions } from '../location';
 import { IPokemonTypes } from '../pokemonTypes';
 
 export type TpokemonList = {
@@ -41,6 +42,9 @@ export interface State {
   };
   type: SelectedType;
   item: SelectedItem;
+  regions: {
+    lists: IRegions;
+  };
 }
 
 export interface SelectedItem {

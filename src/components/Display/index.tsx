@@ -32,8 +32,8 @@ export function DisplayMonitor() {
     case 'ITEMS':
       displayComponent = <ItemsDisplay />;
       break;
-    case 'LOCATIONS':
-      displayComponent = <LocationsDisplay />;
+    case 'REGIONS':
+      displayComponent = <RegionsDisplay />;
       break;
     default:
       displayComponent = <NoSelection />;
@@ -92,7 +92,7 @@ export function ItemsDisplay() {
   );
 }
 
-export function LocationsDisplay() {
+export function RegionsDisplay() {
   return <Screen></Screen>;
 }
 

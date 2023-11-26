@@ -25,7 +25,7 @@ import { State } from '../../types/pokemon';
 import themes from '../../utils/themes';
 import PokemonType from '../Type';
 import { useEffect, useState } from 'react';
-import { getSpecie } from '../../api/locations/specie';
+import { getSpecie } from '../../api/specie/specie';
 import { FlavorTextEntry } from '../../types/specie';
 import { getPokemonTypeByName } from '../../api/pokemonTypes';
 import { TypeInfo } from '../../types/pokemonTypes';

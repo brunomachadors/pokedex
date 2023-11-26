@@ -24,7 +24,7 @@ import {
 import {
   updateFilteredList,
   updateOriginalList,
-} from '../../store/pokemonList/pokemonList';
+} from '../../store/pokemon/pokemonList';
 import { selectPokemon } from '../../store/pokemon/pokemon';
 
 import { ButtonSelect } from '../Buttons/styles';
@@ -34,7 +34,7 @@ import { IPokemonType } from '../../types/pokemonTypes';
 import {
   updateFilteredTypeList,
   updateOriginalTypeList,
-} from '../../store/pokemonTypes/pokemonTypeList';
+} from '../../store/type/pokemonTypeList';
 import { TypeColoredIcon } from '../Type/styles';
 import { selectType } from '../../store/type/pokemonType';
 import PokeballLoading from '../Loading';
@@ -44,8 +44,13 @@ import { StyledItemImage } from '../Photo/styles';
 import {
   updateFilteredItemList,
   updateOriginalItemList,
-} from '../../store/itemList/itemList';
+} from '../../store/item/itemList';
 import { selectItem } from '../../store/item/item';
+import { getAllRegions } from '../../api/locations/region';
+import {
+  filteredRegionList,
+  originalRegionList,
+} from '../../store/region/region';
 
 function Lists() {
   const selectedMenu = useSelector(
@@ -54,9 +59,10 @@ function Lists() {
 
   return (
     <ListsContainer>
-      {selectedMenu === 'POKEMON' && <PokemonList></PokemonList>}
-      {selectedMenu === 'TYPES' && <TypeList></TypeList>}
-      {selectedMenu === 'ITEMS' && <ItemList></ItemList>}
+      {selectedMenu === 'POKEMON' && <PokemonList />}
+      {selectedMenu === 'TYPES' && <TypeList />}
+      {selectedMenu === 'ITEMS' && <ItemList />}
+      {selectedMenu === 'REGIONS' && <RegionList />}
     </ListsContainer>
   );
 }
@@ -286,6 +292,52 @@ export function ItemList() {
                 <TextContainer>#{item.id}</TextContainer>
                 <TextContainer>{item.name.toUpperCase()}</TextContainer>
                 <StyledItemImage src={item.sprites?.default}></StyledItemImage>
+              </ListText>
+            </ButtonSelect>
+          ))}
+        </List>
+      )}
+    </BlackScreenList>
+  );
+}
+
+export function RegionList() {
+  const [isLoading, setIsLoading] = useState(true);
+  const regions = useSelector(
+    (state: State) => state.regions.lists.filteredList
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    async function getRegions() {
+      const allRegions = await getAllRegions();
+
+      const regionsUpdated = await Promise.all(
+        allRegions.map(async (region: { url: string }) => {
+          const info: IItem = await getItem(region.url);
+          return info;
+        })
+      );
+
+      dispatch(originalRegionList(regionsUpdated));
+      dispatch(filteredRegionList(regionsUpdated));
+
+      setIsLoading(false);
+    }
+
+    getRegions();
+  }, []);
+
+  return (
+    <BlackScreenList>
+      {isLoading ? (
+        <PokeballLoading></PokeballLoading>
+      ) : (
+        <List>
+          {regions.map((region) => (
+            <ButtonSelect key={region.name}>
+              <ListText>
+                <TextContainer>{region.name.toUpperCase()}</TextContainer>
               </ListText>
             </ButtonSelect>
           ))}

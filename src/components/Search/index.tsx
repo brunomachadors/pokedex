@@ -1,9 +1,9 @@
 import { SearchContainer, SearchInput } from './styles';
 import { State } from '../../types/pokemon';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateFilteredList } from '../../store/pokemonList/pokemonList';
-import { updateFilteredTypeList } from '../../store/pokemonTypes/pokemonTypeList';
-import { updateFilteredItemList } from '../../store/itemList/itemList';
+import { updateFilteredList } from '../../store/pokemon/pokemonList';
+import { updateFilteredTypeList } from '../../store/type/pokemonTypeList';
+import { updateFilteredItemList } from '../../store/item/itemList';
 
 function Search() {
   const pokemonLists = useSelector((state: State) => state.pokemonList.lists);
