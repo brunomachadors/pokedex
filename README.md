@@ -24,7 +24,7 @@ yarn dev
 - [x] Menu Buttons
 - [x] Pokemon Types
 - [x] Pokemon Items
-- [ ] Regions
+- [x] Regions
 
 ## Team Members
 

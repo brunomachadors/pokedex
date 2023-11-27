@@ -24,7 +24,7 @@ import {
 import {
   updateFilteredList,
   updateOriginalList,
-} from '../../store/pokemonList/pokemonList';
+} from '../../store/pokemon/pokemonList';
 import { selectPokemon } from '../../store/pokemon/pokemon';
 
 import { ButtonSelect } from '../Buttons/styles';
@@ -34,7 +34,7 @@ import { IPokemonType } from '../../types/pokemonTypes';
 import {
   updateFilteredTypeList,
   updateOriginalTypeList,
-} from '../../store/pokemonTypes/pokemonTypeList';
+} from '../../store/type/pokemonTypeList';
 import { TypeColoredIcon } from '../Type/styles';
 import { selectType } from '../../store/type/pokemonType';
 import PokeballLoading from '../Loading';
@@ -44,8 +44,15 @@ import { StyledItemImage } from '../Photo/styles';
 import {
   updateFilteredItemList,
   updateOriginalItemList,
-} from '../../store/itemList/itemList';
+} from '../../store/item/itemList';
 import { selectItem } from '../../store/item/item';
+import { getAllRegions } from '../../api/locations/region';
+import {
+  filteredRegionList,
+  originalRegionList,
+  selectRegion,
+} from '../../store/region/region';
+import { IRegion } from '../../types/location';
 
 function Lists() {
   const selectedMenu = useSelector(
@@ -54,9 +61,10 @@ function Lists() {
 
   return (
     <ListsContainer>
-      {selectedMenu === 'POKEMON' && <PokemonList></PokemonList>}
-      {selectedMenu === 'TYPES' && <TypeList></TypeList>}
-      {selectedMenu === 'ITEMS' && <ItemList></ItemList>}
+      {selectedMenu === 'POKEMON' && <PokemonList />}
+      {selectedMenu === 'TYPES' && <TypeList />}
+      {selectedMenu === 'ITEMS' && <ItemList />}
+      {selectedMenu === 'REGIONS' && <RegionList />}
     </ListsContainer>
   );
 }
@@ -66,7 +74,7 @@ export function PokemonList() {
   const pokemonLists = useSelector((state: State) => state.pokemonList.lists);
   const dispatch = useDispatch();
   const firstGeneration = getRangeByGeneration(PokemonGeneration.First);
-  const secondGeneration = getRangeByGeneration(PokemonGeneration.Second);
+  const eigthGeneration = getRangeByGeneration(PokemonGeneration.Eighth);
 
   useEffect(() => {
     async function fetchData() {
@@ -75,7 +83,7 @@ export function PokemonList() {
 
         const response: TpokemonList = await getPokemonList(
           firstGeneration.start,
-          secondGeneration.end
+          eigthGeneration.end
         );
 
         const updatedList = await Promise.all(
@@ -106,7 +114,7 @@ export function PokemonList() {
     }
 
     fetchData();
-  }, [dispatch, firstGeneration.start, secondGeneration.end]);
+  }, [dispatch, firstGeneration.start, eigthGeneration.end]);
 
   const handleClick = (pokemon: Tresult) => {
     dispatch(selectPokemon(pokemon));
@@ -279,13 +287,76 @@ export function ItemList() {
           {filteredItemList.map((item) => (
             <ButtonSelect
               key={item.id}
-              color={themes.colors.buttonColor.dark}
+              color={
+                themes.colors.itemTypeColorMap[
+                  item.category
+                    ?.name as keyof typeof themes.colors.itemTypeColorMap
+                ]
+              }
               onClick={() => handleClick(item)}
             >
               <ListText>
                 <TextContainer>#{item.id}</TextContainer>
                 <TextContainer>{item.name.toUpperCase()}</TextContainer>
                 <StyledItemImage src={item.sprites?.default}></StyledItemImage>
+              </ListText>
+            </ButtonSelect>
+          ))}
+        </List>
+      )}
+    </BlackScreenList>
+  );
+}
+
+export function RegionList() {
+  const [isLoading, setIsLoading] = useState(true);
+  const regions = useSelector(
+    (state: State) => state.regions.lists.filteredList
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    async function getRegions() {
+      const allRegions = await getAllRegions();
+
+      const regionsUpdated = await Promise.all(
+        allRegions.map(async (region: { url: string }) => {
+          const info: IItem = await getItem(region.url);
+          return info;
+        })
+      );
+
+      dispatch(originalRegionList(regionsUpdated));
+      dispatch(filteredRegionList(regionsUpdated));
+
+      setIsLoading(false);
+    }
+
+    getRegions();
+  }, [dispatch]);
+
+  const handleClick = (region: IRegion) => {
+    dispatch(selectRegion(region));
+  };
+
+  return (
+    <BlackScreenList>
+      {isLoading ? (
+        <PokeballLoading></PokeballLoading>
+      ) : (
+        <List>
+          {regions.map((region) => (
+            <ButtonSelect
+              key={region.name}
+              color={
+                themes.colors.regionColorMap[
+                  region.name as keyof typeof themes.colors.regionColorMap
+                ]
+              }
+              onClick={() => handleClick(region)}
+            >
+              <ListText>
+                <TextContainer>{region.name.toUpperCase()}</TextContainer>
               </ListText>
             </ButtonSelect>
           ))}

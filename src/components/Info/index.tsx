@@ -18,6 +18,12 @@ import {
   ItemAttributesContainer,
   ItemAttributes,
   ItemShortEffect,
+  RegionInfoContainer,
+  RegionId,
+  RegionName,
+  VersionGroups,
+  Versions,
+  MainGeneration,
 } from './styles';
 import { selectInfoMenu } from '../../store/info/info';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,7 +31,7 @@ import { State } from '../../types/pokemon';
 import themes from '../../utils/themes';
 import PokemonType from '../Type';
 import { useEffect, useState } from 'react';
-import { getSpecie } from '../../api/locations/specie';
+import { getSpecie } from '../../api/specie/specie';
 import { FlavorTextEntry } from '../../types/specie';
 import { getPokemonTypeByName } from '../../api/pokemonTypes';
 import { TypeInfo } from '../../types/pokemonTypes';
@@ -133,8 +139,6 @@ export function PokemonTypeInfo() {
     loadType();
   }, [selectedType]);
 
-  console.log(pokemonType);
-
   return (
     <TextContainer>
       <Name>{pokemonType?.name.toUpperCase()}</Name>
@@ -214,5 +218,27 @@ export function ItemInfo() {
         ))}
       </ItemAttributesContainer>
     </ItemInfoContainer>
+  );
+}
+
+export function RegionInfo() {
+  const selectedRegion = useSelector(
+    (state: State) => state.regions.lists.selected
+  );
+
+  return (
+    <RegionInfoContainer>
+      <RegionId>#{selectedRegion.id}</RegionId>
+      <RegionName>{selectedRegion.name.toUpperCase()}</RegionName>
+      <MainGeneration>
+        {selectedRegion.main_generation?.name.toUpperCase()}
+      </MainGeneration>
+      <Versions>
+        VERSIONS:
+        {selectedRegion.version_groups?.map((version) => (
+          <VersionGroups>{version.name.toUpperCase()}</VersionGroups>
+        ))}
+      </Versions>
+    </RegionInfoContainer>
   );
 }

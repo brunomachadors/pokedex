@@ -265,3 +265,69 @@ export const ItemAttributes = styled.li`
     font-size: 4vw;
   }
 `;
+
+export const RegionInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'RetroGaming', sans-serif;
+  width: 100%;
+
+  height: 100%;
+`;
+
+export const RegionId = styled.div`
+  color: white;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 2vw;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 4vw;
+  }
+`;
+
+export const RegionName = styled.div`
+  color: white;
+  font-size: 3vw;
+  @media screen and (max-width: 1024px) {
+    font-size: 2vw;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 4vw;
+  }
+`;
+
+export const Versions = styled.div`
+  color: white;
+  font-size: 0.8vw;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+  border: 1px solid white;
+  padding: 0.5vw;
+  border-radius: 15px;
+  background-color: #00000098;
+  font-family: 'RetroGaming', sans-serif;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 3vw;
+    width: 98%;
+    height: 60%;
+    justify-content: space-evenly;
+  }
+`;
+
+export const VersionGroups = styled.div`
+  font-size: 0.5vw;
+`;
+
+export const MainGeneration = styled.div`
+  color: black;
+  font-size: 1vw;
+`;

@@ -1,14 +1,16 @@
 import { SearchContainer, SearchInput } from './styles';
 import { State } from '../../types/pokemon';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateFilteredList } from '../../store/pokemonList/pokemonList';
-import { updateFilteredTypeList } from '../../store/pokemonTypes/pokemonTypeList';
-import { updateFilteredItemList } from '../../store/itemList/itemList';
+import { updateFilteredList } from '../../store/pokemon/pokemonList';
+import { updateFilteredTypeList } from '../../store/type/pokemonTypeList';
+import { updateFilteredItemList } from '../../store/item/itemList';
+import { filteredRegionList } from '../../store/region/region';
 
 function Search() {
   const pokemonLists = useSelector((state: State) => state.pokemonList.lists);
   const typeLists = useSelector((state: State) => state.typeList.lists);
   const itemLists = useSelector((state: State) => state.itemList.lists);
+  const regionLists = useSelector((state: State) => state.regions.lists);
   const dispatch = useDispatch();
   const selectedMenu = useSelector(
     (state: State) => state.mainMenu.selectedMainMenu
@@ -46,6 +48,17 @@ function Search() {
             item.name.toLowerCase().includes(searchTerm.toLowerCase())
           );
           dispatch(updateFilteredItemList(filteredResults));
+        }
+        break;
+
+      case 'REGIONS':
+        if (searchTerm === '') {
+          dispatch(filteredRegionList(regionLists.originalList));
+        } else {
+          const filteredResults = regionLists.originalList.filter((region) =>
+            region.name.toLowerCase().includes(searchTerm.toLowerCase())
+          );
+          dispatch(filteredRegionList(filteredResults));
         }
         break;
       default:

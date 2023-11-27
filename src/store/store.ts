@@ -3,11 +3,12 @@ import { configureStore } from '@reduxjs/toolkit';
 import pokemonReducer from './pokemon/pokemon';
 import infoMenuReducer from './info/info';
 import mainMenuReducer from './mainMenu/mainMenu';
-import pokemonListReducer from './pokemonList/pokemonList';
-import pokemonListTypeReducer from './pokemonTypes/pokemonTypeList';
+import pokemonListReducer from './pokemon/pokemonList';
+import pokemonListTypeReducer from './type/pokemonTypeList';
 import typeReducer from './type/pokemonType';
-import itemListReducer from './itemList/itemList';
+import itemListReducer from './item/itemList';
 import itemReducer from './item/item';
+import regionListReducer from './region/region';
 
 export const store = configureStore({
   reducer: {
@@ -19,5 +20,6 @@ export const store = configureStore({
     itemList: itemListReducer,
     type: typeReducer,
     item: itemReducer,
+    regions: regionListReducer,
   },
 });

@@ -36,7 +36,6 @@ export const List = styled.ul`
   padding-inline-start: 0;
   overflow-y: auto;
   scrollbar-width: thin;
-  border: solid 3px #000000;
 
   &::-webkit-scrollbar {
     width: 30px;
@@ -87,12 +86,12 @@ export const List = styled.ul`
 `;
 
 export const ListText = styled.li`
-  font-size: 1vw;
+  font-size: 2vw;
   color: white;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   font-family: 'RetroGaming', sans-serif;
   text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black,
     1px 1px 1px black;
