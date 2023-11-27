@@ -1,5 +1,6 @@
 export const MAPS = {
-  kanto: 'https://archives.bulbagarden.net/media/upload/6/64/JohtoMap.png',
+  kanto:
+    'https://archives.bulbagarden.net/media/upload/2/25/LGPE_Kanto_Map.png',
   johto: 'https://archives.bulbagarden.net/media/upload/6/64/JohtoMap.png',
   hoenn: 'https://archives.bulbagarden.net/media/upload/8/85/Hoenn_ORAS.png',
   sinnoh:
