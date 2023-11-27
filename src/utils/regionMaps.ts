@@ -1,12 +1,18 @@
 export const MAPS = {
-  kanto: 'maps/kanto.png',
-  johto: 'maps/johto.png',
-  hoenn: 'maps/hoenn.png',
-  sinnoh: 'maps/sinnoh.png',
-  unova: 'maps/unova.png',
-  kalos: 'maps/kalos.png',
-  alola: 'maps/alola.png',
-  galar: 'maps/galar.png',
-  hisui: 'maps/hisui.png',
-  paldea: 'maps/paldea.png',
+  kanto:
+    'https://archives.bulbagarden.net/media/upload/2/25/LGPE_Kanto_Map.png',
+  johto: 'https://archives.bulbagarden.net/media/upload/6/64/JohtoMap.png',
+  hoenn: 'https://archives.bulbagarden.net/media/upload/8/85/Hoenn_ORAS.png',
+  sinnoh:
+    'https://archives.bulbagarden.net/media/upload/0/08/Sinnoh_BDSP_artwork.png',
+  unova:
+    'https://archives.bulbagarden.net/media/upload/f/fc/Unova_B2W2_alt.png',
+  kalos: 'https://archives.bulbagarden.net/media/upload/8/8a/Kalos_alt.png',
+  alola:
+    'https://www.pockettactics.com/wp-content/sites/pockettactics/2022/08/pokemon-regions-6.jpg',
+  galar: 'https://archives.bulbagarden.net/media/upload/c/ce/Galar_artwork.png',
+  hisui:
+    'https://archives.bulbagarden.net/media/upload/2/22/Legends_Arceus_Hisui.png',
+  paldea:
+    'https://archives.bulbagarden.net/media/upload/f/fd/Paldea_artwork.png',
 };
