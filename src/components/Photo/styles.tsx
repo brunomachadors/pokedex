@@ -111,7 +111,8 @@ export const StyledMap = styled.div`
 export const StyledMapDisplay = styled.div``;
 
 export const StyledImageMap = styled.img`
-  max-width: 100%;
+  max-width: 80%;
+  max-height: 80%;
   height: auto;
   border-radius: 8px;
   margin-bottom: 16px;

@@ -14,5 +14,5 @@ export const MAPS = {
   hisui:
     'https://archives.bulbagarden.net/media/upload/thumb/2/22/Legends_Arceus_Hisui.png/800px-Legends_Arceus_Hisui.png',
   paldea:
-    'https://archives.bulbagarden.net/media/upload/f/fd/Paldea_artwork.png',
+    'https://archives.bulbagarden.net/media/upload/thumb/f/fd/Paldea_artwork.png/800px-Paldea_artwork.png',
 };
