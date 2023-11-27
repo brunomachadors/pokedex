@@ -17,7 +17,7 @@ export const ButtonPhoto = styled.button`
   font-size: 0.5vw;
   font-family: 'RetroGaming', sans-serif;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 2vw;
   }
 `;
@@ -31,7 +31,7 @@ export const ButtonInfo = styled.button`
   font-size: 0.5vw;
   font-family: 'RetroGaming', sans-serif;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 2vw;
   }
 `;
@@ -57,6 +57,14 @@ export const TextContainer = styled.div`
   justify-content: space-around;
   flex-direction: column;
   gap: 10px;
+
+  @media screen and (max-width: 1280px) {
+    gap: 5px;
+  }
+
+  @media screen and (max-width: 600px) {
+    gap: 0px;
+  }
 `;
 
 export const Name = styled.div`
@@ -65,12 +73,12 @@ export const Name = styled.div`
   margin-top: 5px;
   font-family: 'RetroGaming', sans-serif;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 3vw;
   }
 
   @media screen and (max-width: 600px) {
-    font-size: 4vw;
+    font-size: 5vw;
   }
 `;
 
@@ -88,11 +96,21 @@ export const DoubleDamage = styled.div`
   background-color: #00000098;
   font-family: 'RetroGaming', sans-serif;
 
-  @media screen and (max-width: 1024px) {
-    font-size: 3vw;
+  @media screen and (max-width: 1280px) {
+    font-size: 2vw;
     width: 90%;
     height: 60%;
     justify-content: space-evenly;
+    padding: 10px;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 2vw;
+    width: 80%;
+    height: 50%;
+    justify-content: space-evenly;
+    padding: 5px;
+    gap: 0;
   }
 `;
 
@@ -106,7 +124,7 @@ export const DoubleDamageFrom = styled.div`
   gap: 5px;
   flex-direction: row;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 3vw;
     justify-content: center;
     margin-right: 0px;
@@ -123,7 +141,7 @@ export const DoubleDamageTo = styled.div`
   gap: 5px;
   flex-direction: row;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 3vw;
     justify-content: space-around;
   }
@@ -135,7 +153,7 @@ export const Damage = styled.div`
   margin-top: 5px;
   display: flex;
   flex-direction: row;
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 2vw;
     justify-content: center;
   }
@@ -156,12 +174,13 @@ export const Flavour = styled.div`
   max-height: 40%;
   padding: 10px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 2vw;
   }
 
   @media screen and (max-width: 600px) {
     font-size: 2.5vw;
+    width: 70%;
   }
 `;
 
@@ -176,7 +195,7 @@ export const Imune = styled.div`
   flex-direction: column-reverse;
   font-family: 'RetroGaming', sans-serif;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 3vw;
   }
 `;
@@ -197,7 +216,7 @@ export const ItemInfoContainer = styled.div`
   margin-top: 1vw;
   gap: 0.4vw;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     gap: 2vw;
   }
 
@@ -211,7 +230,7 @@ export const ItemName = styled.div`
   color: white;
 
   font-size: 1vw;
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 2vw;
   }
 
@@ -223,7 +242,7 @@ export const ItemName = styled.div`
 export const ItemId = styled.div`
   color: white;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 2vw;
   }
 
@@ -242,7 +261,7 @@ export const ItemShortEffect = styled.div`
   text-align: center;
   border: 1px solid black;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 2vw;
   }
 
@@ -263,7 +282,7 @@ export const ItemAttributes = styled.li`
   font-size: 0.8vw;
   font-family: 'RetroGaming', sans-serif;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 2vw;
   }
 
@@ -286,8 +305,8 @@ export const RegionInfoContainer = styled.div`
 export const RegionId = styled.div`
   color: white;
 
-  @media screen and (max-width: 1024px) {
-    font-size: 2vw;
+  @media screen and (max-width: 1280px) {
+    font-size: 3vw;
   }
 
   @media screen and (max-width: 480px) {
@@ -298,8 +317,8 @@ export const RegionId = styled.div`
 export const RegionName = styled.div`
   color: white;
   font-size: 3vw;
-  @media screen and (max-width: 1024px) {
-    font-size: 2vw;
+  @media screen and (max-width: 1280px) {
+    font-size: 4vw;
   }
 
   @media screen and (max-width: 600px) {
@@ -321,8 +340,8 @@ export const Versions = styled.div`
   background-color: #00000098;
   font-family: 'RetroGaming', sans-serif;
 
-  @media screen and (max-width: 1024px) {
-    font-size: 3vw;
+  @media screen and (max-width: 1280px) {
+    font-size: 2vw;
     width: 90%;
     height: 60%;
     justify-content: space-evenly;
@@ -336,6 +355,10 @@ export const Versions = styled.div`
 export const VersionGroups = styled.div`
   font-size: 0.5vw;
 
+  @media screen and (max-width: 1280px) {
+    font-size: 1.5vw;
+  }
+
   @media screen and (max-width: 600px) {
     font-size: 2vw;
   }
@@ -344,6 +367,10 @@ export const VersionGroups = styled.div`
 export const MainGeneration = styled.div`
   color: black;
   font-size: 1vw;
+
+  @media screen and (max-width: 1280px) {
+    font-size: 2vw;
+  }
 
   @media screen and (max-width: 600px) {
     font-size: 3vw;

@@ -12,6 +12,8 @@ import ButtonsMenu from '../Buttons';
 import Header from '../Header';
 import Lists from '../Lists';
 import { Music } from '../Music';
+import { useSelector } from 'react-redux';
+import { State } from '../../types/pokemon';
 
 export function PokedexWeb() {
   return (
@@ -36,11 +38,26 @@ export function PokedexWeb() {
 }
 
 export function PokedexMobile() {
+  const menu = useSelector((state: State) => state.mainMenu.selectedMainMenu);
   return (
     <PokedexLeftContent>
       <DisplayMonitor />
       <ButtonsMenu />
-      <Search />
+      {menu !== '' && <Search />}
+      <Lists />
+    </PokedexLeftContent>
+  );
+}
+
+export function PokedexTablet() {
+  const menu = useSelector((state: State) => state.mainMenu.selectedMainMenu);
+
+  return (
+    <PokedexLeftContent>
+      <Display />
+      <DisplayMonitor />
+      <ButtonsMenu />
+      {menu !== '' && <Search />}
       <Lists />
     </PokedexLeftContent>
   );

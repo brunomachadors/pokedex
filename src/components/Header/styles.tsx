@@ -8,7 +8,7 @@ export const PokedexHeaderContainer = styled.div`
   align-items: center;
   position: relative;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     display: none;
   }
 `;
@@ -44,7 +44,7 @@ export const PokedexHeaderBall = styled.div`
 
   animation: ${pulseAnimation} 3s ease-in-out infinite;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     display: none;
   }
 `;

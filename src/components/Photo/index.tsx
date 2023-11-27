@@ -7,7 +7,6 @@ import {
   StyledImage,
   StyledImageMap,
   StyledItemImageLarge,
-  StyledMap,
   StyledModal,
   StyledRegionImage,
   StyledRegionImageContainer,
@@ -102,9 +101,7 @@ export function RegionPhoto() {
       {isModalOpen && (
         <StyledModal onClick={closeModal}>
           <ModalContent>
-            <StyledMap>
-              <StyledImageMap src={mapSource} alt="Region Map" />
-            </StyledMap>
+            <StyledImageMap src={mapSource} alt="Region Map" />
           </ModalContent>
         </StyledModal>
       )}

@@ -10,12 +10,6 @@ export const ButtonContainer = styled.div`
   height: 10%;
   gap: 6px;
   cursor: pointer;
-
-  @media screen and (max-width: 1024px) {
-  }
-
-  @media (max-width: 480px) {
-  }
 `;
 
 export const Button = styled.button<ButtonProps>`
@@ -36,7 +30,7 @@ export const Button = styled.button<ButtonProps>`
   transition: background-color 0.1s;
   cursor: pointer;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 4vw;
     width: 30%;
   }
@@ -53,7 +47,12 @@ export const ButtonSelect = styled.button`
     props.color ? props.color : 'linear-gradient(to right, #afafaf, #929292)'};
   cursor: pointer;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1280px) {
+    width: 300px;
+    padding: 10px;
+  }
+
+  @media (max-width: 600px) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,14 +62,10 @@ export const ButtonSelect = styled.button`
 
 export const ButtonText = styled.p`
   position: relative;
-  margin-top: 200px;
   font-size: 1vw;
-  color: #350000;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 2vw;
-    margin-top: 0;
-    color: white;
   }
 
   @media (max-width: 600px) {

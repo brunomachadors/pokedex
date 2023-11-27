@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react';
-import { PokedexMobile, PokedexWeb } from '../../components/Pokedex';
+import {
+  PokedexMobile,
+  PokedexTablet,
+  PokedexWeb,
+} from '../../components/Pokedex';
 import { useWindowSize } from '../../utils/useWindowSize.hook';
 
 function Home() {
@@ -10,7 +14,7 @@ function Home() {
     if (width < 600) {
       setComponent(<PokedexMobile />);
     } else if (width < 1280) {
-      setComponent(<div>TABLET</div>);
+      setComponent(<PokedexTablet></PokedexTablet>);
     } else {
       setComponent(<PokedexWeb />);
     }

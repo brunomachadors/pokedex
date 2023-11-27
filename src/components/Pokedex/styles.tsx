@@ -9,7 +9,7 @@ export const PokedexContainer = styled.div`
   flex-direction: row;
   margin: 1vw;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     width: 100%;
     height: 100%;
     flex-direction: column-reverse;
@@ -37,7 +37,7 @@ export const PokedexLeftSide = styled.div`
   box-shadow: inset 0 0 15px rgba(251, 56, 56, 0.5);
   padding-bottom: 10px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     width: 100%;
     height: 50%;
     flex-direction: column;
@@ -66,7 +66,7 @@ export const PokedexRightSide = styled.div`
   box-shadow: inset 0 0 15px rgba(251, 56, 56, 0.5);
   margin-bottom: 10px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     width: 100%;
     height: 50%;
     flex-direction: row;
@@ -96,7 +96,7 @@ export const PokedexLeftContent = styled.div`
   flex-direction: column;
   padding: 10px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     width: 100%;
     height: 100%;
     flex-direction: column;
@@ -105,10 +105,8 @@ export const PokedexLeftContent = styled.div`
     border-radius: 0px;
     padding: 0;
     margin-bottom: 0;
-    border-left: none;
-    border-top: none;
-    justify-content: space-around;
     border: none;
+    gap: 20px;
   }
 
   @media (max-width: 720px) {
@@ -129,7 +127,7 @@ export const PokedexRightContent = styled.div`
   margin-left: 5px;
   gap: 1vw;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     width: 100%;
     height: 100%;
     flex-direction: column;

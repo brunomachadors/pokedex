@@ -8,12 +8,15 @@ export const ListsContainer = styled.div`
   justify-content: center;
   margin-bottom: 15px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     flex-direction: column;
     height: 30%;
+    width: 100%;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 600px) {
+    height: 40%;
+    width: 80%;
   }
 `;
 
@@ -43,11 +46,25 @@ export const List = styled.ul`
     background-color: #494949;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     height: 100%;
+    flex-direction: row;
+    width: 100%;
 
     &::-webkit-scrollbar {
-      display: none;
+      height: 30px;
+      display: flex;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #ff0101;
+      border: 2px solid black;
+      height: 10vw;
+      width: 5vw;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #494949;
     }
   }
 
@@ -63,9 +80,9 @@ export const List = styled.ul`
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: #15a835;
+      background-color: #ff0101;
       border: 2px solid black;
-      height: 10vw;
+      height: 5vw;
     }
 
     &::-webkit-scrollbar-track {
@@ -86,19 +103,16 @@ export const ListText = styled.li`
     1px 1px 1px black;
   gap: 0.5vw;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     flex-direction: column-reverse;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 100%;
+    width: 150px;
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: 600px) {
     flex-direction: row;
     width: 100%;
-  }
-
-  @media (max-width: 720px) {
-    flex-direction: row;
   }
 `;
 
@@ -124,12 +138,12 @@ export const BlackScreenList = styled.div`
   overflow: hidden;
   flex-direction: column;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
+    width: 90%;
   }
 
   @media (max-width: 600px) {
     width: 100%;
-
     align-items: center;
   }
 `;
@@ -137,7 +151,7 @@ export const BlackScreenList = styled.div`
 export const TextContainer = styled.div`
   font-size: 0.8vw;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 2vw;
     overflow-x: auto;
   }
