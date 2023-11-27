@@ -26,6 +26,7 @@ yarn dev
 - [x] Pokemon Items
 - [x] Regions
 - [x] Mobile Component
+- [x] Tablet Component
 
 ## Team Members
 
