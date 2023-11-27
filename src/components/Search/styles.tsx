@@ -11,12 +11,11 @@ export const SearchInput = styled.input`
   text-align: center;
 
   @media screen and (max-width: 1024px) {
-    position: relative;
-    margin-top: 150px;
+    font-size: 3vw;
   }
 
-  @media screen and (max-width: 1024px) {
-    font-size: 4vw;
+  @media screen and (max-width: 600px) {
+    font-size: 3vw;
   }
 `;
 
@@ -24,11 +23,9 @@ export const SearchContainer = styled.div`
   height: 8%;
   width: 60%;
 
-  @media (max-width: 480px) {
-    position: absolute;
-    margin-bottom: 600px;
-    width: 75%;
-    height: 5%;
+  @media (max-width: 600px) {
+    width: 74%;
+    height: 6%;
   }
 `;
 

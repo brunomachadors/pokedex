@@ -3,25 +3,17 @@ import styled from 'styled-components';
 export const ListsContainer = styled.div`
   display: flex;
   height: 40%;
-  width: 100%;
+  width: 80%;
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
-    width: 100%;
-    height: 20%;
-    position: absolute;
-    margin-top: 600px;
+    height: 30%;
   }
 
   @media screen and (max-width: 480px) {
-    flex-direction: column;
-    width: 100%;
-    height: 35%;
-    position: absolute;
-    margin-top: 500px;
   }
 `;
 
@@ -52,8 +44,6 @@ export const List = styled.ul`
   }
 
   @media screen and (max-width: 1024px) {
-    flex-direction: row;
-    width: 100%;
     height: 100%;
 
     &::-webkit-scrollbar {
@@ -61,9 +51,8 @@ export const List = styled.ul`
     }
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 600px) {
     flex-direction: column;
-    width: 100%;
     height: 100%;
     align-items: flex-start;
     justify-content: flex-start;
@@ -101,7 +90,6 @@ export const ListText = styled.li`
     flex-direction: column-reverse;
     justify-content: space-around;
     height: 100%;
-    width: 150px;
   }
 
   @media (max-width: 720px) {
@@ -137,16 +125,11 @@ export const BlackScreenList = styled.div`
   flex-direction: column;
 
   @media screen and (max-width: 1024px) {
+  }
+
+  @media (max-width: 600px) {
     width: 100%;
-  }
 
-  @media (max-width: 720px) {
-    width: 70%;
-    align-items: center;
-  }
-
-  @media screen and (max-width: 480px) {
-    width: 75%;
     align-items: center;
   }
 `;
@@ -159,8 +142,8 @@ export const TextContainer = styled.div`
     overflow-x: auto;
   }
 
-  @media screen and (max-width: 480px) {
-    font-size: 4vw;
+  @media screen and (max-width: 600px) {
+    font-size: 3vw;
     overflow-y: auto;
   }
 `;

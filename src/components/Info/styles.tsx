@@ -69,8 +69,8 @@ export const Name = styled.div`
     font-size: 3vw;
   }
 
-  @media screen and (max-width: 480px) {
-    font-size: 6vw;
+  @media screen and (max-width: 600px) {
+    font-size: 4vw;
   }
 `;
 
@@ -90,7 +90,7 @@ export const DoubleDamage = styled.div`
 
   @media screen and (max-width: 1024px) {
     font-size: 3vw;
-    width: 98%;
+    width: 90%;
     height: 60%;
     justify-content: space-evenly;
   }
@@ -154,9 +154,14 @@ export const Flavour = styled.div`
   overflow-y: auto;
   font-family: 'RetroGaming', sans-serif;
   max-height: 40%;
+  padding: 10px;
 
   @media screen and (max-width: 1024px) {
     font-size: 2vw;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 2.5vw;
   }
 `;
 
@@ -180,6 +185,7 @@ export const ImunityTypeContainer = styled.div`
   display: flex;
   gap: 10px;
   font-family: 'RetroGaming', sans-serif;
+  justify-content: space-around;
 `;
 
 export const ItemInfoContainer = styled.div`
@@ -195,9 +201,9 @@ export const ItemInfoContainer = styled.div`
     gap: 2vw;
   }
 
-  @media screen and (max-width: 480px) {
-    margin-top: 2vw;
+  @media screen and (max-width: 600px) {
     gap: 2vw;
+    height: 100%;
   }
 `;
 
@@ -209,7 +215,7 @@ export const ItemName = styled.div`
     font-size: 2vw;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 600px) {
     font-size: 4vw;
   }
 `;
@@ -221,8 +227,8 @@ export const ItemId = styled.div`
     font-size: 2vw;
   }
 
-  @media screen and (max-width: 480px) {
-    font-size: 4vw;
+  @media screen and (max-width: 600px) {
+    font-size: 3vw;
   }
 `;
 
@@ -240,8 +246,8 @@ export const ItemShortEffect = styled.div`
     font-size: 2vw;
   }
 
-  @media screen and (max-width: 480px) {
-    font-size: 4vw;
+  @media screen and (max-width: 600px) {
+    font-size: 2.2vw;
   }
 `;
 
@@ -253,7 +259,7 @@ export const ItemAttributesContainer = styled.ul`
   margin-top: 0;
 `;
 export const ItemAttributes = styled.li`
-  color: black;
+  color: #ffffff;
   font-size: 0.8vw;
   font-family: 'RetroGaming', sans-serif;
 
@@ -261,8 +267,8 @@ export const ItemAttributes = styled.li`
     font-size: 2vw;
   }
 
-  @media screen and (max-width: 480px) {
-    font-size: 4vw;
+  @media screen and (max-width: 600px) {
+    font-size: 3vw;
   }
 `;
 
@@ -296,7 +302,7 @@ export const RegionName = styled.div`
     font-size: 2vw;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 600px) {
     font-size: 4vw;
   }
 `;
@@ -317,17 +323,29 @@ export const Versions = styled.div`
 
   @media screen and (max-width: 1024px) {
     font-size: 3vw;
-    width: 98%;
+    width: 90%;
     height: 60%;
     justify-content: space-evenly;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 3vw;
   }
 `;
 
 export const VersionGroups = styled.div`
   font-size: 0.5vw;
+
+  @media screen and (max-width: 600px) {
+    font-size: 2vw;
+  }
 `;
 
 export const MainGeneration = styled.div`
   color: black;
   font-size: 1vw;
+
+  @media screen and (max-width: 600px) {
+    font-size: 3vw;
+  }
 `;

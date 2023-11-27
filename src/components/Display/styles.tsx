@@ -57,7 +57,6 @@ export const WhiteScreen = styled.div`
   border-top: 6px solid #680708;
 
   @media screen and (max-width: 1024px) {
-    position: absolute;
     width: 70%;
     height: 40%;
   }
@@ -77,11 +76,11 @@ export const StyledItemCategory = styled.div`
   font-family: 'RetroGaming', sans-serif;
 
   @media screen and (max-width: 1024px) {
-    font-size: 3vw;
+    font-size: 1vw;
   }
 
-  @media screen and (max-width: 480px) {
-    font-size: 5vw;
+  @media screen and (max-width: 600px) {
+    font-size: 4vw;
   }
 `;
 
@@ -98,7 +97,7 @@ export const Categoryitem = styled.div`
     font-size: 2vw;
   }
 
-  @media screen and (max-width: 480px) {
-    font-size: 5vw;
+  @media screen and (max-width: 600px) {
+    font-size: 4vw;
   }
 `;

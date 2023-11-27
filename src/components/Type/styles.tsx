@@ -12,6 +12,12 @@ export const StyledType = styled.div`
   @media screen and (max-width: 1024px) {
     font-size: 3vw;
   }
+
+  @media screen and (max-width: 600px) {
+    padding: 0 15px;
+    font-size: 2vw;
+    width: 30%;
+  }
 `;
 
 export const PokemonTypeContainer = styled.div`
@@ -20,8 +26,9 @@ export const PokemonTypeContainer = styled.div`
   align-items: center;
   gap: 20px;
   flex-direction: row;
+
   @media screen and (max-width: 1024px) {
-    width: 80%;
+    width: 90%;
   }
 `;
 
@@ -41,7 +48,7 @@ export const TypeIcon = styled.img`
     padding: 10px;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 600px) {
   }
 `;
 
@@ -59,11 +66,7 @@ export const TypeColoredIcon = styled.img`
     padding: 6px;
   }
 
-  @media (max-width: 720px) {
-    width: 12px;
-  }
-
-  @media screen and (max-width: 480px) {
-    width: 20px;
+  @media (max-width: 600px) {
+    width: 5vw;
   }
 `;

@@ -99,7 +99,7 @@ export const PokedexLeftContent = styled.div`
   @media screen and (max-width: 1024px) {
     width: 100%;
     height: 100%;
-    flex-direction: column-reverse;
+    flex-direction: column;
     margin: 0;
     padding: 0;
     border-radius: 0px;

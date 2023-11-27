@@ -7,19 +7,14 @@ interface ButtonProps {
 export const ButtonContainer = styled.div`
   display: flex;
   width: 75%;
-  height: 14%;
+  height: 10%;
   gap: 6px;
   cursor: pointer;
 
   @media screen and (max-width: 1024px) {
-    position: absolute;
-    background-color: transparent;
   }
 
   @media (max-width: 480px) {
-    position: absolute;
-    margin-bottom: 500px;
-    height: 12%;
   }
 `;
 
@@ -44,9 +39,6 @@ export const Button = styled.button<ButtonProps>`
   @media screen and (max-width: 1024px) {
     font-size: 4vw;
     width: 30%;
-    height: 50%;
-    position: relative;
-    margin-top: 40px;
   }
 
   @media (max-width: 720px) {
@@ -81,8 +73,7 @@ export const ButtonText = styled.p`
     color: white;
   }
 
-  @media (max-width: 720px) {
-    font-size: 8px;
+  @media (max-width: 600px) {
     align-items: center;
     justify-content: center;
   }

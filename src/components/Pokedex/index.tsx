@@ -13,24 +13,35 @@ import Header from '../Header';
 import Lists from '../Lists';
 import { Music } from '../Music';
 
-export function Pokedex() {
+export function PokedexWeb() {
   return (
     <PokedexContainer>
       <PokedexLeftSide>
-        <Header></Header>
+        <Header />
         <PokedexLeftContent>
-          <Display></Display>
-          <ButtonsMenu></ButtonsMenu>
-          <Search></Search>
-          <Music></Music>
+          <Display />
+          <ButtonsMenu />
+          <Search />
+          <Music />
         </PokedexLeftContent>
       </PokedexLeftSide>
       <PokedexRightSide>
         <PokedexRightContent>
-          <DisplayMonitor></DisplayMonitor>
-          <Lists></Lists>
+          <DisplayMonitor />
+          <Lists />
         </PokedexRightContent>
       </PokedexRightSide>
     </PokedexContainer>
+  );
+}
+
+export function PokedexMobile() {
+  return (
+    <PokedexLeftContent>
+      <DisplayMonitor />
+      <ButtonsMenu />
+      <Search />
+      <Lists />
+    </PokedexLeftContent>
   );
 }
