@@ -12,8 +12,8 @@ export const BlackScreen = styled.div`
   border-radius: 10px;
   margin-top: 5%;
 
-  @media screen and (max-width: 1024px) {
-    display: none;
+  @media screen and (max-width: 1280px) {
+    height: 10%;
   }
 `;
 
@@ -27,16 +27,15 @@ export const AnimatedText = styled.div`
   font-size: 2vw;
   color: yellow;
 
-  @media screen and (max-width: 1024px) {
-    display: none;
+  @media screen and (max-width: 1280px) {
+    font-size: 7vw;
   }
 `;
 
 export const Word = styled.div`
   display: inline-block;
   animation: ${wordAnimation} 3s linear infinite;
-  @media screen and (max-width: 1024px) {
-    display: none;
+  @media screen and (max-width: 1280px) {
   }
 `;
 
@@ -56,8 +55,7 @@ export const WhiteScreen = styled.div`
   border-right: 6px solid #680708;
   border-top: 6px solid #680708;
 
-  @media screen and (max-width: 1024px) {
-    position: absolute;
+  @media screen and (max-width: 1280px) {
     width: 70%;
     height: 40%;
   }
@@ -76,12 +74,12 @@ export const StyledItemCategory = styled.div`
   border-radius: 10px;
   font-family: 'RetroGaming', sans-serif;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 3vw;
   }
 
-  @media screen and (max-width: 480px) {
-    font-size: 5vw;
+  @media screen and (max-width: 600px) {
+    font-size: 4vw;
   }
 `;
 
@@ -94,11 +92,11 @@ export const Categoryitem = styled.div`
   flex-direction: column;
   gap: 10px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 2vw;
   }
 
-  @media screen and (max-width: 480px) {
-    font-size: 5vw;
+  @media screen and (max-width: 600px) {
+    font-size: 4vw;
   }
 `;

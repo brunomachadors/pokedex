@@ -9,6 +9,14 @@ const PokeballGif = styled.img.attrs({
   alt: 'Pikachu Loading',
 })`
   width: 100%;
+
+  @media screen and (max-width: 1280px) {
+    width: 30%;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 30%;
+  }
 `;
 
 export default PokeballLoading;

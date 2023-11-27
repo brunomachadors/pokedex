@@ -3,25 +3,20 @@ import styled from 'styled-components';
 export const ListsContainer = styled.div`
   display: flex;
   height: 40%;
-  width: 100%;
+  width: 80%;
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     flex-direction: column;
+    height: 30%;
     width: 100%;
-    height: 20%;
-    position: absolute;
-    margin-top: 600px;
   }
 
-  @media screen and (max-width: 480px) {
-    flex-direction: column;
-    width: 100%;
-    height: 35%;
-    position: absolute;
-    margin-top: 500px;
+  @media screen and (max-width: 600px) {
+    height: 40%;
+    width: 80%;
   }
 `;
 
@@ -51,19 +46,30 @@ export const List = styled.ul`
     background-color: #494949;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
+    height: 100%;
     flex-direction: row;
     width: 100%;
-    height: 100%;
 
     &::-webkit-scrollbar {
-      display: none;
+      height: 30px;
+      display: flex;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #ff0101;
+      border: 2px solid black;
+      height: 10vw;
+      width: 5vw;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #494949;
     }
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 600px) {
     flex-direction: column;
-    width: 100%;
     height: 100%;
     align-items: flex-start;
     justify-content: flex-start;
@@ -74,9 +80,9 @@ export const List = styled.ul`
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: #15a835;
+      background-color: #ff0101;
       border: 2px solid black;
-      height: 10vw;
+      height: 5vw;
     }
 
     &::-webkit-scrollbar-track {
@@ -97,20 +103,16 @@ export const ListText = styled.li`
     1px 1px 1px black;
   gap: 0.5vw;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     flex-direction: column-reverse;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 100%;
     width: 150px;
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: 600px) {
     flex-direction: row;
     width: 100%;
-  }
-
-  @media (max-width: 720px) {
-    flex-direction: row;
   }
 `;
 
@@ -136,17 +138,12 @@ export const BlackScreenList = styled.div`
   overflow: hidden;
   flex-direction: column;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
+    width: 90%;
+  }
+
+  @media (max-width: 600px) {
     width: 100%;
-  }
-
-  @media (max-width: 720px) {
-    width: 70%;
-    align-items: center;
-  }
-
-  @media screen and (max-width: 480px) {
-    width: 75%;
     align-items: center;
   }
 `;
@@ -154,13 +151,13 @@ export const BlackScreenList = styled.div`
 export const TextContainer = styled.div`
   font-size: 0.8vw;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 2vw;
     overflow-x: auto;
   }
 
-  @media screen and (max-width: 480px) {
-    font-size: 4vw;
+  @media screen and (max-width: 600px) {
+    font-size: 3vw;
     overflow-y: auto;
   }
 `;

@@ -7,11 +7,9 @@ export const PokedexHeaderContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  gap: 20px;
 
-  @media screen and (max-width: 1024px) {
-    width: 0;
-    height: 0;
+  @media screen and (max-width: 1280px) {
+    display: none;
   }
 `;
 
@@ -45,6 +43,10 @@ export const PokedexHeaderBall = styled.div`
   border: solid white 5px;
 
   animation: ${pulseAnimation} 3s ease-in-out infinite;
+
+  @media screen and (max-width: 1280px) {
+    display: none;
+  }
 `;
 
 export const BallsContainer = styled.div`
@@ -52,18 +54,19 @@ export const BallsContainer = styled.div`
   width: 50%;
   height: 100%;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
 `;
 
 export const LightsContainer = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   width: 50%;
   gap: 20px;
-  margin-top: 60px;
   margin-left: 10px;
   position: relative;
+  box-sizing: border-box;
 `;
 export const PokedexLightRed = styled.div`
   display: flex;

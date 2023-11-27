@@ -7,18 +7,7 @@ interface AudioElement extends HTMLAudioElement {
 
 const StyledAudioPlayer = styled.audio`
   width: 40%;
-  margin: 10px;
-
   background-color: transparent;
-
-  @media screen and (max-width: 1024px) {
-    position: absolute;
-    bottom: 20px;
-  }
-
-  @media (max-width: 480px) {
-    display: none;
-  }
 `;
 
 export const Music = () => {

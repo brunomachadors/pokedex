@@ -45,7 +45,7 @@ export const RegionName = styled.div`
   margin-top: 0.5vw;
   font-family: 'RetroGaming', sans-serif;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     font-size: 4vw;
   }
 
@@ -58,7 +58,7 @@ export const StyledItemImage = styled.img`
   width: 1.8vw;
   height: auto;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     width: 5vw;
   }
 
@@ -74,7 +74,7 @@ export const StyledItemImageLarge = styled.img`
   background-color: black;
   border: 2px solid white;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     width: 10vw;
   }
 
@@ -89,7 +89,7 @@ export const StyledModal = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,23 +97,20 @@ export const StyledModal = styled.div`
 `;
 
 export const ModalContent = styled.div`
-  border-radius: 8px;
-  overflow: auto;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 `;
 
 export const StyledMap = styled.div`
   position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
 `;
 
-export const StyledMapDisplay = styled.div``;
-
 export const StyledImageMap = styled.img`
-  max-width: 80%;
+  max-width: 95%;
   max-height: 80%;
   height: auto;
-  border-radius: 8px;
-  margin-bottom: 16px;
 `;
