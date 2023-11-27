@@ -50,7 +50,9 @@ import { getAllRegions } from '../../api/locations/region';
 import {
   filteredRegionList,
   originalRegionList,
+  selectRegion,
 } from '../../store/region/region';
+import { IRegion } from '../../types/location';
 
 function Lists() {
   const selectedMenu = useSelector(
@@ -285,7 +287,12 @@ export function ItemList() {
           {filteredItemList.map((item) => (
             <ButtonSelect
               key={item.id}
-              color={themes.colors.buttonColor.dark}
+              color={
+                themes.colors.itemTypeColorMap[
+                  item.category
+                    ?.name as keyof typeof themes.colors.itemTypeColorMap
+                ]
+              }
               onClick={() => handleClick(item)}
             >
               <ListText>
@@ -326,7 +333,11 @@ export function RegionList() {
     }
 
     getRegions();
-  }, []);
+  }, [dispatch]);
+
+  const handleClick = (region: IRegion) => {
+    dispatch(selectRegion(region));
+  };
 
   return (
     <BlackScreenList>
@@ -335,7 +346,15 @@ export function RegionList() {
       ) : (
         <List>
           {regions.map((region) => (
-            <ButtonSelect key={region.name}>
+            <ButtonSelect
+              key={region.name}
+              color={
+                themes.colors.regionColorMap[
+                  region.name as keyof typeof themes.colors.regionColorMap
+                ]
+              }
+              onClick={() => handleClick(region)}
+            >
               <ListText>
                 <TextContainer>{region.name.toUpperCase()}</TextContainer>
               </ListText>

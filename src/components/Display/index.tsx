@@ -1,8 +1,13 @@
 import { AnimatedText, BlackScreen, WhiteScreen, Word } from './styles';
 import { useSelector } from 'react-redux';
 import { State } from '../../types/pokemon';
-import PokemonPhoto, { ItemPhoto, TypePhoto } from '../Photo';
-import InfoPainel, { ItemInfo, PokemonInfo, PokemonTypeInfo } from '../Info';
+import PokemonPhoto, { ItemPhoto, RegionPhoto, TypePhoto } from '../Photo';
+import InfoPainel, {
+  ItemInfo,
+  PokemonInfo,
+  PokemonTypeInfo,
+  RegionInfo,
+} from '../Info';
 import { Screen, StyledImage } from '../Photo/styles';
 import themes from '../../utils/themes';
 
@@ -84,8 +89,16 @@ export function NoSelection() {
 }
 export function ItemsDisplay() {
   const infoMenu = useSelector((state: State) => state.infoMenu.selectedMenu);
+  const itemColor = useSelector(
+    (state: State) =>
+      state.item.selectedItem.category
+        ?.name as keyof typeof themes.colors.itemGradientMap
+  );
+
+  const backgroundColor = themes.colors.itemGradientMap[itemColor];
+
   return (
-    <Screen color="linear-gradient(to top, #f9f9f9, #7c7c7c, black)">
+    <Screen color={backgroundColor}>
       {infoMenu === 'photo' && <ItemPhoto />}
       {infoMenu === 'info' && <ItemInfo />}
     </Screen>
@@ -93,7 +106,21 @@ export function ItemsDisplay() {
 }
 
 export function RegionsDisplay() {
-  return <Screen></Screen>;
+  const infoMenu = useSelector((state: State) => state.infoMenu.selectedMenu);
+
+  const regionColor = useSelector(
+    (state: State) =>
+      state.regions.lists.selected
+        .name as keyof typeof themes.colors.regionColorMapBackground
+  );
+
+  const backgroundColor = themes.colors.regionColorMapBackground[regionColor];
+  return (
+    <Screen color={backgroundColor}>
+      {infoMenu === 'photo' && <RegionPhoto />}
+      {infoMenu === 'info' && <RegionInfo />}
+    </Screen>
+  );
 }
 
 export default Display;
