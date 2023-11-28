@@ -11,6 +11,10 @@ const StyledAudioPlayer = styled.audio`
   position: relative;
   bottom: 0;
   left: 0;
+
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  transform: scale(1.55);
 `;
 
 export const Music = () => {

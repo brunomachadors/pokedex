@@ -2,7 +2,7 @@ export const MAPS = {
   kanto:
     'https://res.cloudinary.com/dtglidvcw/image/upload/v1701186873/maps/kanto.png',
   johto:
-    'https://res.cloudinary.com/dtglidvcw/image/upload/v1701186873/maps/johto.png',
+    'https://res.cloudinary.com/dtglidvcw/image/upload/v1701191839/maps/johtoLarger.jpg',
   hoenn:
     'https://res.cloudinary.com/dtglidvcw/image/upload/v1701186873/maps/hoenn.png',
   sinnoh:
@@ -16,7 +16,7 @@ export const MAPS = {
   galar:
     'https://res.cloudinary.com/dtglidvcw/image/upload/v1701186874/maps/galar.png',
   hisui:
-    'https://res.cloudinary.com/dtglidvcw/image/upload/v1701186872/maps/hisui.png',
+    'https://res.cloudinary.com/dtglidvcw/image/upload/v1701191298/maps/hisuiLarge.png',
   paldea:
     'https://res.cloudinary.com/dtglidvcw/image/upload/v1701187942/maps/paldea.png',
 };

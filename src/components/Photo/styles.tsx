@@ -115,11 +115,18 @@ export const StyledMap = styled.div`
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 100%;
 `;
 
 export const StyledImageMap = styled.img`
-  max-width: 95%;
-  max-height: 80%;
+  max-width: 80vw;
+  max-height: 90vh;
+  width: auto;
   height: auto;
+  position: relative;
+
+  @media screen and (max-width: 1280px) {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
 `;
