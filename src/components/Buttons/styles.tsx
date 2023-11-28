@@ -7,9 +7,17 @@ interface ButtonProps {
 export const ButtonContainer = styled.div`
   display: flex;
   width: 75%;
-  height: 10%;
+  height: 15%;
   gap: 6px;
   cursor: pointer;
+
+  @media screen and (max-width: 1280px) {
+    height: 12%;
+  }
+
+  @media (max-width: 600px) {
+    height: 10%;
+  }
 `;
 
 export const Button = styled.button<ButtonProps>`
@@ -28,6 +36,7 @@ export const Button = styled.button<ButtonProps>`
   border-right: ${(props) => (props.selected ? 'none' : '3px solid #4990a9')};
   border-bottom: ${(props) => (props.selected ? 'none' : '3px solid #4990a9')};
   transition: background-color 0.1s;
+  flex-direction: column;
   cursor: pointer;
 
   @media screen and (max-width: 1280px) {
@@ -62,7 +71,7 @@ export const ButtonSelect = styled.button`
 
 export const ButtonText = styled.p`
   position: relative;
-  font-size: 1vw;
+  font-size: 0.8vw;
 
   @media screen and (max-width: 1280px) {
     font-size: 2vw;
@@ -72,4 +81,10 @@ export const ButtonText = styled.p`
     align-items: center;
     justify-content: center;
   }
+`;
+
+export const ButtonIcon = styled.img`
+  display: flex;
+  height: 40%;
+  box-sizing: border-box;
 `;

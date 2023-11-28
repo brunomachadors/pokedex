@@ -15,7 +15,7 @@ export const ListsContainer = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    height: 40%;
+    height: 30%;
     width: 80%;
   }
 `;

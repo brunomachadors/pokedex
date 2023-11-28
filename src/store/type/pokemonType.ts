@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: { selectedType: string } = {
-  selectedType: 'normal',
+  selectedType: '',
 };
 
 const typeSlice = createSlice({

@@ -17,9 +17,9 @@ export const StyledType = styled.div`
 
   @media screen and (max-width: 600px) {
     font-size: 3vw;
-    padding: 0 15px;
-    font-size: 2vw;
-    width: 30%;
+    padding: 0 30px;
+    font-size: 1vw;
+    width: 40%;
   }
 `;
 
@@ -48,7 +48,7 @@ export const TypeContent = styled.div`
 
   @media screen and (max-width: 600px) {
     gap: 1px;
-    font-size: 4vw;
+    font-size: 3vw;
     padding: 0 15px;
   }
 `;
@@ -78,7 +78,7 @@ export const TypeColoredIcon = styled.img`
   height: auto;
 
   @media screen and (max-width: 1280px) {
-    width: 45px;
+    width: 4vw;
     padding: 6px;
   }
 

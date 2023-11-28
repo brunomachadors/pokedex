@@ -10,16 +10,51 @@ import InfoPainel, {
 } from '../Info';
 import { Screen, StyledImage } from '../Photo/styles';
 import themes from '../../utils/themes';
+import { Name } from '../Info/styles';
 
 export function Display() {
+  const menu = useSelector((state: State) => state.mainMenu.selectedMainMenu);
+  const pokemon = useSelector(
+    (state: State) => state.pokemon.selectedPokemon.name
+  );
+  const type = useSelector((state: State) => state.type.selectedType);
+  const item = useSelector((state: State) => state.item.selectedItem.name);
+  const region = useSelector(
+    (state: State) => state.regions.lists.selected.name
+  );
+
+  let displayText = menu !== '' ? menu : 'POKEDEX';
+
+  switch (menu) {
+    case 'POKEMON':
+      displayText = pokemon ? pokemon.toUpperCase() : 'POKEMON';
+      break;
+
+    case 'TYPES':
+      displayText = type ? type.toUpperCase() : 'TYPE';
+      break;
+
+    case 'ITEMS':
+      displayText = item ? item.toUpperCase() : 'ITEM';
+      break;
+
+    case 'REGIONS':
+      displayText = region ? region.toUpperCase() : 'REGION';
+      break;
+
+    default:
+      break;
+  }
+
   return (
     <BlackScreen>
       <AnimatedText>
-        <Word>POKEDEX</Word>
+        <Word>{displayText}</Word>
       </AnimatedText>
     </BlackScreen>
   );
 }
+
 export function DisplayMonitor() {
   const mainMenu = useSelector(
     (state: State) => state.mainMenu.selectedMainMenu
@@ -54,11 +89,20 @@ export function DisplayMonitor() {
 
 function PokemonDisplay() {
   const infoMenu = useSelector((state: State) => state.infoMenu.selectedMenu);
+  const selectedType = useSelector((state: State) => {
+    const types = state.pokemon.selectedPokemon.types;
+    return types && types.length > 0 ? types[0] : null;
+  }) as keyof typeof themes.colors.background;
+
+  const backgroundColor =
+    selectedType && themes.colors.background[selectedType];
+
   return (
-    <>
+    <Screen color={backgroundColor}>
+      {!selectedType && <Name>SELECT POKEMON</Name>}
       {infoMenu === 'photo' && <PokemonPhoto />}
       {infoMenu === 'info' && <PokemonInfo />}
-    </>
+    </Screen>
   );
 }
 
@@ -74,8 +118,9 @@ export function TypesDisplay() {
 
   return (
     <Screen color={backgroundColor}>
-      {infoMenu === 'photo' && <TypePhoto />}
-      {infoMenu === 'info' && <PokemonTypeInfo />}
+      {!selectedType && <Name>SELECT TYPE</Name>}
+      {selectedType && infoMenu === 'photo' && <TypePhoto />}
+      {selectedType && infoMenu === 'info' && <PokemonTypeInfo />}
     </Screen>
   );
 }
@@ -99,8 +144,9 @@ export function ItemsDisplay() {
 
   return (
     <Screen color={backgroundColor}>
-      {infoMenu === 'photo' && <ItemPhoto />}
-      {infoMenu === 'info' && <ItemInfo />}
+      {!itemColor && <Name>SELECT ITEM</Name>}
+      {itemColor && infoMenu === 'photo' && <ItemPhoto />}
+      {itemColor && infoMenu === 'info' && <ItemInfo />}
     </Screen>
   );
 }
@@ -117,8 +163,9 @@ export function RegionsDisplay() {
   const backgroundColor = themes.colors.regionColorMapBackground[regionColor];
   return (
     <Screen color={backgroundColor}>
-      {infoMenu === 'photo' && <RegionPhoto />}
-      {infoMenu === 'info' && <RegionInfo />}
+      {!regionColor && <Name>SELECT REGION</Name>}
+      {regionColor && infoMenu === 'photo' && <RegionPhoto />}
+      {regionColor && infoMenu === 'info' && <RegionInfo />}
     </Screen>
   );
 }

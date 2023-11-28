@@ -16,7 +16,16 @@ export const Screen = styled.div`
 `;
 
 export const StyledImage = styled.img`
-  width: 85%;
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 90%;
+
+  @media screen and (max-width: 1280px) {
+  }
+
+  @media screen and (max-width: 600px) {
+  }
 `;
 
 export const StyledTypeImage = styled.img`
