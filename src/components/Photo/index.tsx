@@ -15,7 +15,7 @@ import { State } from '../../types/pokemon';
 import { Name, TextContainer } from '../Info/styles';
 import { Categoryitem, StyledItemCategory } from '../Display/styles';
 import { MAPS } from '../../utils/regionMaps';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function PokemonPhoto() {
   const selectedPokemon = useSelector(
@@ -69,8 +69,11 @@ export function RegionPhoto() {
   const selectedRegion = useSelector(
     (state: State) => state.regions.lists.selected
   );
+  const [regionImage, setRegionIMage] = useState('');
 
-  const mapSource = MAPS[selectedRegion.name as keyof typeof MAPS];
+  useEffect(() => {
+    setRegionIMage(MAPS[selectedRegion.name as keyof typeof MAPS]);
+  }, [selectedRegion.name]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -87,7 +90,7 @@ export function RegionPhoto() {
       <StyledRegionImageContainer>
         <RegionName>{selectedRegion.name.toUpperCase()}</RegionName>
         <StyledRegionImage
-          src={mapSource}
+          src={regionImage}
           onClick={openModal}
         ></StyledRegionImage>
       </StyledRegionImageContainer>
@@ -95,7 +98,7 @@ export function RegionPhoto() {
       {isModalOpen && (
         <StyledModal onClick={closeModal}>
           <ModalContent>
-            <StyledImageMap src={mapSource} alt="Region Map" />
+            <StyledImageMap src={regionImage} alt="Region Map" />
           </ModalContent>
         </StyledModal>
       )}
