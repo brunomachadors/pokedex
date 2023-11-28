@@ -7,6 +7,7 @@ import {
   StyledImageMap,
   StyledItemImageLarge,
   StyledModal,
+  StyledPokemoneImage,
   StyledRegionImage,
   StyledRegionImageContainer,
   StyledTypeImage,
@@ -22,10 +23,36 @@ function PokemonPhoto() {
     (state: State) => state.pokemon.selectedPokemon
   );
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
-    selectedPokemon.name && (
-      <StyledImage src={selectedPokemon.image} alt="selectedPokemon" />
-    )
+    <TextContainer>
+      {selectedPokemon.name && (
+        <StyledImage
+          src={selectedPokemon.image}
+          alt="selectedPokemon"
+          onClick={openModal}
+        />
+      )}
+      {isModalOpen && (
+        <StyledModal onClick={closeModal}>
+          <ModalContent>
+            <StyledPokemoneImage
+              src={selectedPokemon.image}
+              alt="Pokemon Image"
+            />
+          </ModalContent>
+        </StyledModal>
+      )}
+    </TextContainer>
   );
 }
 

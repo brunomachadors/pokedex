@@ -130,3 +130,11 @@ export const StyledImageMap = styled.img`
     max-height: 95vh;
   }
 `;
+
+export const StyledPokemoneImage = styled.img`
+  max-width: 100vw;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  position: relative;
+`;
