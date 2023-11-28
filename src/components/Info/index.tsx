@@ -2,7 +2,6 @@ import {
   ButtonPhoto,
   ButtonInfo,
   InfoButtonContainer,
-  BlackScreenInfo,
   Name,
   TextContainer,
   Flavour,
@@ -80,11 +79,6 @@ export function PokemonInfo() {
   );
   const [pokemonFlavour, setPokemonFlavour] = useState<string>();
 
-  const backgroundColor =
-    themes.colors.background[
-      currentPokemon.types?.[0] as keyof typeof themes.colors.type
-    ];
-
   useEffect(() => {
     const pokemonSpecie = async () => {
       try {
@@ -110,7 +104,7 @@ export function PokemonInfo() {
   }, [currentPokemon.name]);
 
   return (
-    <BlackScreenInfo color={backgroundColor}>
+    currentPokemon.name && (
       <TextContainer>
         <Name>
           #{currentPokemon.id} {currentPokemon.name.toUpperCase()}
@@ -118,7 +112,7 @@ export function PokemonInfo() {
         <PokemonType pokemon={currentPokemon}></PokemonType>
         {pokemonFlavour && <Flavour>{pokemonFlavour}</Flavour>}
       </TextContainer>
-    </BlackScreenInfo>
+    )
   );
 }
 

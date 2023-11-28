@@ -6,8 +6,11 @@ interface AudioElement extends HTMLAudioElement {
 }
 
 const StyledAudioPlayer = styled.audio`
-  width: 40%;
+  width: 250px;
   background-color: transparent;
+  position: relative;
+  bottom: 0;
+  left: 0;
 `;
 
 export const Music = () => {

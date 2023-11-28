@@ -3,7 +3,6 @@ import themes from '../../utils/themes';
 import {
   ModalContent,
   RegionName,
-  Screen,
   StyledImage,
   StyledImageMap,
   StyledItemImageLarge,
@@ -23,15 +22,10 @@ function PokemonPhoto() {
     (state: State) => state.pokemon.selectedPokemon
   );
 
-  const backgroundColor =
-    themes.colors.background[
-      selectedPokemon.types?.[0] as keyof typeof themes.colors.type
-    ];
-
   return (
-    <Screen color={backgroundColor}>
+    selectedPokemon.name && (
       <StyledImage src={selectedPokemon.image} alt="selectedPokemon" />
-    </Screen>
+    )
   );
 }
 

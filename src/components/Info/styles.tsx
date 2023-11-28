@@ -101,7 +101,8 @@ export const DoubleDamage = styled.div`
     width: 90%;
     height: 60%;
     justify-content: space-evenly;
-    padding: 10px;
+    padding: 2px;
+    gap: 0;
   }
 
   @media screen and (max-width: 600px) {
@@ -196,6 +197,10 @@ export const Imune = styled.div`
   font-family: 'RetroGaming', sans-serif;
 
   @media screen and (max-width: 1280px) {
+    font-size: 2vw;
+  }
+
+  @media screen and (max-width: 600px) {
     font-size: 3vw;
   }
 `;

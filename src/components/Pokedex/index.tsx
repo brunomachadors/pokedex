@@ -16,6 +16,7 @@ import { useSelector } from 'react-redux';
 import { State } from '../../types/pokemon';
 
 export function PokedexWeb() {
+  const menu = useSelector((state: State) => state.mainMenu.selectedMainMenu);
   return (
     <PokedexContainer>
       <PokedexLeftSide>
@@ -23,7 +24,7 @@ export function PokedexWeb() {
         <PokedexLeftContent>
           <Display />
           <ButtonsMenu />
-          <Search />
+          {menu !== '' && <Search />}
           <Music />
         </PokedexLeftContent>
       </PokedexLeftSide>
