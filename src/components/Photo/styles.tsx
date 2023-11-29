@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Screen = styled.div`
   display: flex;
@@ -15,11 +15,25 @@ export const Screen = styled.div`
   flex-direction: column;
 `;
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0); 
+    
+  }
+  to {
+    opacity: 1;
+    transform: scale(1); 
+  }
+`;
+
 export const StyledImage = styled.img`
   width: auto;
   height: auto;
   max-width: 90%;
   max-height: 90%;
+
+  animation: ${fadeIn} 1s ease-out;
 
   @media screen and (max-width: 1280px) {
   }
@@ -30,6 +44,8 @@ export const StyledImage = styled.img`
 
 export const StyledTypeImage = styled.img`
   width: 55%;
+
+  animation: ${fadeIn} 1s ease-out;
 `;
 
 export const StyledRegionImageContainer = styled.div`

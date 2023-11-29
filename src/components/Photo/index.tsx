@@ -37,6 +37,7 @@ function PokemonPhoto() {
     <TextContainer>
       {selectedPokemon.name && (
         <StyledImage
+          key={selectedPokemon.id}
           src={selectedPokemon.image}
           alt="selectedPokemon"
           onClick={openModal}
@@ -67,7 +68,11 @@ export function TypePhoto() {
   }
 
   return (
-    <StyledTypeImage src={getColoredIcon(selectedType)} alt="selectedPokemon" />
+    <StyledTypeImage
+      key={selectedType}
+      src={getColoredIcon(selectedType)}
+      alt="selectedPokemon"
+    />
   );
 }
 
@@ -79,6 +84,7 @@ export function ItemPhoto() {
       <Name style={{ color: 'white' }}>{selectedItem.name.toUpperCase()}</Name>
 
       <StyledItemImageLarge
+        key={selectedItem.id}
         src={selectedItem.sprites?.default}
         alt="selectedItem"
       />
