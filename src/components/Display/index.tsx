@@ -1,4 +1,11 @@
-import { AnimatedText, BlackScreen, WhiteScreen, Word } from './styles';
+import {
+  AnimatedText,
+  BlackScreen,
+  GitAccount,
+  GitImage,
+  WhiteScreen,
+  Word,
+} from './styles';
 import { useSelector } from 'react-redux';
 import { State } from '../../types/pokemon';
 import PokemonPhoto, { ItemPhoto, RegionPhoto, TypePhoto } from '../Photo';
@@ -26,8 +33,8 @@ export function Display() {
   let displayText = menu !== '' ? menu : 'POKEDEX';
 
   switch (menu) {
-    case 'POKEMON':
-      displayText = pokemon ? pokemon.toUpperCase() : 'POKEMON';
+    case 'POKÉMON':
+      displayText = pokemon ? pokemon.toUpperCase() : 'POKÉMON';
       break;
 
     case 'TYPES':
@@ -63,7 +70,7 @@ export function DisplayMonitor() {
   let displayComponent;
 
   switch (mainMenu) {
-    case 'POKEMON':
+    case 'POKÉMON':
       displayComponent = <PokemonDisplay />;
       break;
     case 'TYPES':
@@ -99,9 +106,9 @@ function PokemonDisplay() {
 
   return (
     <Screen color={backgroundColor}>
-      {!selectedType && <Name>SELECT POKEMON</Name>}
-      {infoMenu === 'photo' && <PokemonPhoto />}
-      {infoMenu === 'info' && <PokemonInfo />}
+      {!selectedType && <Name>SELECT POKÉMON</Name>}
+      {selectedType && infoMenu === 'photo' && <PokemonPhoto />}
+      {selectedType && infoMenu === 'info' && <PokemonInfo />}
     </Screen>
   );
 }
@@ -129,6 +136,10 @@ export function NoSelection() {
   return (
     <Screen>
       <StyledImage src="https://i.gifer.com/4tym.gif"></StyledImage>
+      <GitAccount>
+        <GitImage src="icons/git.png" />
+        {'/brunomachadors'.toUpperCase()}
+      </GitAccount>
     </Screen>
   );
 }

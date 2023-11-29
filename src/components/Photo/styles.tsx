@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Screen = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   font-size: 40px;
   width: 80%;
   height: 80%;

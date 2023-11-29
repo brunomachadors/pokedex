@@ -10,7 +10,7 @@ interface ButtonsProps {
 
 function ButtonsMenu({ onButtonClick }: ButtonsProps) {
   const [selectedButton, setSelectedButton] = useState<number>(5);
-  const buttonLabels = ['POKEMON', 'TYPES', 'ITEMS', 'REGIONS'];
+  const buttonLabels = ['POKÉMON', 'TYPES', 'ITEMS', 'REGIONS'];
   const dispatch = useDispatch();
   const selected = useSelector(
     (state: State) => state.mainMenu.selectedMainMenu

@@ -1,4 +1,4 @@
-import { SearchContainer, SearchInput } from './styles';
+import { DetectivePikachu, SearchContainer, SearchInput } from './styles';
 import { State } from '../../types/pokemon';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateFilteredList } from '../../store/pokemon/pokemonList';
@@ -18,7 +18,7 @@ function Search() {
 
   function handleSearch(searchTerm: string) {
     switch (selectedMenu) {
-      case 'POKEMON':
+      case 'POKÉMON':
         if (searchTerm === '') {
           dispatch(updateFilteredList(pokemonLists.originalList));
         } else {
@@ -70,11 +70,12 @@ function Search() {
 
   return (
     <SearchContainer>
+      <DetectivePikachu src="icons/detetive.png"></DetectivePikachu>
       <SearchInput
         placeholder={placeHolderText}
         id="searchBox"
         onChange={(e) => handleSearch(e.target.value)}
-      />
+      ></SearchInput>
     </SearchContainer>
   );
 }

@@ -97,7 +97,7 @@ export const ListText = styled.li`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   font-family: 'RetroGaming', sans-serif;
   text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black,
     1px 1px 1px black;
@@ -149,7 +149,7 @@ export const BlackScreenList = styled.div`
 `;
 
 export const TextContainer = styled.div`
-  font-size: 0.8vw;
+  font-size: 0.7vw;
 
   @media screen and (max-width: 1280px) {
     font-size: 2vw;
@@ -159,5 +159,19 @@ export const TextContainer = styled.div`
   @media screen and (max-width: 600px) {
     font-size: 3vw;
     overflow-y: auto;
+  }
+`;
+
+export const MapIcon = styled.img`
+  width: 1.6vw;
+  height: auto;
+
+  @media screen and (max-width: 1280px) {
+    width: 6vw;
+    padding: 6px;
+  }
+
+  @media (max-width: 600px) {
+    width: 8vw;
   }
 `;

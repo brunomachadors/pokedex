@@ -47,7 +47,7 @@ export function getRangeByGeneration(generation: PokemonGeneration): {
       break;
     case PokemonGeneration.Eighth:
       start = 810;
-      end = 898;
+      end = 1010;
       break;
     default:
       throw new Error('Invalid Pokémon Generation');
