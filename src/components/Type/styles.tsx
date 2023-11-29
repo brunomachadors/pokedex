@@ -74,7 +74,7 @@ export const TypeColoredDiv = styled.img`
 `;
 
 export const TypeColoredIcon = styled.img`
-  width: 1.8vw;
+  width: 1.5vw;
   height: auto;
 
   @media screen and (max-width: 1280px) {

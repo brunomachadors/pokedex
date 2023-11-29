@@ -100,3 +100,30 @@ export const Categoryitem = styled.div`
     font-size: 4vw;
   }
 `;
+
+export const GitAccount = styled.div`
+  color: white;
+  font-family: 'RetroGaming', sans-serif;
+  font-size: 1vw;
+
+  @media screen and (max-width: 1280px) {
+    font-size: 3vw;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 4vw;
+  }
+`;
+
+export const GitImage = styled.img`
+  width: 1vw;
+  background-color: transparent;
+
+  @media screen and (max-width: 1280px) {
+    width: 3vw;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 4vw;
+  }
+`;

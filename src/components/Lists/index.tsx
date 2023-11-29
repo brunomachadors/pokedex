@@ -10,6 +10,7 @@ import {
   List,
   ListText,
   ListsContainer,
+  MapIcon,
   TextContainer,
 } from './styles';
 import { useEffect, useState } from 'react';
@@ -61,7 +62,7 @@ function Lists() {
 
   return (
     <ListsContainer>
-      {selectedMenu === 'POKEMON' && <PokemonList />}
+      {selectedMenu === 'POKÉMON' && <PokemonList />}
       {selectedMenu === 'TYPES' && <TypeList />}
       {selectedMenu === 'ITEMS' && <ItemList />}
       {selectedMenu === 'REGIONS' && <RegionList />}
@@ -356,7 +357,9 @@ export function RegionList() {
               onClick={() => handleClick(region)}
             >
               <ListText>
+                <TextContainer>#{region.id}</TextContainer>
                 <TextContainer>{region.name.toUpperCase()}</TextContainer>
+                <MapIcon src="icons/map.png" />
               </ListText>
             </ButtonSelect>
           ))}
