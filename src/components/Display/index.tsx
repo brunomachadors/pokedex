@@ -1,6 +1,7 @@
 import {
   AnimatedText,
   BlackScreen,
+  Button,
   GitAccount,
   GitImage,
   WhiteScreen,
@@ -30,7 +31,7 @@ export function Display() {
     (state: State) => state.regions.lists.selected.name
   );
 
-  let displayText = menu !== '' ? menu : 'POKEDEX';
+  let displayText = menu !== '' ? menu : 'POKÉDEX';
 
   switch (menu) {
     case 'POKÉMON':
@@ -133,16 +134,23 @@ export function TypesDisplay() {
 }
 
 export function NoSelection() {
+  const redirectToGitHub = () => {
+    window.open('https://github.com/brunomachadors', '_blank');
+  };
+
   return (
     <Screen>
       <StyledImage src="https://i.gifer.com/4tym.gif"></StyledImage>
-      <GitAccount>
-        <GitImage src="icons/git.png" />
-        {'/brunomachadors'.toUpperCase()}
-      </GitAccount>
+      <Button onClick={redirectToGitHub}>
+        <GitAccount>
+          <GitImage src="icons/git.png" />
+          {'/brunomachadors'.toUpperCase()}
+        </GitAccount>
+      </Button>
     </Screen>
   );
 }
+
 export function ItemsDisplay() {
   const infoMenu = useSelector((state: State) => state.infoMenu.selectedMenu);
   const itemColor = useSelector(

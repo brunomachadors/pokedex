@@ -127,3 +127,8 @@ export const GitImage = styled.img`
     width: 4vw;
   }
 `;
+
+export const Button = styled.button`
+  background-color: transparent;
+  border: none;
+`;
