@@ -14,7 +14,7 @@ function getIconSrc(type: string): string {
 
 function PokemonType({ pokemon }: { pokemon: Tresult }) {
   return (
-    <PokemonTypeContainer>
+    <PokemonTypeContainer id="typeContainer">
       {pokemon.types?.map((type, index) => (
         <StyledType
           key={index}

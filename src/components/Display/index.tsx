@@ -140,9 +140,12 @@ export function NoSelection() {
 
   return (
     <Screen>
-      <StyledImage src="https://i.gifer.com/4tym.gif"></StyledImage>
+      <StyledImage
+        src="https://i.gifer.com/4tym.gif"
+        id="pikachuGif"
+      ></StyledImage>
       <Button onClick={redirectToGitHub}>
-        <GitAccount>
+        <GitAccount id="gitAccount">
           <GitImage src="icons/git.png" />
           {'/brunomachadors'.toUpperCase()}
         </GitAccount>
