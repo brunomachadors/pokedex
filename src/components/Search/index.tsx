@@ -69,8 +69,11 @@ function Search() {
   const placeHolderText = `Search ${selectedMenu.toLocaleLowerCase()}...`;
 
   return (
-    <SearchContainer>
-      <DetectivePikachu src="icons/detetive.png"></DetectivePikachu>
+    <SearchContainer id="searchContainer">
+      <DetectivePikachu
+        src="icons/detetive.png"
+        id="detective"
+      ></DetectivePikachu>
       <SearchInput
         placeholder={placeHolderText}
         id="searchBox"

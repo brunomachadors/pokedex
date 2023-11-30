@@ -35,6 +35,9 @@ export const AnimatedText = styled.div`
 export const Word = styled.div`
   display: inline-block;
   animation: ${wordAnimation} 3s linear infinite;
+
+  font-family: 'RetroGaming', sans-serif;
+
   @media screen and (max-width: 1280px) {
   }
 `;

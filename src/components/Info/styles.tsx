@@ -101,7 +101,7 @@ export const DoubleDamage = styled.div`
     width: 90%;
     height: 60%;
     justify-content: space-evenly;
-    padding: 2px;
+    padding: 2vw;
     gap: 0;
   }
 
@@ -110,7 +110,6 @@ export const DoubleDamage = styled.div`
     width: 80%;
     height: 50%;
     justify-content: space-evenly;
-    padding: 5px;
     gap: 0;
   }
 `;
@@ -130,6 +129,9 @@ export const DoubleDamageFrom = styled.div`
     justify-content: center;
     margin-right: 0px;
   }
+
+  @media screen and (max-width: 600px) {
+  }
 `;
 
 export const DoubleDamageTo = styled.div`
@@ -145,6 +147,10 @@ export const DoubleDamageTo = styled.div`
   @media screen and (max-width: 1280px) {
     font-size: 3vw;
     justify-content: space-around;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 0 5vw 0 4vw;
   }
 `;
 
@@ -215,14 +221,14 @@ export const ImunityTypeContainer = styled.div`
 export const ItemInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
   font-family: 'RetroGaming', sans-serif;
   margin-top: 1vw;
   gap: 0.4vw;
 
   @media screen and (max-width: 1280px) {
-    gap: 2vw;
+    gap: 1vw;
   }
 
   @media screen and (max-width: 600px) {
@@ -347,8 +353,9 @@ export const Versions = styled.div`
 
   @media screen and (max-width: 1280px) {
     font-size: 2vw;
-    width: 90%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
+    padding: 1vw;
     justify-content: space-evenly;
   }
 
@@ -361,7 +368,7 @@ export const VersionGroups = styled.div`
   font-size: 0.5vw;
 
   @media screen and (max-width: 1280px) {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
 
   @media screen and (max-width: 600px) {

@@ -152,7 +152,7 @@ export const TextContainer = styled.div`
   font-size: 0.7vw;
 
   @media screen and (max-width: 1280px) {
-    font-size: 2vw;
+    font-size: 1.8vw;
     overflow-x: auto;
   }
 

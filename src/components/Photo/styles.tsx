@@ -44,6 +44,7 @@ export const StyledImage = styled.img`
 
 export const StyledTypeImage = styled.img`
   width: 55%;
+  max-height: 90%;
 
   animation: ${fadeIn} 1s ease-out;
 `;

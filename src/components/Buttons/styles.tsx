@@ -59,6 +59,7 @@ export const ButtonSelect = styled.button`
   @media (max-width: 1280px) {
     width: 300px;
     padding: 10px;
+    max-width: 20vw;
   }
 
   @media (max-width: 600px) {
@@ -66,6 +67,7 @@ export const ButtonSelect = styled.button`
     justify-content: center;
     align-items: center;
     width: 100%;
+    max-width: 100vw;
   }
 `;
 

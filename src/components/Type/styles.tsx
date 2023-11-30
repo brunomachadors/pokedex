@@ -11,7 +11,7 @@ export const StyledType = styled.div`
 
   @media screen and (max-width: 1280px) {
     font-size: 1vw;
-    padding: 0 15px;
+    padding: 0 3vw 0 3vw;
     width: 40%;
   }
 
@@ -19,7 +19,7 @@ export const StyledType = styled.div`
     font-size: 3vw;
     padding: 0 30px;
     font-size: 1vw;
-    width: 40%;
+    width: 15vw;
   }
 `;
 
@@ -63,8 +63,9 @@ export const TypeIcon = styled.img`
   }
 
   @media screen and (max-width: 600px) {
-    width: 26%;
-    padding: 10px;
+    width: 3vw;
+    padding: 0;
+    gap: 2vw;
   }
 `;
 
