@@ -39,15 +39,15 @@ export function Display() {
       break;
 
     case 'TYPES':
-      displayText = type ? type.toUpperCase() : 'TYPE';
+      displayText = type ? type.toUpperCase() : 'TYPES';
       break;
 
     case 'ITEMS':
-      displayText = item ? item.toUpperCase() : 'ITEM';
+      displayText = item ? item.toUpperCase() : 'ITEMS';
       break;
 
     case 'REGIONS':
-      displayText = region ? region.toUpperCase() : 'REGION';
+      displayText = region ? region.toUpperCase() : 'REGIONS';
       break;
 
     default:
@@ -57,7 +57,7 @@ export function Display() {
   return (
     <BlackScreen>
       <AnimatedText>
-        <Word>{displayText}</Word>
+        <Word id="textDisplay">{displayText}</Word>
       </AnimatedText>
     </BlackScreen>
   );
@@ -88,14 +88,14 @@ export function DisplayMonitor() {
   }
 
   return (
-    <WhiteScreen>
+    <WhiteScreen id="whiteScreen">
       {displayComponent}
       <InfoPainel />
     </WhiteScreen>
   );
 }
 
-function PokemonDisplay() {
+export function PokemonDisplay() {
   const infoMenu = useSelector((state: State) => state.infoMenu.selectedMenu);
   const selectedType = useSelector((state: State) => {
     const types = state.pokemon.selectedPokemon.types;

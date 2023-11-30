@@ -5,7 +5,7 @@ export const PokedexContainer = styled.div`
   align-items: flex-end;
   justify-content: center;
   width: auto;
-  height: 95%;
+  height: 95vh;
   flex-direction: row;
   margin: 1vw;
 
@@ -101,8 +101,8 @@ export const PokedexLeftContent = styled.div`
   gap: 4vw;
 
   @media screen and (max-width: 1280px) {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     flex-direction: column;
     margin: 0;
     padding: 0;

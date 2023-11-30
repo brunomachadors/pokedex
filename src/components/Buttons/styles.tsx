@@ -86,5 +86,6 @@ export const ButtonText = styled.p`
 export const ButtonIcon = styled.img`
   display: flex;
   height: 40%;
+  max-width: 50%;
   box-sizing: border-box;
 `;

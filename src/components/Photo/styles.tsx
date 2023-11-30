@@ -5,7 +5,7 @@ export const Screen = styled.div`
   align-items: center;
   justify-content: space-around;
   font-size: 40px;
-  width: 80%;
+  width: 90%;
   height: 80%;
   background-image: ${(props) =>
     props.color ? props.color : 'radial-gradient(#1d1e2c, #09090d)'};

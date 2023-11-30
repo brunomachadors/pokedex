@@ -27,7 +27,7 @@ export const Music = () => {
   }, []);
 
   return (
-    <StyledAudioPlayer controls ref={audioRef}>
+    <StyledAudioPlayer controls ref={audioRef} id="music">
       <source src="opening.mp3" type="audio/mp3" />
     </StyledAudioPlayer>
   );

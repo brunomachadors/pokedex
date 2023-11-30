@@ -35,9 +35,10 @@ function ButtonsMenu({ onButtonClick }: ButtonsProps) {
   };
 
   return (
-    <ButtonContainer>
+    <ButtonContainer id="buttonContainer">
       {buttonLabels.map((label, index) => (
         <Button
+          id={label}
           key={index}
           selected={selectedButton === index}
           onClick={() => handleButtonClick(index, label)}
