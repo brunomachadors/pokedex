@@ -1,9 +1,15 @@
+import { Provider } from 'react-redux';
 import { NoSelection } from './index';
 import { mount } from 'cypress/react18';
+import { store } from '../../store/store';
 
 describe('<NoSelection />', () => {
   beforeEach(() => {
-    mount(<NoSelection />);
+    mount(
+      <Provider store={store}>
+        <NoSelection />
+      </Provider>
+    );
   });
 
   it('Git account loaded', () => {
