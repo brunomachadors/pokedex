@@ -1,7 +1,25 @@
 # POKEDEX
 
-This project was developed during the Mindera Frontend Bootcamp at 2023.
-The idea is to create a pokedex using the Pokemon API.
+Discover the world of Pokémon with our Pokedex app! This comprehensive application, developed using React and TypeScript, serves as a one-stop hub for all your Pokémon needs. Dive into a wealth of information about every Pokémon, explore various types, browse through an extensive collection of items, and navigate detailed region maps.
+
+### Key Features:
+
+- Pokémon Database: Access detailed information on all Pokémon species.
+- Type Encyclopedia: Explore the various types of Pokémon and their attributes.
+- Item Catalog: Browse through a curated collection of in-game items.
+- Region Maps: Navigate through beautifully crafted maps representing different Pokémon regions.
+
+### Technology Stack:
+
+- Frontend: React, TypeScript
+- API: Pokémon API
+- Testing: Cypress
+
+### Development Journey:
+
+This project is the result of dedicated work during the Mindera Frontend Bootcamp of 2023. From conceptualization to implementation, our team crafted a user-friendly and feature-rich Pokedex app to bring the Pokémon world to your fingertips.
+
+Embark on a journey of exploration and nostalgia—uncover the vast universe of Pokémon in this meticulously designed Pokedex app.
 
 ## PREVIEW
 
@@ -12,6 +30,12 @@ The idea is to create a pokedex using the Pokemon API.
 ```bash
 yarn install
 yarn dev
+```
+
+## How to run the tests
+
+```bash
+yarn tests
 ```
 
 ## Tasks
@@ -27,10 +51,16 @@ yarn dev
 - [x] Regions
 - [x] Mobile Component
 - [x] Tablet Component
+- [x] Cypress component testing
+- [x] Production deploy to github pages
 
-## Team Members
+## DEVELOPED BY:
 
-- [Bruno Machado](https://github.com/brunomachadors)
+### Bruno Machado
+
+- [GITHUB](https://github.com/brunomachadors)
+- [LINKEDIN](https://www.linkedin.com/in/brunomrs/)
+- [INSTAGRAM](https://www.instagram.com/brunomachadors/)
 
 ### MY FAVOURITE POKEMON
 
