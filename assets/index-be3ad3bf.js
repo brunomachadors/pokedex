@@ -133,7 +133,6 @@ Error generating stack: `+o.message+`
   justify-content: flex-start;
   flex-direction: column;
   padding: 10px;
-
   gap: 4vw;
 
   @media screen and (max-width: 1280px) {
@@ -147,10 +146,11 @@ Error generating stack: `+o.message+`
     margin-bottom: 0;
     border: none;
     gap: 4vh;
+    gap: 2vw;
   }
 
   @media (max-width: 600px) {
-    gap: 5vh;
+    gap: 3vh;
   }
 
   @media (orientation: landscape) and (max-width: 1366px) {
@@ -207,6 +207,7 @@ Error generating stack: `+o.message+`
 
   @media screen and (max-width: 1280px) {
     height: 10%;
+    margin-top: 1%;
   }
 `,e1=ac`
   0% { opacity: 1  }
@@ -238,7 +239,6 @@ Error generating stack: `+o.message+`
   border: 3px solid black;
   overflow: hidden;
   border-radius: 10px;
-  margin-top: 10px;
 
   border-right: 6px solid #680708;
   border-top: 6px solid #680708;
@@ -1446,7 +1446,6 @@ Error generating stack: `+o.message+`
   border: 3px solid black;
   overflow: hidden;
   border-radius: 10px;
-  margin-top: 10px;
 `;const es=j.div`
   display: flex;
   align-items: center;
@@ -1502,15 +1501,7 @@ Error generating stack: `+o.message+`
     width: 7%;
   }
 `;var au=(e=>(e[e.First=1]="First",e[e.Second=152]="Second",e[e.Third=252]="Third",e[e.Fourth=387]="Fourth",e[e.Fifth=494]="Fifth",e[e.Sixth=650]="Sixth",e[e.Seventh=722]="Seventh",e[e.Eighth=810]="Eighth",e))(au||{});function Tf(e){let t,n;switch(e){case 1:t=1,n=151;break;case 152:t=152,n=251;break;case 252:t=252,n=386;break;case 387:t=387,n=493;break;case 494:t=494,n=649;break;case 650:t=650,n=721;break;case 722:t=722,n=809;break;case 810:t=810,n=1010;break;default:throw new Error("Invalid Pokémon Generation")}return{start:t,end:n}}const Bk=async(e=1,t=151)=>{const n={method:"get",maxBodyLength:1/0,url:`${Ai}${Li.pokemon.pokemon}?offset=${e-1}&limit=${t}`,headers:{}};try{return(await un.request(n)).data}catch(r){console.error(r)}},Uk=async e=>{const t={method:"get",maxBodyLength:1/0,url:`${Ai}${Li.pokemon.pokemon}/${e}`,headers:{}};try{return(await un.request(t)).data}catch(n){console.error(n)}},Hk={selectedPokemon:{name:"",url:"",id:0,image:"",types:[]}},y0=Lt({name:"pokemon",initialState:Hk,reducers:{selectPokemon:(e,t)=>{e.selectedPokemon=t.payload}}}),{selectPokemon:Wk}=y0.actions,Vk=y0.reducer,Gk={selectedType:""},v0=Lt({name:"type",initialState:Gk,reducers:{selectType:(e,t)=>{e.selectedType=t.payload}}}),{selectType:Qk}=v0.actions,Kk=v0.reducer;function ts(){return w.jsx(Yk,{})}const Yk=j.img.attrs({src:"https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/029b8bd9-cb5a-41e4-9c7e-ee516face9bb/dayo3ow-7ac86c31-8b2b-4810-89f2-e6134caf1f2d.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAyOWI4YmQ5LWNiNWEtNDFlNC05YzdlLWVlNTE2ZmFjZTliYlwvZGF5bzNvdy03YWM4NmMzMS04YjJiLTQ4MTAtODlmMi1lNjEzNGNhZjFmMmQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ooubhxjHp9PIMhVxvCFHziI6pxDAS8glXPWenUeomWs",alt:"Pikachu Loading"})`
-  width: 100%;
-
-  @media screen and (max-width: 1280px) {
-    width: 30%;
-  }
-
-  @media screen and (max-width: 600px) {
-    width: 30%;
-  }
+  width: 20vw;
 `;async function Xk(){const e={method:"get",maxBodyLength:1/0,url:"https://pokeapi.co/api/v2/item/?offset=0&limit=954",headers:{}};try{return(await un.request(e)).data.results}catch(t){console.error(t)}}async function w0(e){const t={method:"get",maxBodyLength:1/0,url:e,headers:{}};try{return(await un.request(t)).data}catch(n){console.error(n)}}const qk={selectedItem:{attributes:[{name:"",url:""}],baby_trigger_for:null,category:{name:"",url:""},cost:0,effect_entries:[{effect:"",language:{name:"",url:""},short_effect:""}],flavor_text_entries:[{language:{name:"en",url:"https://pokeapi.co/api/v2/language/9/"},text:`The best BALL that
 catches a POKéMON
 without fail.`,version_group:{name:"ruby-sapphire",url:"https://pokeapi.co/api/v2/version-group/5/"}}],fling_effect:null,fling_power:null,game_indices:[{game_index:0,generation:{name:"",url:""}}],held_by_pokemon:[],id:0,machines:[],name:"",names:[{language:{name:"",url:""},name:""}],sprites:{default:""}}},x0=Lt({name:"item",initialState:qk,reducers:{selectItem:(e,t)=>{e.selectedItem=t.payload}}}),{selectItem:Jk}=x0.actions,Zk=x0.reducer,e2=async()=>{const e={method:"get",maxBodyLength:1/0,url:`${Ai}${Li.locations.region}`,headers:{}};try{return(await un.request(e)).data.results}catch(t){console.error(t)}};function ns(){const e=I(t=>t.mainMenu.selectedMainMenu);return w.jsxs(Mk,{children:[e==="POKÉMON"&&w.jsx(t2,{}),e==="TYPES"&&w.jsx(n2,{}),e==="ITEMS"&&w.jsx(r2,{}),e==="REGIONS"&&w.jsx(i2,{})]})}function t2(){const[e,t]=L.useState(!0),n=I(a=>a.pokemonList.lists),r=In(),i=Tf(au.First),o=Tf(au.Eighth);L.useEffect(()=>{async function a(){try{t(!0);const u=await Bk(i.start,o.end),d=await Promise.all(u.results.map(async c=>{const p=await Uk(c.name);return{...c,id:p.id,image:p.sprites.other["official-artwork"].front_default,types:p.types.map(g=>g.type.name)}}));r(ck(d)),r(iu(d))}catch(u){console.error("Error fetching Pokemon data:",u)}finally{t(!1)}}a()},[r,i.start,o.end]);const l=a=>{r(Wk(a))};function s(a){return"types/"+a.toLowerCase()+".svg"}return w.jsx(es,{children:e?w.jsx(ts,{}):w.jsx(Jl,{children:n.filteredList.map(a=>{var u,d;return w.jsx(Xl,{color:lt.colors.type[(u=a.types)==null?void 0:u[0]],onClick:()=>l(a),children:w.jsxs(Zl,{children:[w.jsxs(gt,{children:["#",a.id]}),w.jsx(gt,{children:a.name.toUpperCase()}),w.jsx(gt,{children:(d=a.types)==null?void 0:d.map(c=>w.jsx(Jo,{src:s(c),alt:c},c))})]})},a.name)})})})}function n2(){const[e,t]=L.useState(!0),n=In(),r=I(l=>l.typeList.lists.filteredList);L.useEffect(()=>{async function l(){t(!0);const s=await GS(),a=await Promise.all(s.map(async u=>({typeInfo:await c0(u.name)})));n(pk(a)),n(ou(a)),t(!1)}l()},[n]);function i(l){return"types/"+l.toLowerCase()+".svg"}const o=l=>{n(Qk(l))};return w.jsx(es,{children:e?w.jsx(ts,{}):w.jsx(Jl,{children:r.map(l=>w.jsx(Xl,{color:lt.colors.type[l.typeInfo.name],onClick:()=>o(l.typeInfo.name),children:w.jsxs(Zl,{children:[w.jsxs(gt,{children:["#",l.typeInfo.id]}),w.jsx(gt,{children:l.typeInfo.name.toUpperCase()}),w.jsx(gt,{children:w.jsx(Jo,{src:i(l.typeInfo.name),alt:l.typeInfo.name})})]})},l.typeInfo.name))})})}function r2(){const[e,t]=L.useState(!0),n=In(),r=I(o=>o.itemList.lists.filteredList);L.useEffect(()=>{async function o(){try{const l=await Xk(),s=await Promise.all(l.map(async a=>await w0(a.url)));n(gk(s)),n(lu(s)),t(!1)}catch(l){console.error("Error fetching items:",l),t(!1)}}o()},[n]);const i=o=>{n(Jk(o))};return w.jsx(es,{children:e?w.jsx(ts,{}):w.jsx(Jl,{children:r.map(o=>{var l,s;return w.jsx(Xl,{color:lt.colors.itemTypeColorMap[(l=o.category)==null?void 0:l.name],onClick:()=>i(o),children:w.jsxs(Zl,{children:[w.jsxs(gt,{children:["#",o.id]}),w.jsx(gt,{children:o.name.toUpperCase()}),w.jsx(ew,{src:(s=o.sprites)==null?void 0:s.default})]})},o.id)})})})}function i2(){const[e,t]=L.useState(!0),n=I(o=>o.regions.lists.filteredList),r=In();L.useEffect(()=>{async function o(){const l=await e2(),s=await Promise.all(l.map(async a=>await w0(a.url)));r(wk(s)),r(su(s)),t(!1)}o()},[r]);const i=o=>{r(xk(o))};return w.jsx(es,{children:e?w.jsx(ts,{}):w.jsx(Jl,{children:n.map(o=>w.jsx(Xl,{color:lt.colors.regionColorMap[o.name],onClick:()=>i(o),children:w.jsxs(Zl,{children:[w.jsxs(gt,{children:["#",o.id]}),w.jsx(gt,{children:o.name.toUpperCase()}),w.jsx(Dk,{src:"icons/map.png"})]})},o.name))})})}const o2=j.audio`
@@ -1523,4 +1514,4 @@ without fail.`,version_group:{name:"ruby-sapphire",url:"https://pokeapi.co/api/v
   -webkit-transform: scale(1.05);
   -moz-transform: scale(1.05);
   transform: scale(1.55);
-`,l2=()=>{const e=L.useRef(null);return L.useEffect(()=>{e.current&&(e.current.volume=.5)},[]),w.jsx(o2,{controls:!0,ref:e,id:"music",children:w.jsx("source",{src:"opening.mp3",type:"audio/mp3"})})};function s2(){const e=I(t=>t.mainMenu.selectedMainMenu);return w.jsxs(Kv,{children:[w.jsxs(Yv,{children:[w.jsx(zk,{}),w.jsxs(Sl,{children:[w.jsx(d0,{}),w.jsx(ql,{}),e!==""&&w.jsx(Yl,{}),w.jsx(l2,{})]})]}),w.jsx(Xv,{children:w.jsxs(qv,{children:[w.jsx(Kl,{}),w.jsx(ns,{})]})})]})}function a2(){const e=I(t=>t.mainMenu.selectedMainMenu);return w.jsxs(Sl,{children:[w.jsx(Kl,{}),w.jsx(ql,{}),e!==""&&w.jsx(Yl,{}),w.jsx(ns,{})]})}const u2=({size:e})=>{const t=I(n=>n.mainMenu.selectedMainMenu);return w.jsxs(Sl,{children:[w.jsx(Kl,{}),w.jsxs(Jv,{children:[w.jsx(ql,{}),e>=800&&t!==""&&w.jsx(Yl,{}),w.jsx(ns,{})]})]})};function c2(){const e=I(t=>t.mainMenu.selectedMainMenu);return w.jsxs(Sl,{children:[w.jsx(d0,{}),w.jsx(Kl,{}),w.jsx(ql,{}),e!==""&&w.jsx(Yl,{}),w.jsx(ns,{})]})}globalThis&&globalThis.__awaiter;function d2(e,t,n,r){const i=L.useRef(t);S0(()=>{i.current=t},[t]),L.useEffect(()=>{var o;const l=(o=n==null?void 0:n.current)!==null&&o!==void 0?o:window;if(!(l&&l.addEventListener))return;const s=a=>i.current(a);return l.addEventListener(e,s,r),()=>{l.removeEventListener(e,s,r)}},[e,n,r])}globalThis&&globalThis.__awaiter;const S0=typeof window<"u"?L.useLayoutEffect:L.useEffect;function f2(){const[e,t]=L.useState({width:0,height:0}),n=()=>{t({width:window.innerWidth,height:window.innerHeight})};return d2("resize",n),S0(()=>{n()},[]),e}function p2(){const{width:e,height:t}=f2(),[n,r]=L.useState(null);return L.useEffect(()=>{t<e&&e<1367?r(w.jsx(u2,{size:t})):e<600?r(w.jsx(a2,{})):e<1280?r(w.jsx(c2,{})):r(w.jsx(s2,{}))},[e,t]),w.jsx(w.Fragment,{children:n})}function h2(){return w.jsx(Gv,{theme:lt,children:w.jsx(p2,{})})}const m2=px({reducer:{pokemon:Vk,infoMenu:Cx,mainMenu:Ok,pokemonList:dk,typeList:hk,itemList:yk,type:Kk,item:Zk,regions:Sk}});Qs.createRoot(document.getElementById("root")).render(w.jsx(Q1,{store:m2,children:w.jsx(h2,{})}));
+`,l2=()=>{const e=L.useRef(null);return L.useEffect(()=>{e.current&&(e.current.volume=.5)},[]),w.jsx(o2,{controls:!0,ref:e,id:"music",children:w.jsx("source",{src:"opening.mp3",type:"audio/mp3"})})};function s2(){const e=I(t=>t.mainMenu.selectedMainMenu);return w.jsxs(Kv,{children:[w.jsxs(Yv,{children:[w.jsx(zk,{}),w.jsxs(Sl,{children:[w.jsx(d0,{}),w.jsx(ql,{}),e!==""&&w.jsx(Yl,{}),w.jsx(l2,{})]})]}),w.jsx(Xv,{children:w.jsxs(qv,{children:[w.jsx(Kl,{}),w.jsx(ns,{})]})})]})}function a2(){const e=I(t=>t.mainMenu.selectedMainMenu);return w.jsxs(Sl,{children:[w.jsx(Kl,{}),w.jsx(ql,{}),e!==""&&w.jsx(Yl,{}),w.jsx(ns,{})]})}const u2=({size:e})=>{const t=I(n=>n.mainMenu.selectedMainMenu);return w.jsxs(Sl,{children:[w.jsx(Kl,{}),w.jsxs(Jv,{children:[w.jsx(ql,{}),e>=800&&t!==""&&w.jsx(Yl,{}),w.jsx(ns,{})]})]})};function c2(){const e=I(t=>t.mainMenu.selectedMainMenu);return w.jsxs(Sl,{children:[w.jsx(d0,{}),w.jsx(ql,{}),w.jsx(Kl,{}),e!==""&&w.jsx(Yl,{}),w.jsx(ns,{})]})}globalThis&&globalThis.__awaiter;function d2(e,t,n,r){const i=L.useRef(t);S0(()=>{i.current=t},[t]),L.useEffect(()=>{var o;const l=(o=n==null?void 0:n.current)!==null&&o!==void 0?o:window;if(!(l&&l.addEventListener))return;const s=a=>i.current(a);return l.addEventListener(e,s,r),()=>{l.removeEventListener(e,s,r)}},[e,n,r])}globalThis&&globalThis.__awaiter;const S0=typeof window<"u"?L.useLayoutEffect:L.useEffect;function f2(){const[e,t]=L.useState({width:0,height:0}),n=()=>{t({width:window.innerWidth,height:window.innerHeight})};return d2("resize",n),S0(()=>{n()},[]),e}function p2(){const{width:e,height:t}=f2(),[n,r]=L.useState(null);return L.useEffect(()=>{t<e&&e<1367?r(w.jsx(u2,{size:t})):e<600?r(w.jsx(a2,{})):e<1280?r(w.jsx(c2,{})):r(w.jsx(s2,{}))},[e,t]),w.jsx(w.Fragment,{children:n})}function h2(){return w.jsx(Gv,{theme:lt,children:w.jsx(p2,{})})}const m2=px({reducer:{pokemon:Vk,infoMenu:Cx,mainMenu:Ok,pokemonList:dk,typeList:hk,itemList:yk,type:Kk,item:Zk,regions:Sk}});Qs.createRoot(document.getElementById("root")).render(w.jsx(Q1,{store:m2,children:w.jsx(h2,{})}));
