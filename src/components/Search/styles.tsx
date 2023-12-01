@@ -29,7 +29,7 @@ export const SearchContainer = styled.div`
   width: 60%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
   @media (max-width: 600px) {
     width: 74%;
