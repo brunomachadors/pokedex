@@ -31,6 +31,21 @@ export class PokedexPageObjects {
   validateMusic() {
     cy.get('#music').should('be.visible');
   }
+
+  validateSelectPokemon() {
+    cy.get('#selectPokemon').should('have.text', 'SELECT POKÉMON');
+  }
+  validateSelectItem() {
+    cy.get('#selectItem').should('have.text', 'SELECT ITEM');
+  }
+
+  validateSelectType() {
+    cy.get('#selectType').should('have.text', 'SELECT TYPE');
+  }
+
+  validateSelectRegion() {
+    cy.get('#selectRegions').should('have.text', 'SELECT REGION');
+  }
 }
 
 export const pokedexPageObjects = new PokedexPageObjects();

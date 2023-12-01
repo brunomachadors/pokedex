@@ -29,20 +29,24 @@ describe('<Home /> WEB', () => {
   it('Button POKÉMON', () => {
     pokedexPageObjects.clickPokemonButton();
     pokedexPageObjects.checkTextDisplay('POKÉMON');
+    pokedexPageObjects.validateSelectPokemon();
   });
 
   it('Button TYPES', () => {
     pokedexPageObjects.clickTypesButton();
     pokedexPageObjects.checkTextDisplay('TYPES');
+    pokedexPageObjects.validateSelectType();
   });
 
   it('Button ITEMS', () => {
     pokedexPageObjects.clickItemsButton();
     pokedexPageObjects.checkTextDisplay('ITEMS');
+    pokedexPageObjects.validateSelectItem();
   });
   it('Button REGIONS', () => {
     pokedexPageObjects.clickRegionsButton();
     pokedexPageObjects.checkTextDisplay('REGIONS');
+    pokedexPageObjects.validateSelectRegion();
   });
 
   it('White Screen', () => {
@@ -73,17 +77,21 @@ describe('<Home /> MOBILE', () => {
 
   it('Button POKÉMON', () => {
     pokedexPageObjects.clickPokemonButton();
+    pokedexPageObjects.validateSelectPokemon();
   });
 
   it('Button TYPES', () => {
     pokedexPageObjects.clickTypesButton();
+    pokedexPageObjects.validateSelectType();
   });
 
   it('Button ITEMS', () => {
     pokedexPageObjects.clickItemsButton();
+    pokedexPageObjects.validateSelectItem();
   });
   it('Button REGIONS', () => {
     pokedexPageObjects.clickRegionsButton();
+    pokedexPageObjects.validateSelectRegion();
   });
 
   it('White Screen', () => {
@@ -110,20 +118,24 @@ describe('<Home /> TABLET', () => {
   it('Button POKÉMON', () => {
     pokedexPageObjects.clickPokemonButton();
     pokedexPageObjects.checkTextDisplay('POKÉMON');
+    pokedexPageObjects.validateSelectPokemon();
   });
 
   it('Button TYPES', () => {
     pokedexPageObjects.clickTypesButton();
     pokedexPageObjects.checkTextDisplay('TYPES');
+    pokedexPageObjects.validateSelectType();
   });
 
   it('Button ITEMS', () => {
     pokedexPageObjects.clickItemsButton();
     pokedexPageObjects.checkTextDisplay('ITEMS');
+    pokedexPageObjects.validateSelectItem();
   });
   it('Button REGIONS', () => {
     pokedexPageObjects.clickRegionsButton();
     pokedexPageObjects.checkTextDisplay('REGIONS');
+    pokedexPageObjects.validateSelectRegion();
   });
 
   it('White Screen', () => {

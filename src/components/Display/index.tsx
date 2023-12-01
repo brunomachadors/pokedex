@@ -55,8 +55,8 @@ export function Display() {
   }
 
   return (
-    <BlackScreen>
-      <AnimatedText>
+    <BlackScreen id="blackScreen">
+      <AnimatedText id="animatedText">
         <Word id="textDisplay">{displayText}</Word>
       </AnimatedText>
     </BlackScreen>
@@ -106,8 +106,8 @@ export function PokemonDisplay() {
     selectedType && themes.colors.background[selectedType];
 
   return (
-    <Screen color={backgroundColor}>
-      {!selectedType && <Name>SELECT POKÉMON</Name>}
+    <Screen color={backgroundColor} id="screen">
+      {!selectedType && <Name id="selectPokemon">SELECT POKÉMON</Name>}
       {selectedType && infoMenu === 'photo' && <PokemonPhoto />}
       {selectedType && infoMenu === 'info' && <PokemonInfo />}
     </Screen>
@@ -126,7 +126,7 @@ export function TypesDisplay() {
 
   return (
     <Screen color={backgroundColor}>
-      {!selectedType && <Name>SELECT TYPE</Name>}
+      {!selectedType && <Name id="selectType">SELECT TYPE</Name>}
       {selectedType && infoMenu === 'photo' && <TypePhoto />}
       {selectedType && infoMenu === 'info' && <PokemonTypeInfo />}
     </Screen>
@@ -139,7 +139,7 @@ export function NoSelection() {
   };
 
   return (
-    <Screen>
+    <Screen id="screen">
       <StyledImage
         src="https://i.gifer.com/4tym.gif"
         id="pikachuGif"
@@ -165,8 +165,8 @@ export function ItemsDisplay() {
   const backgroundColor = themes.colors.itemGradientMap[itemColor];
 
   return (
-    <Screen color={backgroundColor}>
-      {!itemColor && <Name>SELECT ITEM</Name>}
+    <Screen color={backgroundColor} id="screen">
+      {!itemColor && <Name id="selectItem">SELECT ITEM</Name>}
       {itemColor && infoMenu === 'photo' && <ItemPhoto />}
       {itemColor && infoMenu === 'info' && <ItemInfo />}
     </Screen>
@@ -185,7 +185,7 @@ export function RegionsDisplay() {
   const backgroundColor = themes.colors.regionColorMapBackground[regionColor];
   return (
     <Screen color={backgroundColor}>
-      {!regionColor && <Name>SELECT REGION</Name>}
+      {!regionColor && <Name id="selectRegions">SELECT REGION</Name>}
       {regionColor && infoMenu === 'photo' && <RegionPhoto />}
       {regionColor && infoMenu === 'info' && <RegionInfo />}
     </Screen>
