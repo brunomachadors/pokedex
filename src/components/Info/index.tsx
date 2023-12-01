@@ -13,7 +13,6 @@ import {
   ImunityTypeContainer,
   ItemInfoContainer,
   ItemName,
-  ItemId,
   ItemAttributesContainer,
   ItemAttributes,
   ItemShortEffect,
@@ -197,8 +196,9 @@ export function ItemInfo() {
 
   return (
     <ItemInfoContainer>
-      <ItemId>#{selectedItem.id}</ItemId>
-      <ItemName>{selectedItem.name.toUpperCase()}</ItemName>
+      <ItemName>
+        #{selectedItem.id} - {selectedItem.name.toUpperCase()}
+      </ItemName>
       <ItemShortEffect>
         {selectedItem?.effect_entries?.[0]?.short_effect ||
           'No short effect available'}
@@ -222,8 +222,10 @@ export function RegionInfo() {
 
   return (
     <RegionInfoContainer>
-      <RegionId>#{selectedRegion.id}</RegionId>
-      <RegionName>{selectedRegion.name.toUpperCase()}</RegionName>
+      <RegionId></RegionId>
+      <RegionName>
+        #{selectedRegion.id} - {selectedRegion.name.toUpperCase()}
+      </RegionName>
       <MainGeneration>
         {selectedRegion.main_generation?.name.toUpperCase()}
       </MainGeneration>

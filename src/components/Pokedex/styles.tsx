@@ -5,7 +5,7 @@ export const PokedexContainer = styled.div`
   align-items: flex-end;
   justify-content: center;
   width: auto;
-  height: 95%;
+  height: 95vh;
   flex-direction: row;
   margin: 1vw;
 
@@ -28,7 +28,8 @@ export const PokedexLeftSide = styled.div`
   background: radial-gradient(#eb090d, #950406);
   width: 40%;
   height: 100%;
-  border: solid black 1px;
+  border: solid black 4px;
+  border-right: none;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -58,7 +59,8 @@ export const PokedexRightSide = styled.div`
   background: radial-gradient(#eb090d, #950406);
   width: 34%;
   height: 80%;
-  border: solid black 1px;
+  border: solid black 4px;
+  border-left: none;
   border-radius: 30px;
   display: flex;
   justify-content: center;
@@ -101,8 +103,8 @@ export const PokedexLeftContent = styled.div`
   gap: 4vw;
 
   @media screen and (max-width: 1280px) {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     flex-direction: column;
     margin: 0;
     padding: 0;
@@ -110,10 +112,11 @@ export const PokedexLeftContent = styled.div`
     padding: 0;
     margin-bottom: 0;
     border: none;
-    gap: 20px;
+    gap: 4vh;
   }
 
   @media (max-width: 720px) {
+    gap: 5vh;
   }
 `;
 

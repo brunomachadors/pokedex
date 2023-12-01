@@ -39,15 +39,15 @@ export function Display() {
       break;
 
     case 'TYPES':
-      displayText = type ? type.toUpperCase() : 'TYPE';
+      displayText = type ? type.toUpperCase() : 'TYPES';
       break;
 
     case 'ITEMS':
-      displayText = item ? item.toUpperCase() : 'ITEM';
+      displayText = item ? item.toUpperCase() : 'ITEMS';
       break;
 
     case 'REGIONS':
-      displayText = region ? region.toUpperCase() : 'REGION';
+      displayText = region ? region.toUpperCase() : 'REGIONS';
       break;
 
     default:
@@ -55,9 +55,9 @@ export function Display() {
   }
 
   return (
-    <BlackScreen>
-      <AnimatedText>
-        <Word>{displayText}</Word>
+    <BlackScreen id="blackScreen">
+      <AnimatedText id="animatedText">
+        <Word id="textDisplay">{displayText}</Word>
       </AnimatedText>
     </BlackScreen>
   );
@@ -88,14 +88,14 @@ export function DisplayMonitor() {
   }
 
   return (
-    <WhiteScreen>
+    <WhiteScreen id="whiteScreen">
       {displayComponent}
       <InfoPainel />
     </WhiteScreen>
   );
 }
 
-function PokemonDisplay() {
+export function PokemonDisplay() {
   const infoMenu = useSelector((state: State) => state.infoMenu.selectedMenu);
   const selectedType = useSelector((state: State) => {
     const types = state.pokemon.selectedPokemon.types;
@@ -106,8 +106,8 @@ function PokemonDisplay() {
     selectedType && themes.colors.background[selectedType];
 
   return (
-    <Screen color={backgroundColor}>
-      {!selectedType && <Name>SELECT POKÉMON</Name>}
+    <Screen color={backgroundColor} id="screen">
+      {!selectedType && <Name id="selectPokemon">SELECT POKÉMON</Name>}
       {selectedType && infoMenu === 'photo' && <PokemonPhoto />}
       {selectedType && infoMenu === 'info' && <PokemonInfo />}
     </Screen>
@@ -126,7 +126,7 @@ export function TypesDisplay() {
 
   return (
     <Screen color={backgroundColor}>
-      {!selectedType && <Name>SELECT TYPE</Name>}
+      {!selectedType && <Name id="selectType">SELECT TYPE</Name>}
       {selectedType && infoMenu === 'photo' && <TypePhoto />}
       {selectedType && infoMenu === 'info' && <PokemonTypeInfo />}
     </Screen>
@@ -139,10 +139,13 @@ export function NoSelection() {
   };
 
   return (
-    <Screen>
-      <StyledImage src="https://i.gifer.com/4tym.gif"></StyledImage>
+    <Screen id="screen">
+      <StyledImage
+        src="https://i.gifer.com/4tym.gif"
+        id="pikachuGif"
+      ></StyledImage>
       <Button onClick={redirectToGitHub}>
-        <GitAccount>
+        <GitAccount id="gitAccount">
           <GitImage src="icons/git.png" />
           {'/brunomachadors'.toUpperCase()}
         </GitAccount>
@@ -162,8 +165,8 @@ export function ItemsDisplay() {
   const backgroundColor = themes.colors.itemGradientMap[itemColor];
 
   return (
-    <Screen color={backgroundColor}>
-      {!itemColor && <Name>SELECT ITEM</Name>}
+    <Screen color={backgroundColor} id="screen">
+      {!itemColor && <Name id="selectItem">SELECT ITEM</Name>}
       {itemColor && infoMenu === 'photo' && <ItemPhoto />}
       {itemColor && infoMenu === 'info' && <ItemInfo />}
     </Screen>
@@ -182,7 +185,7 @@ export function RegionsDisplay() {
   const backgroundColor = themes.colors.regionColorMapBackground[regionColor];
   return (
     <Screen color={backgroundColor}>
-      {!regionColor && <Name>SELECT REGION</Name>}
+      {!regionColor && <Name id="selectRegions">SELECT REGION</Name>}
       {regionColor && infoMenu === 'photo' && <RegionPhoto />}
       {regionColor && infoMenu === 'info' && <RegionInfo />}
     </Screen>
