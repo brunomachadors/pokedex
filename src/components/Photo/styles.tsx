@@ -75,7 +75,7 @@ export const RegionName = styled.div`
     font-size: 4vw;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 600px) {
     font-size: 6vw;
   }
 `;
@@ -88,8 +88,16 @@ export const StyledItemImage = styled.img`
     width: 5vw;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 600px) {
     width: 8vw;
+  }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    width: 3vw;
+  }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    width: 3vw;
   }
 `;
 
@@ -104,8 +112,12 @@ export const StyledItemImageLarge = styled.img`
     width: 10vw;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 600px) {
     width: 18vw;
+  }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    width: 8vw;
   }
 `;
 
@@ -153,5 +165,47 @@ export const StyledPokemoneImage = styled.img`
   max-height: 100vh;
   width: auto;
   height: auto;
+  position: relative;
+`;
+
+export const GitAccount = styled.div`
+  color: white;
+  font-family: 'RetroGaming', sans-serif;
+  font-size: 1vw;
+
+  @media screen and (max-width: 1280px) {
+    font-size: 3vw;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 4vw;
+  }
+`;
+
+export const GitImage = styled.img`
+  width: 1vw;
+  background-color: transparent;
+
+  @media screen and (max-width: 1280px) {
+    width: 3vw;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 4vw;
+  }
+`;
+
+export const Button = styled.button`
+  background-color: transparent;
+  border: none;
+`;
+
+export const PantufaImage = styled.img`
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 90%;
+
+  animation: ${fadeIn} 1s ease-out;
   position: relative;
 `;

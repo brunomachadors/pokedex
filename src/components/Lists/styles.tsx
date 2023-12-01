@@ -18,6 +18,11 @@ export const ListsContainer = styled.div`
     height: 30%;
     width: 80%;
   }
+
+  @media screen and (orientation: landscape) and (max-width: 1366px) {
+    height: 60%;
+    width: 100%;
+  }
 `;
 
 export const List = styled.ul`
@@ -37,7 +42,7 @@ export const List = styled.ul`
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #15a835;
+    background-color: #ff0101;
     border: 2px solid black;
     height: 2vw;
   }
@@ -89,6 +94,12 @@ export const List = styled.ul`
       background-color: #494949;
     }
   }
+
+  @media screen and (orientation: landscape) and (max-width: 1366px) {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 export const ListText = styled.li`
@@ -101,7 +112,6 @@ export const ListText = styled.li`
   font-family: 'RetroGaming', sans-serif;
   text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black,
     1px 1px 1px black;
-  gap: 0.5vw;
 
   @media screen and (max-width: 1280px) {
     flex-direction: column-reverse;
@@ -113,6 +123,14 @@ export const ListText = styled.li`
   @media (max-width: 600px) {
     flex-direction: row;
     width: 100%;
+  }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
   }
 `;
 
@@ -146,6 +164,10 @@ export const BlackScreenList = styled.div`
     width: 100%;
     align-items: center;
   }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    width: 100%;
+  }
 `;
 
 export const TextContainer = styled.div`
@@ -160,6 +182,11 @@ export const TextContainer = styled.div`
     font-size: 3vw;
     overflow-y: auto;
   }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    font-size: 80%;
+    display: flex;
+  }
 `;
 
 export const MapIcon = styled.img`
@@ -173,5 +200,9 @@ export const MapIcon = styled.img`
 
   @media (max-width: 600px) {
     width: 8vw;
+  }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    width: 7%;
   }
 `;

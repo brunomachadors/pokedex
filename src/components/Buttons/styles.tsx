@@ -18,6 +18,11 @@ export const ButtonContainer = styled.div`
   @media (max-width: 600px) {
     height: 10%;
   }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    height: 10vw;
+    width: 50vw;
+  }
 `;
 
 export const Button = styled.button<ButtonProps>`
@@ -47,6 +52,9 @@ export const Button = styled.button<ButtonProps>`
   @media (max-width: 720px) {
     font-size: 6px;
   }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+  }
 `;
 
 export const ButtonSelect = styled.button`
@@ -69,6 +77,15 @@ export const ButtonSelect = styled.button`
     width: 100%;
     max-width: 100vw;
   }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100vw;
+    height: 5vw;
+  }
 `;
 
 export const ButtonText = styled.p`
@@ -82,6 +99,10 @@ export const ButtonText = styled.p`
   @media (max-width: 600px) {
     align-items: center;
     justify-content: center;
+  }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    font-size: 1.5vw;
   }
 `;
 

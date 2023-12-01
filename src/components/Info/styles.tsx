@@ -20,6 +20,10 @@ export const ButtonPhoto = styled.button`
   @media screen and (max-width: 1280px) {
     font-size: 2vw;
   }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    font-size: 100%;
+  }
 `;
 
 export const ButtonInfo = styled.button`
@@ -33,6 +37,10 @@ export const ButtonInfo = styled.button`
 
   @media screen and (max-width: 1280px) {
     font-size: 2vw;
+  }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    font-size: 100%;
   }
 `;
 
@@ -65,6 +73,10 @@ export const TextContainer = styled.div`
   @media screen and (max-width: 600px) {
     gap: 0px;
   }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    gap: 0px;
+  }
 `;
 
 export const Name = styled.div`
@@ -79,6 +91,10 @@ export const Name = styled.div`
 
   @media screen and (max-width: 600px) {
     font-size: 5vw;
+  }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    font-size: 3vw;
   }
 `;
 
@@ -112,6 +128,15 @@ export const DoubleDamage = styled.div`
     justify-content: space-evenly;
     gap: 0;
   }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    font-size: 2vw;
+    width: 80%;
+    height: 50%;
+    justify-content: space-evenly;
+    gap: 0;
+    text-align: center;
+  }
 `;
 
 export const DoubleDamageFrom = styled.div`
@@ -130,7 +155,8 @@ export const DoubleDamageFrom = styled.div`
     margin-right: 0px;
   }
 
-  @media screen and (max-width: 600px) {
+  @media (orientation: landscape) and (max-width: 1366px) {
+    font-size: 2vw;
   }
 `;
 
@@ -152,6 +178,11 @@ export const DoubleDamageTo = styled.div`
   @media screen and (max-width: 600px) {
     padding: 0 5vw 0 4vw;
   }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    padding: 0 5vw 0 4vw;
+    font-size: 2vw;
+  }
 `;
 
 export const Damage = styled.div`
@@ -161,7 +192,7 @@ export const Damage = styled.div`
   display: flex;
   flex-direction: row;
   @media screen and (max-width: 1280px) {
-    font-size: 2vw;
+    font-size: 2vh;
     justify-content: center;
   }
 `;
@@ -189,6 +220,11 @@ export const Flavour = styled.div`
     font-size: 2.5vw;
     width: 70%;
   }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    font-size: 3vh;
+    width: 70%;
+  }
 `;
 
 export const Imune = styled.div`
@@ -209,6 +245,10 @@ export const Imune = styled.div`
   @media screen and (max-width: 600px) {
     font-size: 3vw;
   }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    font-size: 3vh;
+  }
 `;
 
 export const ImunityTypeContainer = styled.div`
@@ -216,6 +256,11 @@ export const ImunityTypeContainer = styled.div`
   gap: 10px;
   font-family: 'RetroGaming', sans-serif;
   justify-content: space-around;
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    width: 90%;
+    gap: 5px;
+  }
 `;
 
 export const ItemInfoContainer = styled.div`
@@ -235,6 +280,11 @@ export const ItemInfoContainer = styled.div`
     gap: 2vw;
     height: 100%;
   }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    gap: 2vh;
+    height: 100%;
+  }
 `;
 
 export const ItemName = styled.div`
@@ -246,7 +296,11 @@ export const ItemName = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    font-size: 4vw;
+    font-size: 3vh;
+  }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    font-size: 3vh;
   }
 `;
 
@@ -259,6 +313,10 @@ export const ItemId = styled.div`
 
   @media screen and (max-width: 600px) {
     font-size: 3vw;
+  }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    font-size: 3vh;
   }
 `;
 
@@ -278,6 +336,10 @@ export const ItemShortEffect = styled.div`
 
   @media screen and (max-width: 600px) {
     font-size: 2.2vw;
+  }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    font-size: 3vh;
   }
 `;
 
@@ -300,6 +362,10 @@ export const ItemAttributes = styled.li`
   @media screen and (max-width: 600px) {
     font-size: 3vw;
   }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    font-size: 3vh;
+  }
 `;
 
 export const RegionInfoContainer = styled.div`
@@ -320,14 +386,15 @@ export const RegionId = styled.div`
     font-size: 3vw;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 600px) {
     font-size: 4vw;
   }
 `;
 
 export const RegionName = styled.div`
   color: white;
-  font-size: 3vw;
+  font-size: 2vw;
+
   @media screen and (max-width: 1280px) {
     font-size: 4vw;
   }
@@ -362,6 +429,10 @@ export const Versions = styled.div`
   @media screen and (max-width: 600px) {
     font-size: 3vw;
   }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    font-size: 3vh;
+  }
 `;
 
 export const VersionGroups = styled.div`
@@ -373,6 +444,10 @@ export const VersionGroups = styled.div`
 
   @media screen and (max-width: 600px) {
     font-size: 2vw;
+  }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    font-size: 2vh;
   }
 `;
 
@@ -387,4 +462,52 @@ export const MainGeneration = styled.div`
   @media screen and (max-width: 600px) {
     font-size: 3vw;
   }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    font-size: 3vh;
+  }
+`;
+
+export const EasterEgg = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+`;
+
+export const EasterEggText = styled.div`
+  position: absolute;
+  top: 25vh;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1vw;
+  margin-top: 0;
+  font-family: 'RetroGaming', sans-serif;
+  z-index: 2;
+  background-color: #0000006e;
+  border: 1px white solid;
+  border-radius: 7px;
+  padding: 5px;
+  width: 80%;
+  text-align: center;
+
+  @media screen and (max-width: 1280px) {
+    font-size: 3vw;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 5vw;
+  }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    font-size: 3vw;
+  }
+`;
+
+export const EasterEggImage = styled.img`
+  position: relative;
+  z-index: 1;
 `;

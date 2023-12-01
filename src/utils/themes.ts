@@ -87,55 +87,56 @@ export default {
     },
 
     itemTypeColorMap: {
-      'stat-boosts': 'linear-gradient(to right, #8B7500, #FFD700)', // Dark gold to gold
-      'effort-drop': 'linear-gradient(to right, #8B4500, #FFA500)', // Saddle brown to orange
-      medicine: 'linear-gradient(to right, #696969, #C0C0C0)', // Dim gray to silver
-      other: 'linear-gradient(to right, #4682B4, #87CEEB)', // Steel blue to sky blue
-      'in-a-pinch': 'linear-gradient(to right, #8B0000, #FF6347)', // Dark red to tomato
-      'picky-healing': 'linear-gradient(to right, #556B2F, #7CFC00)', // Dark olive green to lawn green
-      'type-protection': 'linear-gradient(to right, #8B4513, #D2B48C)', // Saddle brown to tan
-      'baking-only': 'linear-gradient(to right, #696969, #B0C4DE)', // Dim gray to light steel blue
-      collectibles: 'linear-gradient(to right, #CD853F, #FFDAB9)', // Peru to peachpuff
-      evolution: 'linear-gradient(to right, #8B008B, #C71585)', // Dark magenta to medium violet red
-      spelunking: 'linear-gradient(to right, #008000, #98FB98)', // Green to pale green
-      'held-items': 'linear-gradient(to right, #8B4513, #FFB6C1)', // Saddle brown to light pink
-      choice: 'linear-gradient(to right, #4B0082, #9370DB)', // Indigo to medium purple
-      'effort-training': 'linear-gradient(to right, #1E90FF, #87CEEB)', // Dodger blue to sky blue
-      'bad-held-items': 'linear-gradient(to right, #8B4513, #CD853F)', // Saddle brown to peru
-      training: 'linear-gradient(to right, #4682B4, #AFEEEE)', // Steel blue to pale turquoise
-      plates: 'linear-gradient(to right, #8B4513, #FF6347)', // Saddle brown to tomato
-      'species-specific': 'linear-gradient(to right, #CD5C5C, #FFA07A)', // Indian red to light salmon
-      'type-enhancement': 'linear-gradient(to right, #4B0082, #8B4513)', // Indigo to saddle brown
-      'event-items': 'linear-gradient(to right, #FF4500, #FFD700)', // Dark orange to gold
-      gameplay: 'linear-gradient(to right, #A9A9A9, #D3D3D3)', // Dark gray to light gray
-      'plot-advancement': 'linear-gradient(to right, #4B0082, #8A2BE2)', // Indigo to blue violet
-      unused: 'linear-gradient(to right, #696969, #808080)', // Dim gray to gray
-      loot: 'linear-gradient(to right, #8B4513, #B8860B)', // Saddle brown to dark goldenrod
-      'all-mail': 'linear-gradient(to right, #FF69B4, #FFB6C1)', // Hot pink to light pink
-      vitamins: 'linear-gradient(to right, #556B2F, #ADFF2F)', // Dark olive green to green yellow
-      healing: 'linear-gradient(to right, #008000, #00FF7F)', // Green to spring green
-      'pp-recovery': 'linear-gradient(to right, #000080, #6495ED)', // Navy to cornflower blue
-      revival: 'linear-gradient(to right, #8B4513, #FF6347)', // Saddle brown to tomato
-      'status-cures': 'linear-gradient(to right, #008000, #00FA9A)', // Green to medium spring green
-      mulch: 'linear-gradient(to right, #8B4513, #DAA520)', // Saddle brown to goldenrod
-      'special-balls': 'linear-gradient(to right, #4B0082, #8A2BE2)', // Indigo to blue violet
-      'standard-balls': 'linear-gradient(to right, #000080, #00BFFF)', // Navy to deep sky blue
-      'dex-completion': 'linear-gradient(to right, #FF4500, #FFD700)', // Dark orange to gold
-      scarves: 'linear-gradient(to right, #8B4513, #FF69B4)', // Saddle brown to hot pink
-      'all-machines': 'linear-gradient(to right, #000080, #4682B4)', // Navy to steel blue
-      flutes: 'linear-gradient(to right, #1E90FF, #87CEEB)', // Dodger blue to sky blue
-      'apricorn-balls': 'linear-gradient(to right, #008000, #00FF00)', // Green to lime
-      'apricorn-box': 'linear-gradient(to right, #FF4500, #FFD700)', // Dark orange to gold
-      'data-cards': 'linear-gradient(to right, #4B0082, #8A2BE2)', // Indigo to blue violet
-      jewels: 'linear-gradient(to right, #8B4513, #FF69B4)', // Saddle brown to hot pink
-      'miracle-shooter': 'linear-gradient(to right, #4B0082, #7B68EE)', // Indigo to medium slate blue
-      'mega-stones': 'linear-gradient(to right, #8B4513, #FF6347)', // Saddle brown to tomato
-      memories: 'linear-gradient(to right, #1E90FF, #87CEFA)', // Dodger blue to light sky blue
-      'z-crystals': 'linear-gradient(to right, #4B0082, #D8BFD8)', // Indigo to thistle
-      'species-candies': 'linear-gradient(to right, #8B4513, #FF6347)', // Saddle brown to tomato
-      'catching-bonus': 'linear-gradient(to right, #008080, #20B2AA)', // Teal to light sea green
-      'dynamax-crystals': 'linear-gradient(to right, #FF4500, #FF8C00)',
+      'stat-boosts': '#FFD700',
+      'effort-drop': '#FFA500',
+      medicine: '#D3D3D3',
+      other: '#B0C4DE',
+      'in-a-pinch': '#FF6347',
+      'picky-healing': '#7CFC00',
+      'type-protection': '#D2B48C',
+      'baking-only': '#D3D3D3',
+      collectibles: '#FFDAB9',
+      evolution: '#C71585',
+      spelunking: '#98FB98',
+      'held-items': '#FFB6C1',
+      choice: '#9370DB',
+      'effort-training': '#87CEEB',
+      'bad-held-items': '#CD853F',
+      training: '#AFEEEE',
+      plates: '#FF6347',
+      'species-specific': '#FFA07A',
+      'type-enhancement': '#8B4513',
+      'event-items': '#FFD700',
+      gameplay: '#DCDCDC',
+      'plot-advancement': '#8A2BE2',
+      unused: '#DCDCDC',
+      loot: '#B8860B',
+      'all-mail': '#FFB6C1',
+      vitamins: '#ADFF2F',
+      healing: '#00FF7F',
+      'pp-recovery': '#6495ED',
+      revival: '#FF6347',
+      'status-cures': '#00FA9A',
+      mulch: '#DAA520',
+      'special-balls': '#8A2BE2',
+      'standard-balls': '#00BFFF',
+      'dex-completion': '#FFD700',
+      scarves: '#FF69B4',
+      'all-machines': '#4682B4',
+      flutes: '#87CEEB',
+      'apricorn-balls': '#00FF00',
+      'apricorn-box': '#FFD700',
+      'data-cards': '#8A2BE2',
+      jewels: '#FF69B4',
+      'miracle-shooter': '#7B68EE',
+      'mega-stones': '#FF6347',
+      memories: '#87CEFA',
+      'z-crystals': '#D8BFD8',
+      'species-candies': '#FF6347',
+      'catching-bonus': '#20B2AA',
+      'dynamax-crystals': '#FF8C00',
     },
+
     itemGradientMap: {
       'stat-boosts': 'linear-gradient(to top, #FF9966, #FF4500, #000000)', // Light orange to dark orange to black
       'effort-drop': 'linear-gradient(to top, #FFD700, #DAA520, #000000)', // Gold to dark goldenrod to black

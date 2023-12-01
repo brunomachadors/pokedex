@@ -17,11 +17,12 @@ import {
   ItemAttributes,
   ItemShortEffect,
   RegionInfoContainer,
-  RegionId,
   RegionName,
   VersionGroups,
   Versions,
   MainGeneration,
+  EasterEgg,
+  EasterEggText,
 } from './styles';
 import { selectInfoMenu } from '../../store/info/info';
 import { useDispatch, useSelector } from 'react-redux';
@@ -39,6 +40,7 @@ import {
   TypeContent,
   TypeIcon,
 } from '../Type/styles';
+import { PantufaImage } from '../Photo/styles';
 
 function getColoredIcon(type: string): string {
   const sourceImage = 'types/' + type.toLowerCase() + '.svg';
@@ -222,7 +224,6 @@ export function RegionInfo() {
 
   return (
     <RegionInfoContainer>
-      <RegionId></RegionId>
       <RegionName>
         #{selectedRegion.id} - {selectedRegion.name.toUpperCase()}
       </RegionName>
@@ -236,5 +237,14 @@ export function RegionInfo() {
         ))}
       </Versions>
     </RegionInfoContainer>
+  );
+}
+
+export function LandingInfo() {
+  return (
+    <EasterEgg>
+      <EasterEggText>A wild Pantufa appears!!</EasterEggText>
+      <PantufaImage src="pantufa.png"></PantufaImage>
+    </EasterEgg>
   );
 }

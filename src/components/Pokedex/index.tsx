@@ -4,6 +4,7 @@ import {
   PokedexRightSide,
   PokedexLeftContent,
   PokedexRightContent,
+  PokedexLandscapeContainer,
 } from './styles';
 
 import Display, { DisplayMonitor } from '../Display';
@@ -49,6 +50,24 @@ export function PokedexMobile() {
     </PokedexLeftContent>
   );
 }
+
+interface PokedexLandscapeProps {
+  size: number;
+}
+
+export const PokedexLandscape: React.FC<PokedexLandscapeProps> = ({ size }) => {
+  const menu = useSelector((state: State) => state.mainMenu.selectedMainMenu);
+  return (
+    <PokedexLeftContent>
+      <DisplayMonitor />
+      <PokedexLandscapeContainer>
+        <ButtonsMenu />
+        {size >= 800 && menu !== '' && <Search />}
+        <Lists />
+      </PokedexLandscapeContainer>
+    </PokedexLeftContent>
+  );
+};
 
 export function PokedexTablet() {
   const menu = useSelector((state: State) => state.mainMenu.selectedMainMenu);

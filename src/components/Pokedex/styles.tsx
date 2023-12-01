@@ -20,7 +20,7 @@ export const PokedexContainer = styled.div`
   @media (max-width: 720px) {
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 600px) {
   }
 `;
 
@@ -51,7 +51,7 @@ export const PokedexLeftSide = styled.div`
   @media (max-width: 720px) {
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 600px) {
   }
 `;
 
@@ -115,8 +115,18 @@ export const PokedexLeftContent = styled.div`
     gap: 4vh;
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: 600px) {
     gap: 5vh;
+  }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: none;
+    margin: 0;
+    padding: 0;
   }
 `;
 
@@ -142,4 +152,15 @@ export const PokedexRightContent = styled.div`
     padding: 0;
     border: none;
   }
+`;
+
+export const PokedexLandscapeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+
+  height: 90%;
+  gap: 2vh;
+  justify-content: space-between;
+  align-items: center;
 `;

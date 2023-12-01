@@ -63,8 +63,14 @@ export const WhiteScreen = styled.div`
     height: 40%;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 600px) {
     width: 90%;
+  }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    height: 90%;
+    width: 40%;
+    margin-left: 2vw;
   }
 `;
 
@@ -102,36 +108,4 @@ export const Categoryitem = styled.div`
   @media screen and (max-width: 600px) {
     font-size: 4vw;
   }
-`;
-
-export const GitAccount = styled.div`
-  color: white;
-  font-family: 'RetroGaming', sans-serif;
-  font-size: 1vw;
-
-  @media screen and (max-width: 1280px) {
-    font-size: 3vw;
-  }
-
-  @media screen and (max-width: 600px) {
-    font-size: 4vw;
-  }
-`;
-
-export const GitImage = styled.img`
-  width: 1vw;
-  background-color: transparent;
-
-  @media screen and (max-width: 1280px) {
-    width: 3vw;
-  }
-
-  @media screen and (max-width: 600px) {
-    width: 4vw;
-  }
-`;
-
-export const Button = styled.button`
-  background-color: transparent;
-  border: none;
 `;

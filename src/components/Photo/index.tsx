@@ -1,6 +1,9 @@
 import { useSelector } from 'react-redux';
 import themes from '../../utils/themes';
 import {
+  Button,
+  GitAccount,
+  GitImage,
   ModalContent,
   RegionName,
   StyledImage,
@@ -136,6 +139,26 @@ export function RegionPhoto() {
         </StyledModal>
       )}
     </TextContainer>
+  );
+}
+
+export function LandingPhoto() {
+  const redirectToGitHub = () => {
+    window.open('https://github.com/brunomachadors', '_blank');
+  };
+  return (
+    <>
+      <StyledImage
+        src="https://i.gifer.com/4tym.gif"
+        id="pikachuGif"
+      ></StyledImage>
+      <Button onClick={redirectToGitHub}>
+        <GitAccount id="gitAccount">
+          <GitImage src="icons/git.png" />
+          {'/brunomachadors'.toUpperCase()}
+        </GitAccount>
+      </Button>
+    </>
   );
 }
 

@@ -1,22 +1,20 @@
-import {
-  AnimatedText,
-  BlackScreen,
-  Button,
-  GitAccount,
-  GitImage,
-  WhiteScreen,
-  Word,
-} from './styles';
+import { AnimatedText, BlackScreen, WhiteScreen, Word } from './styles';
 import { useSelector } from 'react-redux';
 import { State } from '../../types/pokemon';
-import PokemonPhoto, { ItemPhoto, RegionPhoto, TypePhoto } from '../Photo';
+import PokemonPhoto, {
+  ItemPhoto,
+  LandingPhoto,
+  RegionPhoto,
+  TypePhoto,
+} from '../Photo';
 import InfoPainel, {
   ItemInfo,
+  LandingInfo,
   PokemonInfo,
   PokemonTypeInfo,
   RegionInfo,
 } from '../Info';
-import { Screen, StyledImage } from '../Photo/styles';
+import { Screen } from '../Photo/styles';
 import themes from '../../utils/themes';
 import { Name } from '../Info/styles';
 
@@ -133,27 +131,6 @@ export function TypesDisplay() {
   );
 }
 
-export function NoSelection() {
-  const redirectToGitHub = () => {
-    window.open('https://github.com/brunomachadors', '_blank');
-  };
-
-  return (
-    <Screen id="screen">
-      <StyledImage
-        src="https://i.gifer.com/4tym.gif"
-        id="pikachuGif"
-      ></StyledImage>
-      <Button onClick={redirectToGitHub}>
-        <GitAccount id="gitAccount">
-          <GitImage src="icons/git.png" />
-          {'/brunomachadors'.toUpperCase()}
-        </GitAccount>
-      </Button>
-    </Screen>
-  );
-}
-
 export function ItemsDisplay() {
   const infoMenu = useSelector((state: State) => state.infoMenu.selectedMenu);
   const itemColor = useSelector(
@@ -192,4 +169,13 @@ export function RegionsDisplay() {
   );
 }
 
+export function NoSelection() {
+  const infoMenu = useSelector((state: State) => state.infoMenu.selectedMenu);
+  return (
+    <Screen id="screen">
+      {infoMenu === 'photo' && <LandingPhoto></LandingPhoto>}
+      {infoMenu === 'info' && <LandingInfo></LandingInfo>}
+    </Screen>
+  );
+}
 export default Display;

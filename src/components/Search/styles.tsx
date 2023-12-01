@@ -52,6 +52,11 @@ export const DetectivePikachu = styled.img`
     margin-left: 8vw;
     width: 8vw;
   }
+
+  @media (orientation: landscape) and (max-width: 1366px) {
+    height: 7vh;
+    width: auto;
+  }
 `;
 
 export const PokemonListContainer = styled.ul`
