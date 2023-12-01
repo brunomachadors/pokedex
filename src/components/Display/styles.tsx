@@ -14,6 +14,7 @@ export const BlackScreen = styled.div`
 
   @media screen and (max-width: 1280px) {
     height: 10%;
+    margin-top: 1%;
   }
 `;
 
@@ -53,7 +54,6 @@ export const WhiteScreen = styled.div`
   border: 3px solid black;
   overflow: hidden;
   border-radius: 10px;
-  margin-top: 10px;
 
   border-right: 6px solid #680708;
   border-top: 6px solid #680708;

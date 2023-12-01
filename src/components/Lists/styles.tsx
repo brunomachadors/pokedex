@@ -144,7 +144,6 @@ export const WhiteScreen = styled.div`
   border: 3px solid black;
   overflow: hidden;
   border-radius: 10px;
-  margin-top: 10px;
 `;
 
 export const BlackScreenList = styled.div`

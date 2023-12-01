@@ -75,8 +75,8 @@ export function PokedexTablet() {
   return (
     <PokedexLeftContent>
       <Display />
-      <DisplayMonitor />
       <ButtonsMenu />
+      <DisplayMonitor />
       {menu !== '' && <Search />}
       <Lists />
     </PokedexLeftContent>

@@ -99,7 +99,6 @@ export const PokedexLeftContent = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   padding: 10px;
-
   gap: 4vw;
 
   @media screen and (max-width: 1280px) {
@@ -113,10 +112,11 @@ export const PokedexLeftContent = styled.div`
     margin-bottom: 0;
     border: none;
     gap: 4vh;
+    gap: 2vw;
   }
 
   @media (max-width: 600px) {
-    gap: 5vh;
+    gap: 3vh;
   }
 
   @media (orientation: landscape) and (max-width: 1366px) {
