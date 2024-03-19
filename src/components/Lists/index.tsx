@@ -75,7 +75,7 @@ export function PokemonList() {
   const pokemonLists = useSelector((state: State) => state.pokemonList.lists);
   const dispatch = useDispatch();
   const firstGeneration = getRangeByGeneration(PokemonGeneration.First);
-  const eigthGeneration = getRangeByGeneration(PokemonGeneration.Eighth);
+  //const eigthGeneration = getRangeByGeneration(PokemonGeneration.Eighth);
 
   useEffect(() => {
     async function fetchData() {
@@ -84,7 +84,7 @@ export function PokemonList() {
 
         const response: TpokemonList = await getPokemonList(
           firstGeneration.start,
-          eigthGeneration.end
+          firstGeneration.end
         );
 
         const updatedList = await Promise.all(
@@ -115,7 +115,7 @@ export function PokemonList() {
     }
 
     fetchData();
-  }, [dispatch, firstGeneration.start, eigthGeneration.end]);
+  }, [dispatch, firstGeneration.start, firstGeneration.end]);
 
   const handleClick = (pokemon: Tresult) => {
     dispatch(selectPokemon(pokemon));
@@ -142,7 +142,7 @@ export function PokemonList() {
               }
               onClick={() => handleClick(pokemon)}
             >
-              <ListText>
+              <ListText data-cy={pokemon.name}>
                 <TextContainer>#{pokemon.id}</TextContainer>
                 <TextContainer>{pokemon.name.toUpperCase()}</TextContainer>
                 <TextContainer>

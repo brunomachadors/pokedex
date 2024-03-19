@@ -35,7 +35,7 @@ yarn dev
 ## How to run the tests
 
 ```bash
-yarn tests
+yarn test
 ```
 
 ## Tasks

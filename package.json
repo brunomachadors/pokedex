@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "npx cypress run --component"
+    "test": "npx cypress run --component --record --key a4859cea-e254-4e56-be97-da6f0c031b2a",
+    "e2e": "npx cypress run --e2e --record --key a4859cea-e254-4e56-be97-da6f0c031b2a"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
@@ -28,7 +29,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
-    "cypress": "^13.6.0",
+    "cypress": "13.7.0",
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
