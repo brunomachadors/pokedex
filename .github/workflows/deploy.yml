@@ -25,11 +25,11 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Run E2E
-        run: npm run e2e
-
       - name: Build project
         run: npm run build
+
+      - name: Run E2E
+        run: npm run e2e
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
