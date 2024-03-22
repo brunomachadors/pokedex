@@ -3,7 +3,7 @@ describe('Select Pokémons in Pokédex', () => {
     cy.visit('https://brunomachadors.github.io/pokedex/');
   });
 
-  const pokemons = ['charmander', 'psyduck'];
+  const pokemons = ['charmander', 'psyduck', 'vulpix', 'voltorb'];
 
   pokemons.forEach((pokemon) => {
     it(`Search ${pokemon}`, () => {
@@ -14,4 +14,17 @@ describe('Select Pokémons in Pokédex', () => {
   });
 });
 
-describe('Type Pokemon at the search ', () => {});
+describe('Type Pokemon at the search ', () => {
+  beforeEach(() => {
+    cy.visit('https://brunomachadors.github.io/pokedex/');
+  });
+
+  it('Search Pokemon', () => {
+    cy.get('#POKÉMON').click();
+    cy.get('#searchBox').should('be.visible');
+    cy.wait(4000);
+    cy.get('#searchBox').type('Gengar');
+    cy.get('[data-cy="gengar"]').click();
+    cy.get('#textDisplay').should('have.text', 'GENGAR');
+  });
+});

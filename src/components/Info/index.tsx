@@ -68,8 +68,12 @@ export default function InfoPainel() {
   }
   return (
     <InfoButtonContainer>
-      <ButtonPhoto onClick={handleClickPhoto}>PHOTO</ButtonPhoto>
-      <ButtonInfo onClick={handleClickInfo}>INFO</ButtonInfo>
+      <ButtonPhoto onClick={handleClickPhoto} data-cy="ButtonPhoto">
+        PHOTO
+      </ButtonPhoto>
+      <ButtonInfo onClick={handleClickInfo} data-cy="ButtonInfo">
+        INFO
+      </ButtonInfo>
     </InfoButtonContainer>
   );
 }
