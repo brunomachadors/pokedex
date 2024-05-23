@@ -4,7 +4,7 @@ export async function getItems() {
   const config = {
     method: 'get',
     maxBodyLength: Infinity,
-    url: 'https://pokeapi.co/api/v2/item/?offset=0&limit=2110',
+    url: 'https://pokeapi.co/api/v2/item/?offset=0&limit=1500',
     headers: {},
   };
 
