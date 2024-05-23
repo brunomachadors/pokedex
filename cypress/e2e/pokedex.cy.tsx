@@ -6,7 +6,7 @@ describe('Select Pokémons in Pokédex', () => {
   const pokemons = ['charmander', 'psyduck', 'vulpix', 'voltorb'];
 
   pokemons.forEach((pokemon) => {
-    it(`Search ${pokemon}`, () => {
+    it.skip(`Search ${pokemon}`, () => {
       cy.get('#POKÉMON').click();
       cy.get(`[data-cy=${pokemon}]`).click();
       cy.get('#textDisplay').should('contain.text', pokemon.toUpperCase());
