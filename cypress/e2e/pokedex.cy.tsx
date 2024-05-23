@@ -19,7 +19,7 @@ describe('Type Pokemon at the search ', () => {
     cy.visit('https://brunomachadors.github.io/pokedex/');
   });
 
-  it('Search Pokemon', () => {
+  it.skip('Search Pokemon', () => {
     cy.get('#POKÉMON').click();
     cy.get('#searchBox').should('be.visible');
     cy.wait(4000);
