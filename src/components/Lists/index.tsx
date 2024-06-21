@@ -54,6 +54,7 @@ import {
   selectRegion,
 } from '../../store/region/region';
 import { IRegion } from '../../types/location';
+import { getFossils } from '../../api/fossils/fossils';
 
 function Lists() {
   const selectedMenu = useSelector(
@@ -66,6 +67,7 @@ function Lists() {
       {selectedMenu === 'TYPES' && <TypeList />}
       {selectedMenu === 'ITEMS' && <ItemList />}
       {selectedMenu === 'REGIONS' && <RegionList />}
+      {selectedMenu === 'FOSSILS' && <FossilList />}
     </ListsContainer>
   );
 }
@@ -360,6 +362,73 @@ export function RegionList() {
                 <TextContainer>#{region.id}</TextContainer>
                 <TextContainer>{region.name.toUpperCase()}</TextContainer>
                 <MapIcon src="icons/map.png" />
+              </ListText>
+            </ButtonSelect>
+          ))}
+        </List>
+      )}
+    </BlackScreenList>
+  );
+}
+
+export function FossilList() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const dispatch = useDispatch();
+  const filteredItemList = useSelector(
+    (state: State) => state.itemList.lists.filteredList
+  );
+
+  useEffect(() => {
+    async function getAllItems() {
+      try {
+        const items = await getFossils();
+
+        const infos = await Promise.all(
+          items.map(async (item: { url: string }) => {
+            const info: IItem = await getItem(item.url);
+            return info;
+          })
+        );
+
+        dispatch(updateOriginalItemList(infos));
+        dispatch(updateFilteredItemList(infos));
+
+        setIsLoading(false);
+      } catch (error) {
+        console.error('Error fetching items:', error);
+        setIsLoading(false);
+      }
+    }
+
+    getAllItems();
+  }, [dispatch]);
+
+  const handleClick = (item: IItem) => {
+    dispatch(selectItem(item));
+  };
+
+  return (
+    <BlackScreenList>
+      {isLoading ? (
+        <PokeballLoading></PokeballLoading>
+      ) : (
+        <List>
+          {filteredItemList.map((item) => (
+            <ButtonSelect
+              key={item.id}
+              color={
+                themes.colors.itemTypeColorMap[
+                  item.category
+                    ?.name as keyof typeof themes.colors.itemTypeColorMap
+                ]
+              }
+              onClick={() => handleClick(item)}
+            >
+              <ListText>
+                <TextContainer>#{item.id}</TextContainer>
+                <TextContainer>{item.name.toUpperCase()}</TextContainer>
+                <StyledItemImage src={item.sprites?.default}></StyledItemImage>
               </ListText>
             </ButtonSelect>
           ))}

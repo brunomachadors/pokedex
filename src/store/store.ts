@@ -17,6 +17,7 @@ export const store = configureStore({
     pokemonList: pokemonListReducer,
     typeList: pokemonListTypeReducer,
     itemList: itemListReducer,
+    fossilList: itemListReducer,
     type: typeReducer,
     item: itemReducer,
     regions: regionListReducer,

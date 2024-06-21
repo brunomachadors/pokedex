@@ -44,6 +44,10 @@ export function Display() {
       displayText = item ? item.toUpperCase() : 'ITEMS';
       break;
 
+    case 'FOSSILS':
+      displayText = item ? item.toUpperCase() : 'FOSSILS';
+      break;
+
     case 'REGIONS':
       displayText = region ? region.toUpperCase() : 'REGIONS';
       break;
@@ -76,6 +80,9 @@ export function DisplayMonitor() {
       displayComponent = <TypesDisplay />;
       break;
     case 'ITEMS':
+      displayComponent = <ItemsDisplay />;
+      break;
+    case 'FOSSILS':
       displayComponent = <ItemsDisplay />;
       break;
     case 'REGIONS':

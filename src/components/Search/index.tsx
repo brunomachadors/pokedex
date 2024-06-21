@@ -51,6 +51,17 @@ function Search() {
         }
         break;
 
+      case 'FOSSILS':
+        if (searchTerm === '') {
+          dispatch(updateFilteredItemList(itemLists.originalList));
+        } else {
+          const filteredResults = itemLists.originalList.filter((item) =>
+            item.name.toLowerCase().includes(searchTerm.toLowerCase())
+          );
+          dispatch(updateFilteredItemList(filteredResults));
+        }
+        break;
+
       case 'REGIONS':
         if (searchTerm === '') {
           dispatch(filteredRegionList(regionLists.originalList));
