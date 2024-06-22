@@ -41,16 +41,6 @@ function Search() {
         break;
 
       case 'ITEMS':
-        if (searchTerm === '') {
-          dispatch(updateFilteredItemList(itemLists.originalList));
-        } else {
-          const filteredResults = itemLists.originalList.filter((item) =>
-            item.name.toLowerCase().includes(searchTerm.toLowerCase())
-          );
-          dispatch(updateFilteredItemList(filteredResults));
-        }
-        break;
-
       case 'FOSSILS':
         if (searchTerm === '') {
           dispatch(updateFilteredItemList(itemLists.originalList));
@@ -84,11 +74,14 @@ function Search() {
       <DetectivePikachu
         src="icons/detetive.png"
         id="detective"
+        alt="Detective Pikachu"
+        aria-label="Detective Pikachu"
       ></DetectivePikachu>
       <SearchInput
         placeholder={placeHolderText}
         id="searchBox"
         onChange={(e) => handleSearch(e.target.value)}
+        aria-labelledby="searchContainer"
       ></SearchInput>
     </SearchContainer>
   );

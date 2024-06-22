@@ -42,16 +42,17 @@ function PokemonPhoto() {
         <StyledImage
           key={selectedPokemon.id}
           src={selectedPokemon.image}
-          alt="selectedPokemon"
+          alt={`${selectedPokemon.name} image`}
           onClick={openModal}
+          aria-label={`Open image of ${selectedPokemon.name}`}
         />
       )}
       {isModalOpen && (
-        <StyledModal onClick={closeModal}>
+        <StyledModal onClick={closeModal} aria-label="Close modal">
           <ModalContent>
             <StyledPokemoneImage
               src={selectedPokemon.image}
-              alt="Pokemon Image"
+              alt={`${selectedPokemon.name} enlarged image`}
             />
           </ModalContent>
         </StyledModal>
@@ -74,7 +75,8 @@ export function TypePhoto() {
     <StyledTypeImage
       key={selectedType}
       src={getColoredIcon(selectedType)}
-      alt="selectedPokemon"
+      alt={`${selectedType} type icon`}
+      aria-label={`Image of ${selectedType} type`}
     />
   );
 }
@@ -89,7 +91,8 @@ export function ItemPhoto() {
       <StyledItemImageLarge
         key={selectedItem.id}
         src={selectedItem.sprites?.default}
-        alt="selectedItem"
+        alt={`${selectedItem.name} image`}
+        aria-label={`Image of ${selectedItem.name}`}
       />
       <Categoryitem>
         Category:
@@ -128,13 +131,17 @@ export function RegionPhoto() {
         <StyledRegionImage
           src={regionImage}
           onClick={openModal}
+          aria-label={`Open image of ${selectedRegion.name} region`}
         ></StyledRegionImage>
       </StyledRegionImageContainer>
 
       {isModalOpen && (
-        <StyledModal onClick={closeModal}>
+        <StyledModal onClick={closeModal} aria-label="Close modal">
           <ModalContent>
-            <StyledImageMap src={regionImage} alt="Region Map" />
+            <StyledImageMap
+              src={regionImage}
+              alt={`${selectedRegion.name} region map`}
+            />
           </ModalContent>
         </StyledModal>
       )}
@@ -151,10 +158,14 @@ export function LandingPhoto() {
       <StyledImage
         src="https://i.gifer.com/4tym.gif"
         id="pikachuGif"
+        aria-label="Animated Pikachu GIF"
       ></StyledImage>
-      <Button onClick={redirectToGitHub}>
+      <Button
+        onClick={redirectToGitHub}
+        aria-label="Redirect to GitHub account"
+      >
         <GitAccount id="gitAccount">
-          <GitImage src="icons/git.png" />
+          <GitImage src="icons/git.png" alt="GitHub icon" />
           {'/brunomachadors'.toUpperCase()}
         </GitAccount>
       </Button>

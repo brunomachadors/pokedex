@@ -133,7 +133,7 @@ export function PokemonList() {
       {isLoading ? (
         <PokeballLoading></PokeballLoading>
       ) : (
-        <List>
+        <List aria-label="pokemon list">
           {pokemonLists.filteredList.map((pokemon) => (
             <ButtonSelect
               key={pokemon.name}
@@ -142,6 +142,7 @@ export function PokemonList() {
                   pokemon.types?.[0] as keyof typeof themes.colors.type
                 ]
               }
+              aria-label={'Select the pokemon ' + pokemon.name}
               onClick={() => handleClick(pokemon)}
             >
               <ListText data-cy={pokemon.name}>
@@ -212,7 +213,7 @@ export function TypeList() {
       {isLoading ? (
         <PokeballLoading></PokeballLoading>
       ) : (
-        <List>
+        <List aria-label="Type list">
           {filteredList.map((type) => (
             <ButtonSelect
               key={type.typeInfo.name}
@@ -221,6 +222,7 @@ export function TypeList() {
                   type.typeInfo.name as keyof typeof themes.colors.type
                 ]
               }
+              aria-label={'Select the type ' + type.typeInfo.name}
               onClick={() => handleClick(type.typeInfo.name)}
             >
               <ListText>
@@ -286,7 +288,7 @@ export function ItemList() {
       {isLoading ? (
         <PokeballLoading></PokeballLoading>
       ) : (
-        <List>
+        <List aria-label="Item list">
           {filteredItemList.map((item) => (
             <ButtonSelect
               key={item.id}
@@ -296,6 +298,7 @@ export function ItemList() {
                     ?.name as keyof typeof themes.colors.itemTypeColorMap
                 ]
               }
+              aria-label={'Select the item ' + item.name}
               onClick={() => handleClick(item)}
             >
               <ListText>
@@ -347,7 +350,7 @@ export function RegionList() {
       {isLoading ? (
         <PokeballLoading></PokeballLoading>
       ) : (
-        <List>
+        <List aria-label="Region list">
           {regions.map((region) => (
             <ButtonSelect
               key={region.name}
@@ -356,6 +359,7 @@ export function RegionList() {
                   region.name as keyof typeof themes.colors.regionColorMap
                 ]
               }
+              aria-label={'Select the region ' + region.name}
               onClick={() => handleClick(region)}
             >
               <ListText>
@@ -413,7 +417,7 @@ export function FossilList() {
       {isLoading ? (
         <PokeballLoading></PokeballLoading>
       ) : (
-        <List>
+        <List aria-label="Fossil list">
           {filteredItemList.map((item) => (
             <ButtonSelect
               key={item.id}
@@ -423,6 +427,7 @@ export function FossilList() {
                     ?.name as keyof typeof themes.colors.itemTypeColorMap
                 ]
               }
+              aria-label={'Select the fossil' + item.name}
               onClick={() => handleClick(item)}
             >
               <ListText>

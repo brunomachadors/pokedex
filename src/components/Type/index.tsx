@@ -14,16 +14,17 @@ function getIconSrc(type: string): string {
 
 function PokemonType({ pokemon }: { pokemon: Tresult }) {
   return (
-    <PokemonTypeContainer id="typeContainer">
+    <PokemonTypeContainer id="typeContainer" aria-label="Pokemon Types">
       {pokemon.types?.map((type, index) => (
         <StyledType
           key={index}
           color={
             themes.colors.buttonColor[type as keyof typeof themes.colors.type]
           }
+          aria-labelledby={`typeLabel-${index}`}
         >
-          <TypeContent>
-            <TypeIcon src={getIconSrc(type)} alt={`${type} icon`} id={type} />
+          <TypeContent id={`typeLabel-${index}`}>
+            <TypeIcon src={getIconSrc(type)} alt={`${type} icon`} />
             {type.toUpperCase()}
           </TypeContent>
         </StyledType>
