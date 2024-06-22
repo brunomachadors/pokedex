@@ -28,23 +28,27 @@ function ButtonsMenu({ onButtonClick }: ButtonsProps) {
       onButtonClick(buttonIndex);
     }
   };
+
   const getIcon = (label: string) => {
     const icon = `icons/${label.toLowerCase()}.png`;
-
     return icon;
   };
 
   return (
-    <ButtonContainer id="buttonContainer">
+    <ButtonContainer id="buttonContainer" aria-label="Button Container">
       {buttonLabels.map((label, index) => (
         <Button
           id={label}
           key={index}
           selected={selectedButton === index}
           onClick={() => handleButtonClick(index, label)}
+          aria-label={`${label} Button`}
         >
-          <ButtonIcon src={getIcon(label)}></ButtonIcon>
-          <ButtonText>{label}</ButtonText>
+          <ButtonIcon
+            src={getIcon(label)}
+            aria-label={`${label} Icon`}
+          ></ButtonIcon>
+          <ButtonText aria-label={`${label} Text`}>{label}</ButtonText>
         </Button>
       ))}
     </ButtonContainer>

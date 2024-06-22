@@ -57,9 +57,11 @@ export function Display() {
   }
 
   return (
-    <BlackScreen id="blackScreen">
-      <AnimatedText id="animatedText">
-        <Word id="textDisplay">{displayText}</Word>
+    <BlackScreen id="blackScreen" aria-label="Black Screen">
+      <AnimatedText id="animatedText" aria-label="Animated Text">
+        <Word id="textDisplay" aria-label="Text Display">
+          {displayText}
+        </Word>
       </AnimatedText>
     </BlackScreen>
   );
@@ -74,28 +76,28 @@ export function DisplayMonitor() {
 
   switch (mainMenu) {
     case 'POKÉMON':
-      displayComponent = <PokemonDisplay />;
+      displayComponent = <PokemonDisplay aria-label="Pokemon display" />;
       break;
     case 'TYPES':
-      displayComponent = <TypesDisplay />;
+      displayComponent = <TypesDisplay aria-label="Types display" />;
       break;
     case 'ITEMS':
-      displayComponent = <ItemsDisplay />;
+      displayComponent = <ItemsDisplay aria-label="Items display" />;
       break;
     case 'FOSSILS':
-      displayComponent = <FossilsDisplay />;
+      displayComponent = <FossilsDisplay aria-label="Fossils display" />;
       break;
     case 'REGIONS':
-      displayComponent = <RegionsDisplay />;
+      displayComponent = <RegionsDisplay aria-label="Regions display" />;
       break;
     default:
-      displayComponent = <NoSelection />;
+      displayComponent = <NoSelection aria-label="No Selection display" />;
   }
 
   return (
-    <WhiteScreen id="whiteScreen">
+    <WhiteScreen id="whiteScreen" aria-label="White Screen">
       {displayComponent}
-      <InfoPainel />
+      <InfoPainel aria-label="Info Panel" />
     </WhiteScreen>
   );
 }
@@ -111,10 +113,22 @@ export function PokemonDisplay() {
     selectedType && themes.colors.background[selectedType];
 
   return (
-    <Screen color={backgroundColor} id="screen">
-      {!selectedType && <Name id="selectPokemon">SELECT POKÉMON</Name>}
-      {selectedType && infoMenu === 'photo' && <PokemonPhoto />}
-      {selectedType && infoMenu === 'info' && <PokemonInfo />}
+    <Screen
+      color={backgroundColor}
+      id="screen"
+      aria-label="Pokemon Display Screen"
+    >
+      {!selectedType && (
+        <Name id="selectPokemon" aria-label="Select Pokemon">
+          SELECT POKÉMON
+        </Name>
+      )}
+      {selectedType && infoMenu === 'photo' && (
+        <PokemonPhoto aria-label="Pokemon Photo" />
+      )}
+      {selectedType && infoMenu === 'info' && (
+        <PokemonInfo aria-label="Pokemon Info" />
+      )}
     </Screen>
   );
 }
@@ -130,10 +144,22 @@ export function TypesDisplay() {
     selectedType && themes.colors.background[selectedType];
 
   return (
-    <Screen color={backgroundColor}>
-      {!selectedType && <Name id="selectType">SELECT TYPE</Name>}
-      {selectedType && infoMenu === 'photo' && <TypePhoto />}
-      {selectedType && infoMenu === 'info' && <PokemonTypeInfo />}
+    <Screen
+      color={backgroundColor}
+      id="screen"
+      aria-label="Types Display Screen"
+    >
+      {!selectedType && (
+        <Name id="selectType" aria-label="Select Type">
+          SELECT TYPE
+        </Name>
+      )}
+      {selectedType && infoMenu === 'photo' && (
+        <TypePhoto aria-label="Type Photo" />
+      )}
+      {selectedType && infoMenu === 'info' && (
+        <PokemonTypeInfo aria-label="Pokemon Type Info" />
+      )}
     </Screen>
   );
 }
@@ -149,10 +175,20 @@ export function ItemsDisplay() {
   const backgroundColor = themes.colors.itemGradientMap[itemColor];
 
   return (
-    <Screen color={backgroundColor} id="screen">
-      {!itemColor && <Name id="selectItem">SELECT ITEM</Name>}
-      {itemColor && infoMenu === 'photo' && <ItemPhoto />}
-      {itemColor && infoMenu === 'info' && <ItemInfo />}
+    <Screen
+      color={backgroundColor}
+      id="screen"
+      aria-label="Items Display Screen"
+    >
+      {!itemColor && (
+        <Name id="selectItem" aria-label="Select Item">
+          SELECT ITEM
+        </Name>
+      )}
+      {itemColor && infoMenu === 'photo' && (
+        <ItemPhoto aria-label="Item Photo" />
+      )}
+      {itemColor && infoMenu === 'info' && <ItemInfo aria-label="Item Info" />}
     </Screen>
   );
 }
@@ -168,10 +204,22 @@ export function FossilsDisplay() {
   const backgroundColor = themes.colors.itemGradientMap[itemColor];
 
   return (
-    <Screen color={backgroundColor} id="screen">
-      {!itemColor && <Name id="selectItem">SELECT FOSSIL</Name>}
-      {itemColor && infoMenu === 'photo' && <ItemPhoto />}
-      {itemColor && infoMenu === 'info' && <ItemInfo />}
+    <Screen
+      color={backgroundColor}
+      id="screen"
+      aria-label="Fossils Display Screen"
+    >
+      {!itemColor && (
+        <Name id="selectItem" aria-label="Select Fossil">
+          SELECT FOSSIL
+        </Name>
+      )}
+      {itemColor && infoMenu === 'photo' && (
+        <ItemPhoto aria-label="Fossil Photo" />
+      )}
+      {itemColor && infoMenu === 'info' && (
+        <ItemInfo aria-label="Fossil Info" />
+      )}
     </Screen>
   );
 }
@@ -187,10 +235,22 @@ export function RegionsDisplay() {
 
   const backgroundColor = themes.colors.regionColorMapBackground[regionColor];
   return (
-    <Screen color={backgroundColor}>
-      {!regionColor && <Name id="selectRegions">SELECT REGION</Name>}
-      {regionColor && infoMenu === 'photo' && <RegionPhoto />}
-      {regionColor && infoMenu === 'info' && <RegionInfo />}
+    <Screen
+      color={backgroundColor}
+      id="screen"
+      aria-label="Regions Display Screen"
+    >
+      {!regionColor && (
+        <Name id="selectRegions" aria-label="Select Region">
+          SELECT REGION
+        </Name>
+      )}
+      {regionColor && infoMenu === 'photo' && (
+        <RegionPhoto aria-label="Region Photo" />
+      )}
+      {regionColor && infoMenu === 'info' && (
+        <RegionInfo aria-label="Region Info" />
+      )}
     </Screen>
   );
 }
@@ -198,9 +258,9 @@ export function RegionsDisplay() {
 export function NoSelection() {
   const infoMenu = useSelector((state: State) => state.infoMenu.selectedMenu);
   return (
-    <Screen id="screen">
-      {infoMenu === 'photo' && <LandingPhoto></LandingPhoto>}
-      {infoMenu === 'info' && <LandingInfo></LandingInfo>}
+    <Screen id="screen" aria-label="No Selection Screen">
+      {infoMenu === 'photo' && <LandingPhoto aria-label="Landing Photo" />}
+      {infoMenu === 'info' && <LandingInfo aria-label="Landing Info" />}
     </Screen>
   );
 }

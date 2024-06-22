@@ -68,10 +68,18 @@ export default function InfoPainel() {
   }
   return (
     <InfoButtonContainer>
-      <ButtonPhoto onClick={handleClickPhoto} data-cy="ButtonPhoto">
+      <ButtonPhoto
+        onClick={handleClickPhoto}
+        data-cy="ButtonPhoto"
+        aria-label="Switch to Photo"
+      >
         PHOTO
       </ButtonPhoto>
-      <ButtonInfo onClick={handleClickInfo} data-cy="ButtonInfo">
+      <ButtonInfo
+        onClick={handleClickInfo}
+        data-cy="ButtonInfo"
+        aria-label="Switch to Info"
+      >
         INFO
       </ButtonInfo>
     </InfoButtonContainer>
@@ -151,6 +159,7 @@ export function PokemonTypeInfo() {
                 <Damage key={damageType.name}>
                   <TypeColoredIcon
                     src={getColoredIcon(damageType.name)}
+                    alt={`${damageType.name} icon`}
                   ></TypeColoredIcon>
                 </Damage>
               )
@@ -165,6 +174,7 @@ export function PokemonTypeInfo() {
                 <Damage key={damageType.name}>
                   <TypeColoredIcon
                     src={getColoredIcon(damageType.name)}
+                    alt={`${damageType.name} icon`}
                   ></TypeColoredIcon>
                 </Damage>
               )
@@ -179,7 +189,11 @@ export function PokemonTypeInfo() {
           <ImunityTypeContainer>
             {pokemonType?.damage_relations?.no_damage_from.map(
               (type, index) => (
-                <StyledType key={index} color={backgroundColor(type.name)}>
+                <StyledType
+                  key={index}
+                  color={backgroundColor(type.name)}
+                  aria-label={`Immune to ${type.name}`}
+                >
                   <TypeContent>
                     <TypeIcon
                       src={getIconSrc(type.name)}
@@ -236,8 +250,10 @@ export function RegionInfo() {
       </MainGeneration>
       <Versions>
         VERSIONS:
-        {selectedRegion.version_groups?.map((version) => (
-          <VersionGroups>{version.name.toUpperCase()}</VersionGroups>
+        {selectedRegion.version_groups?.map((version, index) => (
+          <VersionGroups key={index}>
+            {version.name.toUpperCase()}
+          </VersionGroups>
         ))}
       </Versions>
     </RegionInfoContainer>

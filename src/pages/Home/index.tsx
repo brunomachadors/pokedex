@@ -13,13 +13,18 @@ function Home() {
 
   useEffect(() => {
     if (height < width && width < 1367) {
-      setComponent(<PokedexLandscape size={height} />);
+      setComponent(
+        <PokedexLandscape
+          size={height}
+          aria-label="Pokedex in landscape mode"
+        />
+      );
     } else if (width < 600) {
-      setComponent(<PokedexMobile />);
+      setComponent(<PokedexMobile aria-label="Pokedex in mobile mode" />);
     } else if (width < 1280) {
-      setComponent(<PokedexTablet></PokedexTablet>);
+      setComponent(<PokedexTablet aria-label="Pokedex in tablet mode" />);
     } else {
-      setComponent(<PokedexWeb />);
+      setComponent(<PokedexWeb aria-label="Pokedex in web mode" />);
     }
   }, [width, height]);
 

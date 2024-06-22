@@ -19,20 +19,20 @@ import { State } from '../../types/pokemon';
 export function PokedexWeb() {
   const menu = useSelector((state: State) => state.mainMenu.selectedMainMenu);
   return (
-    <PokedexContainer>
-      <PokedexLeftSide>
-        <Header />
-        <PokedexLeftContent>
-          <Display />
-          <ButtonsMenu />
-          {menu !== '' && <Search />}
-          <Music />
+    <PokedexContainer aria-label="Pokedex Web Container">
+      <PokedexLeftSide aria-label="Pokedex Left Side">
+        <Header aria-label="Header" />
+        <PokedexLeftContent aria-label="Pokedex Left Content">
+          <Display aria-label="Display" />
+          <ButtonsMenu aria-label="Buttons Menu" />
+          {menu !== '' && <Search aria-label="Search" />}
+          <Music aria-label="Music Player" />
         </PokedexLeftContent>
       </PokedexLeftSide>
-      <PokedexRightSide>
-        <PokedexRightContent>
-          <DisplayMonitor />
-          <Lists />
+      <PokedexRightSide aria-label="Pokedex Right Side">
+        <PokedexRightContent aria-label="Pokedex Right Content">
+          <DisplayMonitor aria-label="Display Monitor" />
+          <Lists aria-label="Lists" />
         </PokedexRightContent>
       </PokedexRightSide>
     </PokedexContainer>
@@ -42,11 +42,11 @@ export function PokedexWeb() {
 export function PokedexMobile() {
   const menu = useSelector((state: State) => state.mainMenu.selectedMainMenu);
   return (
-    <PokedexLeftContent>
-      <DisplayMonitor />
-      <ButtonsMenu />
-      {menu !== '' && <Search />}
-      <Lists />
+    <PokedexLeftContent aria-label="Pokedex Mobile Content">
+      <DisplayMonitor aria-label="Display Monitor" />
+      <ButtonsMenu aria-label="Buttons Menu" />
+      {menu !== '' && <Search aria-label="Search" />}
+      <Lists aria-label="Lists" />
     </PokedexLeftContent>
   );
 }
@@ -58,12 +58,12 @@ interface PokedexLandscapeProps {
 export const PokedexLandscape: React.FC<PokedexLandscapeProps> = ({ size }) => {
   const menu = useSelector((state: State) => state.mainMenu.selectedMainMenu);
   return (
-    <PokedexLeftContent>
-      <DisplayMonitor />
-      <PokedexLandscapeContainer>
-        <ButtonsMenu />
-        {size >= 800 && menu !== '' && <Search />}
-        <Lists />
+    <PokedexLeftContent aria-label="Pokedex Landscape Content">
+      <DisplayMonitor aria-label="Display Monitor" />
+      <PokedexLandscapeContainer aria-label="Pokedex Landscape Container">
+        <ButtonsMenu aria-label="Buttons Menu" />
+        {size >= 800 && menu !== '' && <Search aria-label="Search" />}
+        <Lists aria-label="Lists" />
       </PokedexLandscapeContainer>
     </PokedexLeftContent>
   );
@@ -73,12 +73,12 @@ export function PokedexTablet() {
   const menu = useSelector((state: State) => state.mainMenu.selectedMainMenu);
 
   return (
-    <PokedexLeftContent>
-      <Display />
-      <ButtonsMenu />
-      <DisplayMonitor />
-      {menu !== '' && <Search />}
-      <Lists />
+    <PokedexLeftContent aria-label="Pokedex Tablet Content">
+      <Display aria-label="Display" />
+      <ButtonsMenu aria-label="Buttons Menu" />
+      <DisplayMonitor aria-label="Display Monitor" />
+      {menu !== '' && <Search aria-label="Search" />}
+      <Lists aria-label="Lists" />
     </PokedexLeftContent>
   );
 }
