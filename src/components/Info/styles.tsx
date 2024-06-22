@@ -10,7 +10,7 @@ export const InfoButtonContainer = styled.div`
 
 export const ButtonPhoto = styled.button`
   border-radius: 20px;
-  background-color: #038d0e;
+  background-color: #016009;
   color: white;
   width: 30%;
   height: 100%;

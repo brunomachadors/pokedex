@@ -83,7 +83,7 @@ export function DisplayMonitor() {
       displayComponent = <ItemsDisplay />;
       break;
     case 'FOSSILS':
-      displayComponent = <ItemsDisplay />;
+      displayComponent = <FossilsDisplay />;
       break;
     case 'REGIONS':
       displayComponent = <RegionsDisplay />;
@@ -151,6 +151,25 @@ export function ItemsDisplay() {
   return (
     <Screen color={backgroundColor} id="screen">
       {!itemColor && <Name id="selectItem">SELECT ITEM</Name>}
+      {itemColor && infoMenu === 'photo' && <ItemPhoto />}
+      {itemColor && infoMenu === 'info' && <ItemInfo />}
+    </Screen>
+  );
+}
+
+export function FossilsDisplay() {
+  const infoMenu = useSelector((state: State) => state.infoMenu.selectedMenu);
+  const itemColor = useSelector(
+    (state: State) =>
+      state.item.selectedItem.category
+        ?.name as keyof typeof themes.colors.itemGradientMap
+  );
+
+  const backgroundColor = themes.colors.itemGradientMap[itemColor];
+
+  return (
+    <Screen color={backgroundColor} id="screen">
+      {!itemColor && <Name id="selectItem">SELECT FOSSIL</Name>}
       {itemColor && infoMenu === 'photo' && <ItemPhoto />}
       {itemColor && infoMenu === 'info' && <ItemInfo />}
     </Screen>
