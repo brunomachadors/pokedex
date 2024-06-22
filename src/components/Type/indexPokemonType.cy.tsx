@@ -13,12 +13,12 @@ describe('<PokemonType />', () => {
   it('It loads the grass type', () => {
     const bulbassaurData: Tresult = bulbassaur;
     mount(<PokemonType pokemon={bulbassaurData} />);
-    cy.get('#grass').should('be.visible');
+    cy.get('#typeLabel-0').should('be.visible');
   });
 
   it('It loads the poison type', () => {
     const bulbassaurData: Tresult = bulbassaur;
     mount(<PokemonType pokemon={bulbassaurData} />);
-    cy.get('#poison').should('be.visible');
+    cy.get('#typeLabel-1').should('be.visible');
   });
 });
