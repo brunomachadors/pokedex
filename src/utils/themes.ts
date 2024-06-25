@@ -19,6 +19,8 @@ export default {
       dragon: 'linear-gradient(to top, #8A55FD, #7241E4, black)',
       steel: 'linear-gradient(to top, #BBC5C4, #A0A0A0, #454545)',
       dark: 'linear-gradient(to top, #5F4632, black)',
+      stellar:
+        'linear-gradient(to top, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #8B00FF, black)', // Arco-íris
     },
     type: {
       grass: 'linear-gradient(to right, #3E9709, #4BB36F)',
@@ -39,6 +41,8 @@ export default {
       dragon: 'linear-gradient(to right, #7241E4, #A99EC3)',
       steel: 'linear-gradient(to right, #A0A0A0, #454545)',
       dark: 'linear-gradient(to right, #333333, #000000)',
+      stellar:
+        'linear-gradient(to right, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #8B00FF)', // Arco-íris
     },
     buttonColor: {
       grass: '#2E6030',
@@ -59,6 +63,7 @@ export default {
       dragon: '#70578B',
       steel: '#808080',
       dark: '#333333',
+      stellar: '#8B00FF',
     },
     regionColorMap: {
       kanto: 'linear-gradient(to right, #FF5733, #FF4500)', // Gradient from coral to dark orange

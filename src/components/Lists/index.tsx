@@ -77,7 +77,7 @@ export function PokemonList() {
   const pokemonLists = useSelector((state: State) => state.pokemonList.lists);
   const dispatch = useDispatch();
   const firstGeneration = getRangeByGeneration(PokemonGeneration.First);
-  const eigthGeneration = getRangeByGeneration(PokemonGeneration.Eighth);
+  const eigthGeneration = getRangeByGeneration(PokemonGeneration.Ninth);
 
   useEffect(() => {
     async function fetchData() {
