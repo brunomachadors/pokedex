@@ -66,6 +66,7 @@ const initialState: { selectedItem: IItem } = {
     sprites: {
       default: '',
     },
+    active: false,
   },
 };
 
