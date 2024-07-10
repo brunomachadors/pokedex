@@ -121,7 +121,7 @@ Error generating stack: `+o.message+`
   }
 `,ba=P.div`
   background: radial-gradient(#de0b0f, #750406);
-  width: 90%;
+  width: 95%;
   height: 80%;
   border: solid black 2px;
   border-left: 12px solid #680708;
@@ -145,12 +145,14 @@ Error generating stack: `+o.message+`
     padding: 0;
     margin-bottom: 0;
     border: none;
-    gap: 4vh;
     gap: 2vw;
   }
 
   @media (max-width: 600px) {
-    gap: 3vh;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0;
+    height: 100vh;
   }
 
   @media (orientation: landscape) and (max-width: 1366px) {
@@ -1086,7 +1088,7 @@ Error generating stack: `+o.message+`
 
   @media (max-width: 600px) {
     width: 74%;
-    height: 6%;
+    height: 4%;
   }
 `,fk=P.img`
   width: 2vw;
@@ -1129,7 +1131,7 @@ Error generating stack: `+o.message+`
   color: #333;
 `;const pk={lists:{originalList:[],filteredList:[]}},g0=yt({name:"list",initialState:pk,reducers:{updateOriginalList:(e,t)=>{e.lists.originalList=t.payload},updateFilteredList:(e,t)=>{e.lists.filteredList=t.payload}}}),{updateOriginalList:hk,updateFilteredList:ou}=g0.actions,mk=g0.reducer,gk={lists:{originalList:[],filteredList:[]}},y0=yt({name:"list",initialState:gk,reducers:{updateOriginalTypeList:(e,t)=>{e.lists.originalList=t.payload},updateFilteredTypeList:(e,t)=>{e.lists.filteredList=t.payload}}}),{updateOriginalTypeList:yk,updateFilteredTypeList:au}=y0.actions,vk=y0.reducer,wk={lists:{originalList:[],filteredList:[]}},v0=yt({name:"list",initialState:wk,reducers:{updateOriginalItemList:(e,t)=>{e.lists.originalList=t.payload},updateFilteredItemList:(e,t)=>{e.lists.filteredList=t.payload}}}),{updateOriginalItemList:w0,updateFilteredItemList:oa}=v0.actions,xk=v0.reducer,Sk={lists:{originalList:[],filteredList:[],selected:{url:"",id:0,locations:[{name:"",url:""}],main_generation:{name:"",url:""},name:"",names:[{language:{name:"",url:""},name:""}],pokedexes:[{name:"",url:""}],version_groups:[{name:"",url:""}]}}},x0=yt({name:"list",initialState:Sk,reducers:{originalRegionList:(e,t)=>{e.lists.originalList=t.payload},filteredRegionList:(e,t)=>{e.lists.filteredList=t.payload},selectRegion:(e,t)=>{e.lists.selected=t.payload}}}),{originalRegionList:kk,filteredRegionList:lu,selectRegion:Ek}=x0.actions,Ck=x0.reducer;function tl(){const e=I(s=>s.pokemonList.lists),t=I(s=>s.typeList.lists),n=I(s=>s.itemList.lists),r=I(s=>s.regions.lists),i=cn(),o=I(s=>s.mainMenu.selectedMainMenu);function a(s){switch(o){case"POKÉMON":if(s==="")i(ou(e.originalList));else{const u=e.originalList.filter(d=>d.name.toLowerCase().includes(s.toLowerCase()));i(ou(u))}break;case"TYPES":if(s==="")i(au(t.originalList));else{const u=t.originalList.filter(d=>d.typeInfo.name.toLowerCase().includes(s.toLowerCase()));i(au(u))}break;case"ITEMS":case"FOSSILS":if(s==="")console.log("Updating with original list:",n.originalList),i(oa(n.originalList));else{const u=n.originalList.filter(d=>d.name&&s?d.name.toLowerCase().includes(s.toLowerCase()):!1);i(oa(u))}break;case"REGIONS":if(s==="")i(lu(r.originalList));else{const u=r.originalList.filter(d=>d.name.toLowerCase().includes(s.toLowerCase()));i(lu(u))}break}}const l=`Search ${o.toLocaleLowerCase()}...`;return y.jsxs(dk,{id:"searchContainer",children:[y.jsx(fk,{src:"icons/detetive.png",id:"detective",alt:"Detective Pikachu","aria-label":"Detective Pikachu"}),y.jsx(ck,{placeholder:l,id:"searchBox",onChange:s=>a(s.target.value),"aria-labelledby":"searchContainer"})]})}const Pk=P.div`
   display: flex;
-  width: 75%;
+  width: 90%;
   height: 15%;
   gap: 6px;
   cursor: pointer;
@@ -1189,7 +1191,7 @@ Error generating stack: `+o.message+`
 
   @media (max-width: 1280px) {
     width: 300px;
-    padding: 10px;
+    padding: 5px;
     max-width: 20vw;
   }
 
@@ -1198,6 +1200,7 @@ Error generating stack: `+o.message+`
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding: 5px;
     max-width: 100vw;
   }
 
@@ -1411,7 +1414,7 @@ Error generating stack: `+o.message+`
     width: 100%;
   }
 `,Ii=P.li`
-  font-size: 2vw;
+  font-size: medium;
   color: white;
   width: 100%;
   display: flex;
@@ -1520,8 +1523,8 @@ without fail.`,version_group:{name:"ruby-sapphire",url:"https://pokeapi.co/api/v
 `,a2=P.li`
   margin: 0;
 `,l2=P.button`
-  width: 40px;
-  height: 40px;
+  width: 10%;
+  height: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1541,8 +1544,8 @@ without fail.`,version_group:{name:"ruby-sapphire",url:"https://pokeapi.co/api/v
   }
 
   @media (max-width: 768px) {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     font-size: 14px;
   }
 
@@ -1561,9 +1564,9 @@ without fail.`,version_group:{name:"ruby-sapphire",url:"https://pokeapi.co/api/v
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 100%;
   max-height: 100%;
+  height: 100%;
 `;function u2(){const[e,t]=F.useState(!0),[n,r]=F.useState(1),i=I(k=>k.pokemonList.lists),o=cn(),a=Ff(su.First),l=Ff(su.Ninth),s=150;F.useEffect(()=>{async function k(){try{t(!0);const p=await Zk(a.start,l.end),f=await Promise.all(p.results.map(async m=>{const x=await e2(m.name);return{...m,id:x.id,image:x.sprites.other["official-artwork"].front_default,types:x.types.map(j=>j.type.name)}}));o(hk(f)),o(ou(f))}catch(p){console.error("Error fetching Pokemon data:",p)}finally{t(!1)}}k()},[o,a.start,l.end]);const u=k=>{o(n2(k))};function d(k){return"types/"+k.toLowerCase()+".svg"}const c=n*s,h=c-s,v=i.filteredList.slice(h,c),g=Math.ceil(i.filteredList.length/s),w=k=>{r(k)};return y.jsx(Ni,{children:e?y.jsx($i,{}):y.jsxs(s2,{children:[y.jsx(j0,{totalPages:g,currentPage:n,onPageChange:w}),y.jsx(Ai,{"aria-label":"pokemon list",children:v.map(k=>{var p,f;return y.jsx(Ti,{color:De.colors.type[(p=k.types)==null?void 0:p[0]],"aria-label":"Select the pokemon "+k.name,onClick:()=>u(k),children:y.jsxs(Ii,{"data-cy":k.name,children:[y.jsxs(Ke,{children:["#",k.id]}),y.jsx(Ke,{children:k.name.toUpperCase()}),y.jsx(Ke,{children:(f=k.types)==null?void 0:f.map(m=>y.jsx(ra,{src:d(m),alt:m},m))})]})},k.name)})})]})})}function c2(){const[e,t]=F.useState(!0),[n,r]=F.useState(1),[i]=F.useState(300),o=cn(),a=I(v=>v.itemList.lists.filteredList);F.useEffect(()=>{async function v(){try{const g=await Kk(),w=await Promise.all(g.map(async k=>await _c(k.url)));o(w0(w)),o(oa(w)),t(!1)}catch(g){console.error("Error fetching items:",g),t(!1)}}v()},[o]);const l=v=>{o(C0(v))},s=n*i,u=s-i,d=a.slice(u,s),c=Math.ceil(a.length/i),h=v=>{r(v)};return y.jsx(Ni,{children:e?y.jsx($i,{}):y.jsxs(y.Fragment,{children:[y.jsx(j0,{totalPages:c,currentPage:n,onPageChange:h}),y.jsx(Ai,{"aria-label":"Item list",children:d.map(v=>{var g,w;return y.jsx(Ti,{active:v.active,color:De.colors.itemTypeColorMap[(g=v.category)==null?void 0:g.name],"aria-label":"Select the item "+v.name,onClick:()=>l(v),children:y.jsxs(Ii,{children:[y.jsxs(Ke,{children:["#",v.id]}),y.jsx(Ke,{children:v.name?v.name.toUpperCase():"Unknown"}),y.jsx(Om,{src:(w=v.sprites)==null?void 0:w.default})]})},v.id)})})]})})}function rl(){const e=I(t=>t.mainMenu.selectedMainMenu);return y.jsxs(Uk,{children:[e==="POKÉMON"&&y.jsx(u2,{}),e==="TYPES"&&y.jsx(d2,{}),e==="ITEMS"&&y.jsx(c2,{}),e==="REGIONS"&&y.jsx(f2,{}),e==="FOSSILS"&&y.jsx(p2,{})]})}function d2(){const[e,t]=F.useState(!0),n=cn(),r=I(a=>a.typeList.lists.filteredList);F.useEffect(()=>{async function a(){t(!0);const l=await XS(),s=await Promise.all(l.map(async u=>({typeInfo:await p0(u.name)})));n(yk(s)),n(au(s)),t(!1)}a()},[n]);function i(a){return"types/"+a.toLowerCase()+".svg"}const o=a=>{n(Vk(a))};return y.jsx(Ni,{children:e?y.jsx($i,{}):y.jsx(Ai,{"aria-label":"Type list",children:r.map(a=>y.jsx(Ti,{color:De.colors.type[a.typeInfo.name],"aria-label":"Select the type "+a.typeInfo.name,onClick:()=>o(a.typeInfo.name),children:y.jsxs(Ii,{children:[y.jsxs(Ke,{children:["#",a.typeInfo.id]}),y.jsx(Ke,{children:a.typeInfo.name.toUpperCase()}),y.jsx(Ke,{children:y.jsx(ra,{src:i(a.typeInfo.name),alt:a.typeInfo.name})})]})},a.typeInfo.name))})})}function f2(){const[e,t]=F.useState(!0),n=I(o=>o.regions.lists.filteredList),r=cn();F.useEffect(()=>{async function o(){const a=await qk(),l=await Promise.all(a.map(async s=>await _c(s.url)));r(kk(l)),r(lu(l)),t(!1)}o()},[r]);const i=o=>{r(Ek(o))};return y.jsx(Ni,{children:e?y.jsx($i,{}):y.jsx(Ai,{"aria-label":"Region list",children:n.map(o=>y.jsx(Ti,{color:De.colors.regionColorMap[o.name],"aria-label":"Select the region "+o.name,onClick:()=>i(o),children:y.jsxs(Ii,{children:[y.jsxs(Ke,{children:["#",o.id]}),y.jsx(Ke,{children:o.name.toUpperCase()}),y.jsx(Hk,{src:"icons/map.png"})]})},o.name))})})}function p2(){const[e,t]=F.useState(!0),n=cn(),r=I(o=>o.itemList.lists.filteredList);F.useEffect(()=>{async function o(){try{const a=await Jk(),l=await Promise.all(a.map(async s=>await _c(s.url)));n(w0(l)),n(oa(l)),t(!1)}catch(a){console.error("Error fetching items:",a),t(!1)}}o()},[n]);const i=o=>{n(C0(o))};return y.jsx(Ni,{children:e?y.jsx($i,{}):y.jsx(Ai,{"aria-label":"Fossil list",children:r.map(o=>{var a,l;return y.jsx(Ti,{color:De.colors.itemTypeColorMap[(a=o.category)==null?void 0:a.name],"aria-label":"Select the fossil"+o.name,onClick:()=>i(o),children:y.jsxs(Ii,{children:[y.jsxs(Ke,{children:["#",o.id]}),y.jsx(Ke,{children:o.name.toUpperCase()}),y.jsx(Om,{src:(l=o.sprites)==null?void 0:l.default})]})},o.id)})})})}const h2=P.audio`
   width: 250px;
   background-color: transparent;
