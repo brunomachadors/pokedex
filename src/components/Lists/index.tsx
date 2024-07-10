@@ -1,10 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  State,
-  TpokemonList,
-  TpokemonType,
-  Tresult,
-} from '../../types/pokemon';
+import { State } from '../../types/pokemon';
 import {
   BlackScreenList,
   List,
@@ -14,19 +9,6 @@ import {
   TextContainer,
 } from './styles';
 import { useEffect, useState } from 'react';
-import {
-  PokemonGeneration,
-  getRangeByGeneration,
-} from '../../utils/generation';
-import {
-  getPokemonDataByName,
-  getPokemonList,
-} from '../../api/pokemon/pokemons';
-import {
-  updateFilteredList,
-  updateOriginalList,
-} from '../../store/pokemon/pokemonList';
-import { selectPokemon } from '../../store/pokemon/pokemon';
 
 import { ButtonSelect } from '../Buttons/styles';
 import themes from '../../utils/themes';
@@ -39,7 +21,7 @@ import {
 import { TypeColoredIcon } from '../Type/styles';
 import { selectType } from '../../store/type/pokemonType';
 import PokeballLoading from '../Loading';
-import { getItem, getItems } from '../../api/item/item';
+import { getItem } from '../../api/item/item';
 import { IItem } from '../../types/item/item';
 import { StyledItemImage } from '../Photo/styles';
 import {
@@ -55,6 +37,8 @@ import {
 } from '../../store/region/region';
 import { IRegion } from '../../types/location';
 import { getFossils } from '../../api/fossils/fossils';
+import PokemonList from '../PokemonList';
+import ItemList from '../ItemList';
 
 function Lists() {
   const selectedMenu = useSelector(
@@ -69,100 +53,6 @@ function Lists() {
       {selectedMenu === 'REGIONS' && <RegionList />}
       {selectedMenu === 'FOSSILS' && <FossilList />}
     </ListsContainer>
-  );
-}
-
-export function PokemonList() {
-  const [isLoading, setIsLoading] = useState(true);
-  const pokemonLists = useSelector((state: State) => state.pokemonList.lists);
-  const dispatch = useDispatch();
-  const firstGeneration = getRangeByGeneration(PokemonGeneration.First);
-  const eigthGeneration = getRangeByGeneration(PokemonGeneration.Ninth);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        setIsLoading(true);
-
-        const response: TpokemonList = await getPokemonList(
-          firstGeneration.start,
-          eigthGeneration.end
-        );
-
-        const updatedList = await Promise.all(
-          response.results.map(async (pokemon) => {
-            const dataResponse = await getPokemonDataByName(pokemon.name);
-
-            const updatedPokemon = {
-              ...pokemon,
-              id: dataResponse.id,
-              image:
-                dataResponse.sprites.other['official-artwork'].front_default,
-              types: dataResponse.types.map(
-                (type: TpokemonType) => type.type.name
-              ),
-            };
-
-            return updatedPokemon;
-          })
-        );
-
-        dispatch(updateOriginalList(updatedList));
-        dispatch(updateFilteredList(updatedList));
-      } catch (error) {
-        console.error('Error fetching Pokemon data:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    fetchData();
-  }, [dispatch, firstGeneration.start, firstGeneration.end]);
-
-  const handleClick = (pokemon: Tresult) => {
-    dispatch(selectPokemon(pokemon));
-  };
-
-  function getColoredIcon(type: string): string {
-    const sourceImage = 'types/' + type.toLowerCase() + '.svg';
-    return sourceImage;
-  }
-
-  return (
-    <BlackScreenList>
-      {isLoading ? (
-        <PokeballLoading></PokeballLoading>
-      ) : (
-        <List aria-label="pokemon list">
-          {pokemonLists.filteredList.map((pokemon) => (
-            <ButtonSelect
-              key={pokemon.name}
-              color={
-                themes.colors.type[
-                  pokemon.types?.[0] as keyof typeof themes.colors.type
-                ]
-              }
-              aria-label={'Select the pokemon ' + pokemon.name}
-              onClick={() => handleClick(pokemon)}
-            >
-              <ListText data-cy={pokemon.name}>
-                <TextContainer>#{pokemon.id}</TextContainer>
-                <TextContainer>{pokemon.name.toUpperCase()}</TextContainer>
-                <TextContainer>
-                  {pokemon.types?.map((type) => (
-                    <TypeColoredIcon
-                      key={type}
-                      src={getColoredIcon(type)}
-                      alt={type}
-                    ></TypeColoredIcon>
-                  ))}
-                </TextContainer>
-              </ListText>
-            </ButtonSelect>
-          ))}
-        </List>
-      )}
-    </BlackScreenList>
   );
 }
 
@@ -237,74 +127,6 @@ export function TypeList() {
                     alt={type.typeInfo.name}
                   ></TypeColoredIcon>
                 </TextContainer>
-              </ListText>
-            </ButtonSelect>
-          ))}
-        </List>
-      )}
-    </BlackScreenList>
-  );
-}
-
-export function ItemList() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  const dispatch = useDispatch();
-  const filteredItemList = useSelector(
-    (state: State) => state.itemList.lists.filteredList
-  );
-
-  useEffect(() => {
-    async function getAllItems() {
-      try {
-        const items = await getItems();
-
-        const infos = await Promise.all(
-          items.map(async (item: { url: string }) => {
-            const info: IItem = await getItem(item.url);
-            return info;
-          })
-        );
-
-        dispatch(updateOriginalItemList(infos));
-        dispatch(updateFilteredItemList(infos));
-
-        setIsLoading(false);
-      } catch (error) {
-        console.error('Error fetching items:', error);
-        setIsLoading(false);
-      }
-    }
-
-    getAllItems();
-  }, [dispatch]);
-
-  const handleClick = (item: IItem) => {
-    dispatch(selectItem(item));
-  };
-
-  return (
-    <BlackScreenList>
-      {isLoading ? (
-        <PokeballLoading></PokeballLoading>
-      ) : (
-        <List aria-label="Item list">
-          {filteredItemList.map((item) => (
-            <ButtonSelect
-              key={item.id}
-              color={
-                themes.colors.itemTypeColorMap[
-                  item.category
-                    ?.name as keyof typeof themes.colors.itemTypeColorMap
-                ]
-              }
-              aria-label={'Select the item ' + item.name}
-              onClick={() => handleClick(item)}
-            >
-              <ListText>
-                <TextContainer>#{item.id}</TextContainer>
-                <TextContainer>{item.name.toUpperCase()}</TextContainer>
-                <StyledItemImage src={item.sprites?.default}></StyledItemImage>
               </ListText>
             </ButtonSelect>
           ))}

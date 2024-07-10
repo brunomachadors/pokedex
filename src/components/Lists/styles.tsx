@@ -6,7 +6,7 @@ export const ListsContainer = styled.div`
   width: 80%;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 
   @media screen and (max-width: 1280px) {
     flex-direction: column;
@@ -151,7 +151,7 @@ export const BlackScreenList = styled.div`
   align-items: center;
   justify-content: center;
   width: 60%;
-  height: 100%;
+  height: 90%;
   overflow: hidden;
   flex-direction: column;
 
