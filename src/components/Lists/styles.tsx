@@ -103,7 +103,7 @@ export const List = styled.ul`
 `;
 
 export const ListText = styled.li`
-  font-size: 2vw;
+  font-size: medium;
   color: white;
   width: 100%;
   display: flex;

@@ -18,8 +18,8 @@ export const PaginationItem = styled.li`
 `;
 
 export const PaginationButton = styled.button<{ active: boolean }>`
-  width: 40px;
-  height: 40px;
+  width: 10%;
+  height: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,8 +39,8 @@ export const PaginationButton = styled.button<{ active: boolean }>`
   }
 
   @media (max-width: 768px) {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     font-size: 14px;
   }
 

@@ -87,7 +87,7 @@ export const PokedexRightSide = styled.div`
 
 export const PokedexLeftContent = styled.div`
   background: radial-gradient(#de0b0f, #750406);
-  width: 90%;
+  width: 95%;
   height: 80%;
   border: solid black 2px;
   border-left: 12px solid #680708;
@@ -111,12 +111,14 @@ export const PokedexLeftContent = styled.div`
     padding: 0;
     margin-bottom: 0;
     border: none;
-    gap: 4vh;
     gap: 2vw;
   }
 
   @media (max-width: 600px) {
-    gap: 3vh;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0;
+    height: 100vh;
   }
 
   @media (orientation: landscape) and (max-width: 1366px) {

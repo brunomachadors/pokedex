@@ -33,7 +33,7 @@ export const SearchContainer = styled.div`
 
   @media (max-width: 600px) {
     width: 74%;
-    height: 6%;
+    height: 4%;
   }
 `;
 
