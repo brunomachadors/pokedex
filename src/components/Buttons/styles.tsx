@@ -6,7 +6,7 @@ interface ButtonProps {
 
 export const ButtonContainer = styled.div`
   display: flex;
-  width: 75%;
+  width: 90%;
   height: 15%;
   gap: 6px;
   cursor: pointer;
@@ -80,7 +80,7 @@ export const ButtonSelect = styled.button.attrs<ButtonProps>((props) => ({
 
   @media (max-width: 1280px) {
     width: 300px;
-    padding: 10px;
+    padding: 5px;
     max-width: 20vw;
   }
 
@@ -89,6 +89,7 @@ export const ButtonSelect = styled.button.attrs<ButtonProps>((props) => ({
     justify-content: center;
     align-items: center;
     width: 100%;
+    padding: 5px;
     max-width: 100vw;
   }
 
