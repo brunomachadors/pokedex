@@ -33,7 +33,6 @@ import {
 } from '../Lists/styles';
 
 import Pagination from '../Pagination';
-import { PokemonListContainer } from './style';
 
 export function PokemonList() {
   const [isLoading, setIsLoading] = useState(true);
@@ -111,7 +110,7 @@ export function PokemonList() {
       {isLoading ? (
         <PokeballLoading></PokeballLoading>
       ) : (
-        <PokemonListContainer>
+        <>
           <Pagination
             totalPages={totalPages}
             currentPage={currentPage}
@@ -145,7 +144,7 @@ export function PokemonList() {
               </ButtonSelect>
             ))}
           </List>
-        </PokemonListContainer>
+        </>
       )}
     </BlackScreenList>
   );
