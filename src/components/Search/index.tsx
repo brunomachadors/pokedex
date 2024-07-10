@@ -43,11 +43,16 @@ function Search() {
       case 'ITEMS':
       case 'FOSSILS':
         if (searchTerm === '') {
+          console.log('Updating with original list:', itemLists.originalList);
           dispatch(updateFilteredItemList(itemLists.originalList));
         } else {
-          const filteredResults = itemLists.originalList.filter((item) =>
-            item.name.toLowerCase().includes(searchTerm.toLowerCase())
-          );
+          const filteredResults = itemLists.originalList.filter((item) => {
+            if (item.name && searchTerm) {
+              return item.name.toLowerCase().includes(searchTerm.toLowerCase());
+            }
+            return false;
+          });
+
           dispatch(updateFilteredItemList(filteredResults));
         }
         break;

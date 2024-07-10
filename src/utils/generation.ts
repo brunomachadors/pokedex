@@ -74,3 +74,10 @@ export function getRangesBetweenGenerations(
 
   return ranges;
 }
+
+export function getNumberOfPokemonsByGeneration(
+  generation: PokemonGeneration
+): number {
+  const range = getRangeByGeneration(generation);
+  return range.end - range.start + 1;
+}

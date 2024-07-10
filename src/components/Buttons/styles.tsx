@@ -57,12 +57,26 @@ export const Button = styled.button<ButtonProps>`
   }
 `;
 
-export const ButtonSelect = styled.button`
+interface ButtonProps {
+  active?: boolean;
+  color?: string;
+}
+
+export const ButtonSelect = styled.button.attrs<ButtonProps>((props) => ({
+  type: 'button',
+  role: 'button',
+  'aria-pressed': props.active ? 'true' : 'false',
+}))<ButtonProps>`
   width: 100%;
   position: relative;
   background: ${(props) =>
     props.color ? props.color : 'linear-gradient(to right, #afafaf, #929292)'};
   cursor: pointer;
+
+  &:hover {
+    background: ${(props) => (props.active ? '#000' : '#f0f0f0')};
+    color: ${(props) => (props.active ? '#ffffff' : '#000000')};
+  }
 
   @media (max-width: 1280px) {
     width: 300px;

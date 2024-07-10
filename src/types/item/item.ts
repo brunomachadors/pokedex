@@ -4,6 +4,7 @@ export interface IItems {
 }
 
 export interface IItem {
+  active: boolean;
   attributes?: Attribute[];
   baby_trigger_for?: unknown;
   category?: Category;

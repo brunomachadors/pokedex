@@ -8,6 +8,7 @@ import typeReducer from './type/pokemonType';
 import itemListReducer from './item/itemList';
 import itemReducer from './item/item';
 import regionListReducer from './region/region';
+import fossilListReducer from './fossil/fossil';
 
 export const store = configureStore({
   reducer: {
@@ -17,7 +18,7 @@ export const store = configureStore({
     pokemonList: pokemonListReducer,
     typeList: pokemonListTypeReducer,
     itemList: itemListReducer,
-    fossilList: itemListReducer,
+    fossilList: fossilListReducer,
     type: typeReducer,
     item: itemReducer,
     regions: regionListReducer,

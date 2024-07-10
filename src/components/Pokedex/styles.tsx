@@ -142,7 +142,6 @@ export const PokedexRightContent = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   margin-left: 5px;
-  gap: 1vw;
 
   @media screen and (max-width: 1280px) {
     width: 100%;
