@@ -61,7 +61,9 @@ export function PokemonList() {
               ...pokemon,
               id: dataResponse.id,
               image:
-                dataResponse.sprites.other['official-artwork'].front_default,
+                dataResponse.sprites.other?.['official-artwork']
+                  ?.front_default ||
+                'https://cdn-icons-png.freepik.com/512/4587/4587713.png',
               types: dataResponse.types.map(
                 (type: TpokemonType) => type.type.name
               ),
