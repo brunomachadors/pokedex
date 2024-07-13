@@ -40,7 +40,7 @@ export function PokemonList() {
   const pokemonLists = useSelector((state: State) => state.pokemonList.lists);
   const dispatch = useDispatch();
   const firstGeneration = getRangeByGeneration(PokemonGeneration.First);
-  const ninthGeneration = getRangeByGeneration(PokemonGeneration.Ninth);
+  const lastGeneration = getRangeByGeneration(PokemonGeneration.Eighth);
   const itemsPerPage = 150;
 
   useEffect(() => {
@@ -50,7 +50,7 @@ export function PokemonList() {
 
         const response: TpokemonList = await getPokemonList(
           firstGeneration.start,
-          ninthGeneration.end
+          lastGeneration.end
         );
 
         const updatedList = await Promise.all(
@@ -83,7 +83,7 @@ export function PokemonList() {
     }
 
     fetchData();
-  }, [dispatch, firstGeneration.start, ninthGeneration.end]);
+  }, [dispatch, firstGeneration.start, lastGeneration.end]);
 
   const handleClick = (pokemon: Tresult) => {
     dispatch(selectPokemon(pokemon));
