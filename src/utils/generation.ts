@@ -8,6 +8,7 @@ export enum PokemonGeneration {
   Seventh = 722,
   Eighth = 810,
   Ninth = 906,
+  Extra = 1026,
 }
 
 export function getRangeByGeneration(generation: PokemonGeneration): {
@@ -52,6 +53,10 @@ export function getRangeByGeneration(generation: PokemonGeneration): {
       break;
     case PokemonGeneration.Ninth:
       start = 906;
+      end = 1025;
+      break;
+    case PokemonGeneration.Extra:
+      start = 1026;
       end = 1302;
       break;
     default:
