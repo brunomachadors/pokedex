@@ -40,7 +40,7 @@ export function PokemonList() {
   const pokemonLists = useSelector((state: State) => state.pokemonList.lists);
   const dispatch = useDispatch();
   const firstGeneration = getRangeByGeneration(PokemonGeneration.First);
-  const ninthGeneration = getRangeByGeneration(PokemonGeneration.Ninth);
+  const lastGeneration = getRangeByGeneration(PokemonGeneration.Second);
   const itemsPerPage = 150;
 
   useEffect(() => {
@@ -50,25 +50,23 @@ export function PokemonList() {
 
         const response: TpokemonList = await getPokemonList(
           firstGeneration.start,
-          ninthGeneration.end
+          lastGeneration.end
         );
 
         const updatedList = await Promise.all(
           response.results.map(async (pokemon) => {
             const dataResponse = await getPokemonDataByName(pokemon.name);
 
-            const image =
-              dataResponse.sprites?.other?.['official-artwork']
-                ?.front_default || 'default-image.png';
-            const types =
-              dataResponse.types?.map((type: TpokemonType) => type.type.name) ||
-              [];
-
             const updatedPokemon = {
               ...pokemon,
               id: dataResponse.id,
-              image: image,
-              types: types,
+              image:
+                dataResponse.sprites.other?.['official-artwork']
+                  ?.front_default ||
+                'https://cdn-icons-png.freepik.com/512/4587/4587713.png',
+              types: dataResponse.types.map(
+                (type: TpokemonType) => type.type.name
+              ),
             };
 
             return updatedPokemon;
@@ -85,7 +83,7 @@ export function PokemonList() {
     }
 
     fetchData();
-  }, [dispatch, firstGeneration.start, ninthGeneration.end]);
+  }, [dispatch, firstGeneration.start, lastGeneration.end]);
 
   const handleClick = (pokemon: Tresult) => {
     dispatch(selectPokemon(pokemon));
