@@ -40,7 +40,7 @@ export function PokemonList() {
   const pokemonLists = useSelector((state: State) => state.pokemonList.lists);
   const dispatch = useDispatch();
   const firstGeneration = getRangeByGeneration(PokemonGeneration.First);
-  const lastGeneration = getRangeByGeneration(PokemonGeneration.Extra);
+  const lastGeneration = getRangeByGeneration(PokemonGeneration.Fifth);
   const itemsPerPage = 150;
 
   useEffect(() => {
